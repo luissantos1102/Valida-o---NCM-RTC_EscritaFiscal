@@ -62,6 +62,26 @@ Cubra, no mínimo:
 - Blogs de escritórios e de software fiscal (movimento de mercado costuma
   antecipar dor operacional real).
 
+## O que NÃO é fato normativo
+
+A âncora da pauta tem que ser um **ato com consequência jurídica**: norma
+publicada, decisão judicial ou administrativa, prazo que corre, consulta
+respondida, regulamentação editada. Nada disso conta como âncora:
+
+- curso, módulo de treinamento, seminário, webinar ou live — inclusive de órgão
+  oficial. Que a Receita *ensine* um tema não muda o regime jurídico dele;
+- release institucional sem norma anexa ("órgão X anuncia esforço para Y");
+- artigo de escritório, post de LinkedIn, opinião de especialista;
+- nota de entidade de classe, salvo quando reage a norma identificável;
+- reunião realizada, agenda divulgada, projeto apenas protocolado.
+
+Esses materiais servem como **contexto ou termômetro de repercussão** dentro de
+um post ancorado numa norma real. Nunca como o fato que abre o texto.
+
+O teste: *consigo apontar o dispositivo, a decisão ou o prazo que mudou?* Se a
+resposta for "não, mas o assunto está em pauta", não é pauta — é assunto. Vá
+para a norma que está por trás dele, ou pegue outro candidato.
+
 ## Eixos e o que conta como pauta
 
 | Eixo | Conta como pauta |

@@ -6,7 +6,10 @@ Missão: transformar o dossiê em **uma** decisão de pauta defensável.
 
 Descarte achados que: (a) já foram tema de publicação nos últimos 60 dias
 (consulte `estado/rodizio.json` → `historico`); (b) não têm fonte primária
-verificada; (c) são meramente procedimentais, sem consequência para o leitor.
+verificada; (c) são meramente procedimentais, sem consequência para o leitor;
+(d) **não têm fato normativo por âncora** — curso, evento, release ou opinião,
+conforme a lista em `pesquisa.md`. Sem norma, decisão ou prazo, não há questão
+jurídica para analisar, e o texto acaba escorregando para relato de rotina.
 
 ## Pontuação
 
