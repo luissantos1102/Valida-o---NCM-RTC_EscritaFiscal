@@ -1,0 +1,48 @@
+{
+  "slug": "simples-nacional-credito-cadastro",
+  "slides": [
+    { "tipo": "capa",
+      "kicker": "Reforma Tributária",
+      "titulo": "O seu crédito depende de uma escolha que não é sua",
+      "fonte": "Resolução CGSN nº 190/2026",
+      "destaque": "DOU de 10 de agosto de 2026" },
+
+    { "tipo": "texto",
+      "kicker": "O que mudou",
+      "titulo": "IBS e CBS entram no recolhimento mensal do Simples Nacional",
+      "corpo": ["A resolução também abriu a opção pelo **regime híbrido**: a empresa do Simples pode apurar os dois tributos pelas regras do regime regular."] },
+
+    { "tipo": "texto",
+      "kicker": "O efeito que passa batido",
+      "titulo": "A norma não fala só de quem é do Simples",
+      "corpo": ["Quem **não** é optante passa a ter direito a crédito de IBS e CBS sobre o que compra de empresa do Simples.",
+                "E o valor desse crédito muda conforme o regime que o fornecedor escolher."] },
+
+    { "tipo": "comparativo",
+      "kicker": "Duas rotas, dois créditos",
+      "blocos": [
+        { "lab": "Fornecedor no regime híbrido",
+          "val": "Destaca IBS e CBS.\nCrédito apurado pelas regras do regime regular." },
+        { "lab": "Fornecedor no regime único",
+          "val": "Não destaca.\nCrédito equivalente ao que foi cobrado dentro do Simples." }
+      ],
+      "rodape": "A decisão é do fornecedor. O efeito no caixa é **do adquirente**." },
+
+    { "tipo": "texto",
+      "kicker": "Onde isso quebra",
+      "titulo": "Deixa de ser tema tributário e vira cadastro",
+      "corpo": ["Hoje o campo **\"regime tributário do fornecedor\"** é informação de referência no ERP: ninguém audita, ninguém atualiza, nada trava por causa dele.",
+                "A partir de 2027 esse campo determina valor de crédito."] },
+
+    { "tipo": "lista",
+      "kicker": "O que fazer agora",
+      "itens": ["Levantar quantos fornecedores ativos são do Simples e seu peso na base de crédito.",
+                "Definir de quem é a responsabilidade de manter o campo atualizado.",
+                "Levar para o contrato a obrigação de informar o regime e comunicar mudanças."] },
+
+    { "tipo": "fecho",
+      "kicker": "Para vigiar",
+      "titulo": "Cadastro desatualizado deixa de ser ruído e vira glosa",
+      "assinatura": ["Luis Santos", "Direito Tributário e Análise de Dados Fiscais"] }
+  ]
+}

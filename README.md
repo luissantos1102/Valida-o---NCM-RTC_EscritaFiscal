@@ -44,6 +44,11 @@ dados fiscais · Key User Oracle EBS.
 ## Arquivos
 
 ```
+bin/preflight.sh                      testa o egresso de rede e define o modo da execução
+bin/contar.py                         reprova o texto fora dos limites do protocolo
+bin/carrossel.py                      gera os PNGs 1080x1350 a partir do roteiro.json
+bin/roteiro.exemplo.json              modelo de roteiro, com os cinco tipos de slide
+
 .claude/skills/linkedin-pipeline/     produção do conteúdo (etapas 1–6)
   SKILL.md                            orquestrador
   references/pesquisa.md              onde procurar, janela de 5 dias, formato do dossiê
@@ -98,11 +103,38 @@ que tenha os conectores: o pipeline é o mesmo.
 
 | Função | Ferramenta | Se faltar |
 |---|---|---|
-| Pesquisa | WebSearch / WebFetch | bloqueia o pipeline |
+| Pesquisa | WebSearch | bloqueia o pipeline |
+| Verificação em fonte primária | WebFetch + egresso liberado | cai em **modo degradado** (ver abaixo) |
 | Jurisprudência | conector Jusratio | segue só com fonte normativa |
-| Criativo | conector Canva | fallback HTML + Chromium headless |
+| Criativo | `bin/carrossel.py` + Chromium | bloqueia a etapa 5 |
 | E-mail | conector Gmail | bloqueia o envio de aprovação |
 | Publicação | skill `claude_in_chrome` | fallback `agent-browser` com sessão logada |
+
+O Canva **não** entra no caminho do carrossel: nenhuma das duas ferramentas de
+geração produz 5–8 slides em 4:5 sem um passo interativo. Detalhes e o teste que
+mostrou isso estão em `references/criativo.md`.
+
+## Rede: o que precisa estar liberado
+
+O protocolo exige abrir a fonte primária antes de citar qualquer norma. Isso
+depende da política de rede do environment (Claude Code on the web →
+configuração do ambiente). Os domínios que o pipeline usa:
+
+```
+www.planalto.gov.br   www.in.gov.br            www.gov.br
+www.cgibs.gov.br      portal.stf.jus.br        www.stj.jus.br
+www.confaz.fazenda.gov.br
+www.conjur.com.br     www.jota.info            www.migalhas.com.br
+www.contabeis.com.br
+```
+
+`bash bin/preflight.sh` testa todos e imprime o modo da execução.
+
+**Modo degradado** (menos de 3 fontes primárias alcançáveis): o pipeline não
+trava, mas aperta o cinto — todo número de norma precisa de duas fontes
+secundárias independentes, dados de fonte única não viram afirmação, julgamentos
+sem confirmação saem da pauta, e o e-mail de aprovação abre com um aviso dizendo
+o que não pôde ser verificado. As regras estão em `references/pesquisa.md`.
 
 ## Regras que o agente não quebra
 

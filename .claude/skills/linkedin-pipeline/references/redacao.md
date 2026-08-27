@@ -45,7 +45,20 @@ Acadêmico, jornalístico e informativo. Na prática:
 7. **Hashtags.** De 3 a 5, no fim, específicas. Ex.: `#ReformaTributária #IBS #CBS
    #DireitoTributário #GestãoFiscal`. Nada de #sucesso #motivação.
 
-## Checagem antes de fechar
+## Checagem mecânica (rode antes da editorial)
+
+Salve o texto em `<pacote>/texto.md` e rode:
+
+```
+python3 bin/contar.py estado/publicacoes/<AAAA-MM-DD>-<slug>/texto.md
+```
+
+Ele reprova o texto por tamanho fora da faixa, número errado de hashtags, bloco
+de fontes ausente, parágrafo longo demais e link no corpo. **Só siga para a
+checagem editorial depois que ele aprovar** — escrever primeiro e contar depois
+custa uma reescrita inteira.
+
+## Checagem editorial
 
 - [ ] Toda norma citada foi aberta na fonte primária e o número confere.
 - [ ] Nenhuma frase afirma como vigente algo que ainda é projeto.

@@ -41,8 +41,12 @@ estado e compense no ciclo seguinte.
 
 ### 2. Pesquisar (papel: pesquisador)
 
-Siga `references/pesquisa.md`. Regra dura: só entra na pauta o que teve
-movimento nos **últimos 5 dias** contados da data de execução.
+Comece por `bash bin/preflight.sh`, que diz se este ambiente alcança as fontes
+primárias. Depois siga `references/pesquisa.md` — inclusive a seção "Modo
+degradado", se o pré-voo acusar bloqueio.
+
+Regra dura: só entra na pauta o que teve movimento nos **últimos 5 dias**
+contados da data de execução.
 
 ### 3. Analisar e decidir (papel: analista de marketing)
 
@@ -51,13 +55,16 @@ pontuadas, e escolhe **uma**. Registre a pontuação — ela vira histórico.
 
 ### 4. Escrever (papel: roteirista/colunista)
 
-Siga `references/redacao.md`. Tom acadêmico/jornalístico/informativo. Entrega:
-o texto da publicação (a "legenda") pronto para colar, com fontes.
+Siga `references/redacao.md`. Tom acadêmico/jornalístico/informativo. Salve em
+`<pacote>/texto.md` e rode `python3 bin/contar.py <pacote>/texto.md` **antes** da
+checagem editorial — ele reprova tamanho, hashtags e fontes fora do protocolo.
 
 ### 5. Criar o visual
 
-Siga `references/criativo.md`. Carrossel (5 a 8 slides) ou criativo único,
-conforme o tema pedir. Exporte em PNG 1080x1350.
+Siga `references/criativo.md`. Escreva o roteiro em `<pacote>/roteiro.json` e
+rode `python3 bin/carrossel.py <pacote>`. Saem os PNGs em 1080x1350 com a
+identidade fixa. Não escreva HTML à mão e não tente o Canva — o motivo está no
+protocolo.
 
 ### 6. Enviar para aprovação
 
@@ -74,7 +81,18 @@ turno. Não fique em espera ativa, não use `sleep`.
 
 - Uma execução = uma publicação. Nunca produza duas.
 - Nada vai ao LinkedIn sem o "aprovado" chegar por e-mail.
-- Toda afirmação normativa carrega a fonte (número da lei/artigo, órgão, data).
+- Toda afirmação normativa carrega a fonte (número da lei/artigo, órgão, data),
+  no nível de verificação que o ambiente permitiu — e em modo degradado o e-mail
+  diz isso ao usuário, em vez de apresentar o pacote como verificado.
 - Se a pesquisa não achar nada relevante nos 5 dias, **não invente pauta**: envie
   o e-mail explicando o vazio e propondo 3 temas perenes do eixo da vez, e peça
   a decisão. Isso conta como envio para aprovação.
+
+## Ferramentas do repositório
+
+| Script | Quando |
+|---|---|
+| `bin/preflight.sh` | início da etapa 2 — diz se as fontes primárias são alcançáveis |
+| `bin/contar.py` | fim da etapa 4 — reprova o texto fora dos limites do protocolo |
+| `bin/carrossel.py` | etapa 5 — gera os PNGs a partir de `roteiro.json` |
+| `bin/roteiro.exemplo.json` | modelo de roteiro, com os cinco tipos de slide |

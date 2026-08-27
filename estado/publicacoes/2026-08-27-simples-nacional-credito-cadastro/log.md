@@ -16,3 +16,8 @@
   HTML + Chromium headless, 7 PNGs em 1080x1350. Slides 1 e 4 conferidos visualmente.
 - Etapa 6 (e-mail): **NÃO EXECUTADA**. Execução de teste, e o pacote não passou pela
   verificação de fonte primária exigida pelo protocolo. Aguardando decisão do usuário.
+- **2026-08-27 (2ª passagem)** — Ajustes aplicados ao pipeline. Criativo regerado por
+  `bin/carrossel.py` a partir de `roteiro.json`, com a distribuição vertical corrigida
+  (o conteúdo agrupa no topo em vez de abrir vão no meio). Texto reconferido por
+  `bin/contar.py`: 1.899 caracteres, aprovado. Modo da execução registrado como
+  DEGRADADO — `bin/preflight.sh` acusa 0 de 7 fontes primárias alcançáveis.

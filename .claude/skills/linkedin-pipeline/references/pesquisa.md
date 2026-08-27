@@ -3,6 +3,19 @@
 Missão: mapear o que **efetivamente se moveu** nos últimos 5 dias nos três eixos
 de interesse, com fonte primária identificável.
 
+## Antes de tudo: pré-voo de rede
+
+```
+bash bin/preflight.sh
+```
+
+Ele testa o egresso para as fontes primárias e diz o **MODO** da execução.
+Rode sempre, no começo da pesquisa. O ambiente pode ter política de rede
+restritiva, e descobrir isso no meio da redação custa a execução inteira.
+
+- **MODO=COMPLETO** → siga este arquivo como está escrito.
+- **MODO=DEGRADADO** → siga também a seção "Modo degradado", no fim.
+
 ## Janela
 
 `hoje - 5 dias` até `hoje`. Nada anterior entra como pauta principal. Material
@@ -59,3 +72,29 @@ Regras:
   descarte o achado.
 - Não confie em resumo de imprensa para afirmar o conteúdo de um artigo de lei.
 - Marque explicitamente o que é **projeto/proposta** e o que é **norma vigente**.
+
+## Modo degradado
+
+Quando o pré-voo acusa egresso bloqueado para fonte primária, a regra "nenhuma
+norma sem a fonte aberta" não pode ser cumprida. **Não trave a execução** — mas
+também não finja que verificou. Opere assim:
+
+1. **Regra dos dois independentes.** Cada número de norma, artigo e data só entra
+   no texto se **duas fontes secundárias sem relação entre si** trouxerem o mesmo
+   dado. Dois portais republicando o mesmo release contam como uma. Se só uma
+   fonte afirma, o dado não entra — ou entra sem o número ("uma resolução
+   publicada em agosto", não "a Resolução nº 190").
+2. **Marque o nível.** No dossiê, cada achado leva
+   `verificacao: primaria | dupla_secundaria | unica_secundaria`.
+   Nada com `unica_secundaria` pode virar afirmação no post.
+3. **Prefira o fato à minúcia.** Em modo degradado, escreva sobre o que a norma
+   *faz*, que é robusto, e não sobre o inciso que a faz — que é frágil sem o texto
+   à mão.
+4. **Descarte o que depende de confirmação.** Resultado de julgamento, placar,
+   trecho de voto: sem a fonte, não vira pauta. Escolha outro candidato.
+5. **Registre no `log.md` e no e-mail.** O e-mail de aprovação abre com o aviso
+   de que o pacote saiu em modo degradado e o que isso significa — o usuário
+   precisa saber o que está aprovando.
+
+Diga ao usuário, uma vez por execução, que a correção definitiva é liberar os
+domínios listados em `bin/preflight.sh` na política de rede do ambiente.

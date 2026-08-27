@@ -18,6 +18,10 @@ resposta cai na mesma thread.
 
 Use `templates/email_aprovacao.html`. Ele traz, nesta ordem:
 
+0. **Aviso de verificação** — só quando a execução rodou em modo degradado
+   (ver `pesquisa.md`). Vai acima de tudo, dizendo quais fontes não puderam ser
+   abertas e que os dados normativos foram confirmados por dupla fonte
+   secundária. Sem isso o usuário aprova achando que está verificado.
 1. **Como responder** — o bloco de instrução, sempre no topo.
 2. **Texto da publicação** — exatamente como será colado, em bloco monoespaçado,
    com a contagem de caracteres.

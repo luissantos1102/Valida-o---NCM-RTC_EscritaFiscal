@@ -5,64 +5,85 @@
 | Situação | Formato |
 |---|---|
 | A pauta tem etapas, prazos, comparação antes/depois, ou 3+ pontos que se sustentam sozinhos | **Carrossel**, 5 a 8 slides |
-| A pauta é uma tese única, uma decisão pontual, um número que fala sozinho | **Criativo único** |
+| A pauta é uma tese única, uma decisão pontual, um número que fala sozinho | **Criativo único** (um slide de capa + um de fecho) |
 
-Na dúvida, carrossel: ele segura o leitor por mais tempo e é o formato que
-melhor performa para conteúdo técnico.
+Na dúvida, carrossel: ele segura o leitor por mais tempo e é o formato que melhor
+performa para conteúdo técnico.
 
 Especificação: **1080 x 1350 px** (4:5, retrato — ocupa mais tela no feed).
 
-## Roteiro do carrossel
+## Produção: `bin/carrossel.py`
+
+Você **não escreve HTML**. Escreve o roteiro em
+`estado/publicacoes/<pacote>/roteiro.json` e roda:
+
+```
+python3 bin/carrossel.py estado/publicacoes/<AAAA-MM-DD>-<slug>
+```
+
+Saem os PNGs em `<pacote>/criativo/slide-NN.png`, já em 1080x1350, com a
+identidade visual fixa. Os HTML intermediários ficam em `criativo/html/` — úteis
+para depurar um slide que estourou.
+
+Modelo completo: `bin/roteiro.exemplo.json`. Em qualquer campo de texto,
+`**assim**` vira destaque na cor de realce.
+
+### Tipos de slide
+
+| tipo | campos | quando usar |
+|---|---|---|
+| `capa` | kicker, titulo, fonte, destaque | slide 1, sempre |
+| `texto` | kicker, titulo, corpo[] | desenvolvimento de uma ideia |
+| `comparativo` | kicker, blocos[{lab,val}], rodape | duas rotas, antes × depois, dois regimes |
+| `lista` | kicker, titulo, itens[] | passos, obrigações, o que fazer |
+| `fecho` | kicker, titulo, assinatura[] | último slide, sempre |
+
+Quebra de linha dentro de `val` (comparativo): use `\n`.
+
+## Roteiro: o que escrever
 
 O carrossel não repete a legenda. Ele é o **esqueleto visual** do argumento.
 
-- **Slide 1 — capa.** A tese em no máximo 8 palavras. Sem "arrasta pro lado".
-  Subtítulo de uma linha com a referência normativa (ex.: "LC 214/2025, art. 12").
-- **Slides 2 a N-1 — desenvolvimento.** Uma ideia por slide. Máximo 25 palavras
-  por slide. Se precisar de mais, a ideia deve virar dois slides. Prefira
-  estruturas visuais a parágrafos: linha do tempo, antes × depois, tabela de
-  duas colunas, lista numerada de obrigações.
-- **Slide N — fecho.** O que vigiar + assinatura discreta:
-  "Luis Santos · Direito Tributário e Análise de Dados Fiscais".
+- **Capa.** A tese em no máximo 8 palavras. Sem "arrasta pro lado". O campo
+  `fonte` leva a referência normativa; `destaque` leva a data (DOU, julgamento).
+- **Miolo.** Uma ideia por slide. Máximo 25 palavras de corpo por slide. Se não
+  couber, a ideia vira dois slides — nunca reduza a fonte para caber.
+- **Fecho.** O que vigiar, e a assinatura
+  `["Luis Santos", "Direito Tributário e Análise de Dados Fiscais"]`.
 
-Nunca coloque no criativo um número de lei que não foi verificado na fonte
-primária. Erro em imagem não se corrige depois de publicado.
+Nunca coloque no criativo um número de lei que não foi verificado. Erro em imagem
+não se corrige depois de publicado.
 
-## Identidade visual (mantenha constante entre publicações)
+## Identidade visual
 
-- Paleta sóbria: fundo escuro (grafite/azul-petróleo), texto branco, **um** tom
-  de destaque (verde ou âmbar) usado só para o dado que importa no slide.
-- Tipografia sem serifa, peso alto no título, corpo em peso regular. Nada de
-  fonte decorativa.
-- Muito respiro. Se o slide parece cheio, corte texto — não reduza a fonte.
-- Sem banco de imagens genérico (aperto de mãos, martelo de juiz, prédio de
-  vidro). Se precisar de imagem, use gráfico, tabela ou diagrama do próprio dado.
-- Contraste mínimo 4.5:1. O feed é lido no celular, no claro.
+Está travada no `bin/carrossel.py` e **não muda entre publicações** — é o que faz
+a rede reconhecer o autor antes de ler o nome. Fundo petróleo `#0E2A25`, texto
+`#F4F7F5`, realce verde `#6FCF9F` usado só no dado que importa. Sem foto de banco
+de imagens. Se um dia precisar mexer na paleta, mexa no script, não no roteiro.
 
-Constância visual é o que faz a rede reconhecer o autor antes de ler o nome.
+## Verificação final (obrigatória)
 
-## Produção — Canva (caminho primário)
+Abra ao menos **a capa e o slide mais denso** e confira:
 
-1. `mcp__Canva__list-brand-kits` — se houver brand kit, use-o e mantenha-o em
-   todas as publicações.
-2. `mcp__Canva__search-designs` com o termo `linkedin-luis` — reaproveite o
-   design da publicação anterior como base (`copy-design`) para manter a
-   identidade. Só gere do zero na primeira execução.
-3. Sem base anterior: `mcp__Canva__generate-design-structured` com o roteiro
-   dos slides e a especificação visual acima.
-4. Revise com `mcp__Canva__read-design` — confira **cada** número de lei, data e
-   artigo contra o dossiê. Corrija com `mcp__Canva__edit-design`.
-5. `mcp__Canva__export-design` em PNG. Salve os arquivos em
-   `estado/publicacoes/<AAAA-MM-DD>-<slug>/criativo/` como `slide-01.png`, etc.
-6. Nomeie o design no Canva como `linkedin-luis <AAAA-MM-DD> <slug>`.
+- [ ] Texto legível em miniatura (reduza a 300px e leia o título).
+- [ ] Nada cortado nem encostando na borda.
+- [ ] Cada referência normativa conferida contra o dossiê.
+- [ ] Ordem dos slides correta na numeração dos arquivos.
 
-Se o Canva falhar ou não estiver conectado: gere os slides com HTML + CSS
-(mesma paleta e grid), renderize com Chromium headless em 1080x1350 e siga em
-frente. Registre no e-mail que o criativo veio pelo caminho alternativo.
+Se um slide estourou a altura, o corpo está longo demais: corte texto ou divida
+em dois slides. Não reduza a fonte.
 
-## Verificação final
+## Sobre o Canva
 
-- [ ] Todo texto legível em miniatura (teste: reduza a 300px e leia o título).
-- [ ] Nenhum texto cortado ou encostando na borda (margem mínima 80px).
-- [ ] Referências normativas conferidas uma a uma.
-- [ ] Ordem dos slides correta nos nomes dos arquivos.
+O conector Canva **não serve** para este passo, e isso já foi testado:
+
+- `generate-design-structured` só produz `presentation` (16:9) e exige que o
+  usuário aprove um outline num widget interativo;
+- `generate-design` com `instagram_post` sai em 1080x1350, mas gera um
+  *candidato* único que precisa de escolha humana via `create-design-from-candidate`.
+
+Nenhum dos dois produz um carrossel de 5 a 8 slides sem intervenção — o que mata
+a automação. Não tente de novo por conta própria.
+
+O Canva continua útil **depois**: se o usuário quiser retrabalhar um slide à mão,
+suba o PNG com `mcp__Canva__upload-asset-from-url` ou pelo próprio Canva.
