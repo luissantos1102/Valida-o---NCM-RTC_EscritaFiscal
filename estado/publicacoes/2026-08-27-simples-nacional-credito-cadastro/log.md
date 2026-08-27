@@ -33,3 +33,6 @@
   Implementação não cabe a tempo do slot de hoje (17:30). Publicação manual
   recomendada para esta rodada, via e-mail. status →
   aprovado_publicacao_manual_recomendada.
+- **2026-08-27 13:22 UTC** — Check-in: sem resposta nova do usuário além da
+  própria atualização de status enviada às 13:19 UTC. Nada a fazer além de
+  reagendar. status mantido: aprovado_publicacao_manual_recomendada.
