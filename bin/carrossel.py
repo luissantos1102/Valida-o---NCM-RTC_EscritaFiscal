@@ -19,6 +19,7 @@ Tipos de slide:
   dados       kicker, itens [{n, d}], rodape — números/prazos em grade 2x2
   fecho       kicker, titulo, assinatura (lista de 2 linhas)
 """
+import glob
 import html
 import json
 import os
@@ -138,6 +139,13 @@ def main():
     htmldir = os.path.join(out, "html")
     os.makedirs(htmldir, exist_ok=True)
     binary = chromium()
+
+    # Limpa slides de uma geração anterior com mais páginas — senão um roteiro
+    # reduzido de 7 para 6 slides deixa o slide-07.png antigo para trás.
+    for stale in glob.glob(os.path.join(out, "slide-*.png")):
+        os.remove(stale)
+    for stale in glob.glob(os.path.join(htmldir, "slide-*.html")):
+        os.remove(stale)
 
     for i, s in enumerate(slides, 1):
         hp = os.path.join(htmldir, f"slide-{i:02d}.html")

@@ -1,48 +1,38 @@
 {
-  "slug": "simples-nacional-credito-cadastro",
+  "template": "editorial",
   "slides": [
     { "tipo": "capa",
-      "kicker": "Reforma Tributária",
-      "titulo": "O seu crédito depende de uma escolha que não é sua",
+      "kicker": "Direito Tributário",
+      "titulo": "O crédito do adquirente depende de escolha alheia",
       "fonte": "Resolução CGSN nº 190/2026",
       "destaque": "DOU de 10 de agosto de 2026" },
 
     { "tipo": "texto",
-      "kicker": "O que mudou",
-      "titulo": "IBS e CBS entram no recolhimento mensal do Simples Nacional",
-      "corpo": ["A resolução também abriu a opção pelo **regime híbrido**: a empresa do Simples pode apurar os dois tributos pelas regras do regime regular."] },
+      "kicker": "O que a norma estabelece",
+      "titulo": "Crédito ao adquirente sobre compras do Simples",
+      "corpo": ["O adquirente não optante tem direito a crédito de IBS e CBS sobre o que compra de empresa do Simples — equivalente ao cobrado no regime único, ou ao valor do regime regular se o fornecedor optar pelo **híbrido**."] },
 
     { "tipo": "texto",
-      "kicker": "O efeito que passa batido",
-      "titulo": "A norma não fala só de quem é do Simples",
-      "corpo": ["Quem **não** é optante passa a ter direito a crédito de IBS e CBS sobre o que compra de empresa do Simples.",
-                "E o valor desse crédito muda conforme o regime que o fornecedor escolher."] },
+      "kicker": "A questão em aberto",
+      "titulo": "O que acontece quando o fornecedor muda de regime depois?",
+      "corpo": ["Se a troca vem **depois** de uma venda cujo crédito já foi apropriado, esse crédito se refaz retroativamente ou fica preservado? A norma não diz."] },
 
     { "tipo": "comparativo",
-      "kicker": "Duas rotas, dois créditos",
+      "kicker": "Duas leituras possíveis",
       "blocos": [
-        { "lab": "Fornecedor no regime híbrido",
-          "val": "Destaca IBS e CBS.\nCrédito apurado pelas regras do regime regular." },
-        { "lab": "Fornecedor no regime único",
-          "val": "Não destaca.\nCrédito equivalente ao que foi cobrado dentro do Simples." }
+        { "lab": "Efeito retroativo",
+          "val": "O crédito se ajusta ao regime\nvigente na data da mudança." },
+        { "lab": "Efeito só para frente",
+          "val": "O crédito apurado sobre documento\nidôneo à época fica preservado." }
       ],
-      "rodape": "A decisão é do fornecedor. O efeito no caixa é **do adquirente**." },
-
-    { "tipo": "texto",
-      "kicker": "Onde isso quebra",
-      "titulo": "Deixa de ser tema tributário e vira cadastro",
-      "corpo": ["Hoje o campo **\"regime tributário do fornecedor\"** é informação de referência no ERP: ninguém audita, ninguém atualiza, nada trava por causa dele.",
-                "A partir de 2027 esse campo determina valor de crédito."] },
+      "rodape": "A não cumulatividade plena da LC 214/2025 aponta para a **segunda**." },
 
     { "tipo": "lista",
-      "kicker": "O que fazer agora",
-      "itens": ["Levantar quantos fornecedores ativos são do Simples e seu peso na base de crédito.",
-                "Definir de quem é a responsabilidade de manter o campo atualizado.",
-                "Levar para o contrato a obrigação de informar o regime e comunicar mudanças."] },
+      "kicker": "O que sustenta essa leitura",
+      "itens": ["Preservar o crédito apurado sobre documento idôneo é o que a não cumulatividade plena exige como regra estrutural.", "Não há previsão expressa de estorno para essa hipótese — e o intérprete não deveria criar um.", "A mudança de regime projeta efeitos daí para frente; não reabre o que já foi apurado."] },
 
     { "tipo": "fecho",
       "kicker": "Para vigiar",
-      "titulo": "Cadastro desatualizado deixa de ser ruído e vira glosa",
-      "assinatura": ["Luis Santos", "Direito Tributário e Análise de Dados Fiscais"] }
+      "titulo": "Se o Comitê Gestor regulamenta essa hipótese antes que ela vá parar no CARF" }
   ]
 }

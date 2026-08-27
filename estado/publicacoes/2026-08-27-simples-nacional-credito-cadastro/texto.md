@@ -1,23 +1,19 @@
-A Resolução CGSN nº 190/2026, publicada no DOU de 10 de agosto, incluiu IBS e CBS no recolhimento mensal do Simples Nacional e abriu a opção pelo regime híbrido.
+A Resolução CGSN nº 190/2026 (DOU de 10/08) deu ao adquirente não optante direito a crédito de IBS e CBS sobre compras de empresa do Simples Nacional. O que a norma não resolveu é o que acontece quando o fornecedor muda de regime depois do crédito já apropriado.
 
-A norma parece tratar só do contribuinte do Simples. Não trata.
+Pela resolução, o crédito equivale ao que foi cobrado dentro do regime único — ou, se o fornecedor optar pelo híbrido, ao valor apurado pelas regras do regime regular. Em 24/08, a Fin sinalizou que fornecedor do Simples fora do híbrido fica fora do split payment na primeira fase, prevista para 2027.
 
-Pela nova regra, a pessoa jurídica não optante passa a ter direito a crédito de IBS e CBS sobre o que compra de empresa do Simples, em valor equivalente ao que foi cobrado dentro do regime único. E em 24 de agosto a presidência da Fin sinalizou que empresas do Simples que não destacarem os dois tributos devem ficar fora do split payment na primeira fase, prevista para 2027.
+A lacuna: se o fornecedor troca de regime depois de uma venda cujo crédito o adquirente já apropriou, esse crédito se refaz retroativamente ou fica preservado?
 
-Junte as pontas: o valor do meu crédito depende de uma escolha que não é minha.
+Defendo a segunda leitura. A não cumulatividade plena que a LC 214/2025 adota como regra estrutural do IBS e da CBS aponta para preservar o crédito apurado sobre documento idôneo à época da operação — não para condicioná-lo a um evento posterior e alheio ao adquirente.
 
-Quem decide é o fornecedor. Se ele opta pelo híbrido e destaca, credito pelo regime regular. Se permanece no regime único, credito o equivalente ao que foi cobrado ali dentro — outro valor.
+Falta, além disso, previsão expressa de estorno para essa hipótese, e onde a lei não prevê ajuste, o intérprete não deveria criar um. A mudança de regime projeta efeitos daí para frente; não reabre o que já foi apurado.
 
-É aqui que o problema deixa de ser tributário e vira cadastro.
+Na prática, essa incerteza normativa deveria virar cláusula contratual: exigir do fornecedor do Simples o dever de informar mudança de regime, para separar o risco jurídico do risco de gestão.
 
-Uma cooperativa agrícola compra de centenas de fornecedores pequenos. Hoje o campo "regime tributário do fornecedor" existe no ERP como informação de referência: ninguém audita, ninguém atualiza, nada trava por causa dele. A partir de 2027 esse campo passa a determinar valor de crédito. Cadastro desatualizado deixa de ser ruído e vira glosa.
+Vale acompanhar se o Comitê Gestor regulamenta essa hipótese antes que ela vá parar no CARF.
 
-Nenhuma parametrização resolve isso sozinha: o dado não nasce no sistema, nasce numa escolha do fornecedor — que ele pode rever.
+Quem já viu esse ponto discutido — na doutrina ou em consulta respondida?
 
-O que dá para fazer antes de virar passivo: levantar quantos fornecedores ativos são do Simples e seu peso na base de crédito; definir de quem é a responsabilidade de manter o campo; e levar a obrigação de informar o regime para o contrato.
+Fontes: Resolução CGSN nº 190/2026 (DOU de 10/08/2026); LC 214/2025; declaração pública da Fin em 24/08/2026.
 
-Quem já mapeou sua base de fornecedores do Simples, ou isso ficou para 2027?
-
-Fontes: Resolução CGSN nº 190/2026 (DOU de 10/08/2026); LC 214/2025; declaração da Fin em 24/08/2026.
-
-#ReformaTributária #SimplesNacional #IBS #CBS #GestãoFiscal
+#ReformaTributária #SimplesNacional #IBS #CBS #DireitoTributário
