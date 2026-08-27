@@ -55,3 +55,10 @@
   falso de "janela se fechando" (são 12:24 em Campo Grande, não 16:24 — faltam
   ~5h05 para 17:30, não minutos). Corrigido via update_trigger antes do
   disparo. Nenhum e-mail incorreto foi enviado.
+- **2026-08-27 17:31 UTC (disparo dizia 16:53, mas chegou atrasado)** —
+  Check-in: nenhuma resposta nova do usuário na thread desde a aprovação com
+  ajuste (12:23 UTC); as mensagens seguintes são atualizações da própria
+  automação. Sem Client ID/Secret do LinkedIn recebidos nesta conversa. Hora
+  local em Campo Grande = 13:31 (UTC-4), ainda não passou de 16:30 — sem
+  lembrete de "janela se fechando". status mantido:
+  aprovado_publicacao_manual_recomendada. Reagendado para 18:01 UTC.
