@@ -24,7 +24,32 @@ Acadêmico, jornalístico e informativo. Na prática:
 - Conselho jurídico individualizado. É análise, não parecer.
 - Adjetivar sem prova ("absurdo", "gravíssimo") — o fato carrega o peso sozinho.
 
-## Estrutura (1.300 a 1.900 caracteres)
+## Orçamento de caracteres (respeite ao escrever, não depois)
+
+**Mire 1.800 caracteres.** O teto é 1.900; escrever solto e aparar depois custa
+quatro ou cinco reescritas e some com as melhores frases, porque no fim você corta
+o que dá, não o que sobra.
+
+Antes de escrever, distribua o orçamento assim — e confira a conta ao terminar
+cada bloco, não no fim:
+
+| Seção | Alvo | Acumulado |
+|---|---|---|
+| Abertura | 180 | 180 |
+| Contexto | 480 | 660 |
+| Tensão | 260 | 920 |
+| Ângulo | 620 | 1.540 |
+| Fecho | 180 | 1.720 |
+| Fontes + hashtags | 180 | ~1.900 |
+
+Se um bloco estourar o alvo, **corte dentro do próprio bloco** antes de seguir
+para o próximo. Um bloco que passa empurra o problema para o fim, onde a única
+saída vira mutilar o ângulo — que é justamente a parte insubstituível.
+
+Os 100 caracteres entre 1.800 e o teto são folga de revisão. Chegar a 1.899 na
+primeira versão significa que você não terá onde acomodar um ajuste do usuário.
+
+## Estrutura
 
 1. **Abertura — 1 a 2 linhas.** O fato, direto, com a referência. É o que aparece
    antes do "ver mais": tem que fazer o leitor certo parar. Sem pergunta retórica.
@@ -65,7 +90,7 @@ custa uma reescrita inteira.
 - [ ] O ângulo prático não caberia na boca de qualquer tributarista genérico.
 - [ ] Passa no `humanizer`: sem inflação, sem estrutura repetitiva, sem palavra
       de IA. Se estiver na dúvida, rode a skill `humanizer` no rascunho.
-- [ ] Entre 1.300 e 1.900 caracteres (limite duro do LinkedIn: 3.000).
+- [ ] Perto de 1.800 caracteres, nunca acima de 1.900 (teto do LinkedIn: 3.000).
 - [ ] A pergunta final é respondível por alguém do fiscal em uma frase.
 
 ## Entrega

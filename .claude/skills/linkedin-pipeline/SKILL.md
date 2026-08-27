@@ -100,4 +100,5 @@ turno. Não fique em espera ativa, não use `sleep`.
 | `bin/preflight.sh` | início da etapa 2 — fontes primárias alcançáveis + o push funciona |
 | `bin/contar.py` | fim da etapa 4 — reprova o texto fora dos limites do protocolo |
 | `bin/carrossel.py` | etapa 5 — gera os PNGs a partir de `roteiro.json` |
+| `bin/folha_contato.py` | etapa 6 — folha de contato + base64 para anexar no e-mail |
 | `bin/roteiro.exemplo.json` | modelo de roteiro, com os cinco tipos de slide |

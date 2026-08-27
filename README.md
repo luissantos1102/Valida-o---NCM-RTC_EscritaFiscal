@@ -47,6 +47,7 @@ dados fiscais · Key User Oracle EBS.
 bin/preflight.sh                      testa o egresso de rede e define o modo da execução
 bin/contar.py                         reprova o texto fora dos limites do protocolo
 bin/carrossel.py                      gera os PNGs 1080x1350 a partir do roteiro.json
+bin/folha_contato.py                  folha de contato + base64 para anexar no e-mail
 bin/roteiro.exemplo.json              modelo de roteiro, com os cinco tipos de slide
 
 .claude/skills/linkedin-pipeline/     produção do conteúdo (etapas 1–6)

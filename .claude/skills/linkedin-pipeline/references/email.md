@@ -25,14 +25,52 @@ Use `templates/email_aprovacao.html`. Ele traz, nesta ordem:
 1. **Como responder** — o bloco de instrução, sempre no topo.
 2. **Texto da publicação** — exatamente como será colado, em bloco monoespaçado,
    com a contagem de caracteres.
-3. **Criativo** — os slides embutidos como imagem, na ordem, e anexados em PNG.
+3. **Criativo** — a folha de contato e o roteiro em texto. Ver "Como anexar o
+   criativo", abaixo.
 4. **Por que este tema** — a tabela de pontuação, o bloco FATO/TENSÃO/ÂNGULO/
    CONSEQUÊNCIA e os dois parágrafos de justificativa.
 5. **Fontes** — lista com URL e identificação normativa.
 6. **Agendamento previsto** — data e hora: 17:30 do dia seguinte ao disparo.
 7. **Rodízio** — eixo desta publicação e como fica a cota do mês.
 
-Anexe os PNGs. Não dependa só das imagens embutidas.
+## Como anexar o criativo
+
+A ferramenta de e-mail recebe anexo como **base64 dentro do próprio argumento**
+(`attachments[].content`) — ela não aceita caminho de arquivo. Sete PNGs de
+1080x1350 viram cerca de 800 KB de base64 numa única chamada: caro e sujeito a
+truncamento. Por isso o anexo é **uma folha de contato**, não os sete slides.
+
+```
+python3 bin/folha_contato.py estado/publicacoes/<AAAA-MM-DD>-<slug> 900
+```
+
+Isso gera `criativo/folha-contato.png` (~112 KB) e `folha-contato.png.b64`
+(~150 KB). A 900 px de largura o texto dos slides fica legível — o usuário aprova
+o conteúdo sem abrir nada.
+
+No `send_message`, monte **um** anexo:
+
+```
+attachments: [{
+  filename: "carrossel-<slug>.png",
+  mimeType: "image/png",
+  content:  <conteúdo de folha-contato.png.b64>
+}]
+```
+
+Se o `.b64` passar de 400 KB, o próprio script avisa: rode de novo com largura
+menor (`... <pacote> 760`).
+
+Junto da folha, escreva no corpo o **roteiro dos slides em texto** — kicker e
+título de cada um, uma linha por slide. É o que permite aprovar por leitura, sem
+depender da imagem renderizar no cliente de e-mail.
+
+E aponte para a resolução cheia: os sete PNGs ficam commitados em
+`estado/publicacoes/<pacote>/criativo/slide-01.png` … `slide-07.png`, no branch
+`claude/linkedin-content-agent-7hnba3`. Cite o caminho no e-mail.
+
+**Nunca** tente anexar os sete PNGs individuais, e **nunca** deixe o e-mail sair
+sem criativo nenhum: sem ele o usuário não tem o que aprovar.
 
 ## Vocabulário de resposta (declare no e-mail)
 

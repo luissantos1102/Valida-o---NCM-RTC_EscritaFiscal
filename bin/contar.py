@@ -7,7 +7,7 @@ import io
 import re
 import sys
 
-MIN, MAX, TETO_LINKEDIN = 1300, 1900, 3000
+MIN, ALVO, MAX, TETO_LINKEDIN = 1300, 1800, 1900, 3000
 
 if len(sys.argv) != 2:
     sys.exit(__doc__)
@@ -18,13 +18,16 @@ pars = [p for p in t.split("\n\n") if p.strip()]
 tags = re.findall(r"#\w+", t)
 longos = [i + 1 for i, p in enumerate(pars) if len(p) > 400]
 
-print(f"caracteres : {n}   (alvo {MIN}-{MAX}, teto do LinkedIn {TETO_LINKEDIN})")
+print(f"caracteres : {n}   (mire {ALVO}; faixa {MIN}-{MAX}; teto do LinkedIn {TETO_LINKEDIN})")
 print(f"parágrafos : {len(pars)}")
 print(f"hashtags   : {len(tags)}  {' '.join(tags)}")
 
 erros = []
 if n > MAX:
-    erros.append(f"{n - MAX} caracteres acima do alvo — corte antes de seguir.")
+    erros.append(f"{n - MAX} caracteres acima do teto — corte antes de seguir.")
+elif n > ALVO:
+    print(f"aviso     : {n - ALVO} caracteres acima do alvo de {ALVO}. "
+          "Passa, mas sem folga para revisão.")
 if n < MIN:
     erros.append(f"{MIN - n} caracteres abaixo do alvo — o texto está raso.")
 if not 3 <= len(tags) <= 5:
