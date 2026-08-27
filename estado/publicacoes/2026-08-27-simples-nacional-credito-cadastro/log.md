@@ -50,3 +50,8 @@
 - **2026-08-27 16:23 UTC** — Check-in: sem resposta nova na thread; sem
   Client ID/Secret recebidos no chat. status mantido:
   aprovado_publicacao_manual_recomendada. Reagendado para 16:53 UTC.
+- **2026-08-27 16:25 UTC** — Correção: o prompt do check-in criado agora há
+  pouco confundiu UTC com horário de Campo Grande e teria mandado um lembrete
+  falso de "janela se fechando" (são 12:24 em Campo Grande, não 16:24 — faltam
+  ~5h05 para 17:30, não minutos). Corrigido via update_trigger antes do
+  disparo. Nenhum e-mail incorreto foi enviado.
