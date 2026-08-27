@@ -82,3 +82,9 @@
   Client ID/Secret recebidos. Hora local em Campo Grande = 16:13, ainda não
   passou de 16:30 — sem lembrete de "janela se fechando". status mantido:
   aprovado_publicacao_manual_recomendada. Reagendado para 20:43 UTC.
+- **2026-08-27 20:44 UTC** — Check-in: sem resposta nova na thread; sem
+  Client ID/Secret recebidos. Hora local em Campo Grande = 16:44, já passou
+  de 16:30 e faltam ~46 min para as 17:30. Enviado lembrete único de "janela
+  se fechando" na thread (mensagem 1a044f7c400adc96), pedindo confirmação de
+  publicação manual ou Client ID/Secret. status mantido:
+  aprovado_publicacao_manual_recomendada. Reagendado para 21:14 UTC.
