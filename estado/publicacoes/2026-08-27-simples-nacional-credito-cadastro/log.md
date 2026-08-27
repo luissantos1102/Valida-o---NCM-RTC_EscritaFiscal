@@ -36,3 +36,8 @@
 - **2026-08-27 13:22 UTC** — Check-in: sem resposta nova do usuário além da
   própria atualização de status enviada às 13:19 UTC. Nada a fazer além de
   reagendar. status mantido: aprovado_publicacao_manual_recomendada.
+- **2026-08-27 13:53 UTC** — Check-in: sem resposta nova na thread. Integração
+  via API construída e testada em --dry-run nesta janela, mas ainda sem
+  LINKEDIN_ACCESS_TOKEN/LINKEDIN_PERSON_URN (aguardando o usuário criar o app e
+  passar Client ID/Secret). Publicação manual de hoje segue como recomendação
+  vigente. status mantido: aprovado_publicacao_manual_recomendada. Reagendado.
