@@ -11,3 +11,8 @@
   aprovado em `bin/contar.py`.
 - **2026-08-27** — E-mail de aprovação enviado. thread_id=1a043206b241f6ea. Status:
   aguardando_aprovacao. Check-in agendado para 30 min.
+- **2026-08-27 12:23 UTC** — Resposta do usuário na thread: "Aprovado com ajustes
+  <Data da publicação deve ser 27/08/2026 às 17:30>". Classificado como
+  **Aprovado com ajuste** — o ajuste é só a data (hoje, não amanhã). Texto e
+  criativo não mudam. Aplicado: data_agendamento → 2026-08-27T17:30:00-04:00.
+  Seguindo direto para publicacao.md, sem novo aval.
