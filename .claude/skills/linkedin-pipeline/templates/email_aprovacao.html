@@ -1,0 +1,71 @@
+<!-- Template do e-mail de aprovação.
+     Substitua os campos {{...}}. Remova este comentário antes de enviar. -->
+<div style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1a1a1a;max-width:680px">
+
+  <div style="background:#0f2b26;color:#fff;padding:16px 20px;border-radius:8px">
+    <strong style="font-size:16px">Como responder</strong><br>
+    Responda este e-mail com uma palavra:<br>
+    <strong>APROVADO</strong> — publico e agendo para {{data_agendamento}} às 17:30.<br>
+    <strong>REFAZER</strong> — eu pergunto se ajusto o texto ou busco novo tema.<br>
+    <strong>APROVADO COM AJUSTE:</strong> &lt;o que mudar&gt; — aplico e publico sem novo aval.
+  </div>
+
+  <h2 style="margin:28px 0 4px">{{tema}}</h2>
+  <div style="color:#666;font-size:13px">
+    Eixo: {{eixo}} &nbsp;·&nbsp; Rodada {{rodada}} &nbsp;·&nbsp; {{data_producao}}
+  </div>
+
+  <h3 style="margin-top:28px;border-bottom:2px solid #0f2b26;padding-bottom:6px">
+    1. Texto da publicação
+  </h3>
+  <div style="color:#666;font-size:13px;margin-bottom:8px">
+    {{contagem_caracteres}} caracteres
+  </div>
+  <pre style="white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;
+              font-size:14px;background:#f6f7f6;border-left:3px solid #0f2b26;
+              padding:16px;border-radius:4px">{{texto_publicacao}}</pre>
+
+  <h3 style="margin-top:28px;border-bottom:2px solid #0f2b26;padding-bottom:6px">
+    2. Criativo
+  </h3>
+  <div style="color:#666;font-size:13px">
+    {{formato}} · {{n_slides}} slide(s) · 1080x1350 · também em anexo
+  </div>
+  {{slides_embutidos}}
+
+  <h3 style="margin-top:28px;border-bottom:2px solid #0f2b26;padding-bottom:6px">
+    3. Por que este tema
+  </h3>
+  {{tabela_pontuacao}}
+  <table style="border-collapse:collapse;margin-top:16px;width:100%">
+    <tr><td style="padding:6px 10px;background:#f6f7f6;width:130px"><strong>Fato</strong></td>
+        <td style="padding:6px 10px">{{fato}}</td></tr>
+    <tr><td style="padding:6px 10px;background:#f6f7f6"><strong>Tensão</strong></td>
+        <td style="padding:6px 10px">{{tensao}}</td></tr>
+    <tr><td style="padding:6px 10px;background:#f6f7f6"><strong>Ângulo</strong></td>
+        <td style="padding:6px 10px">{{angulo}}</td></tr>
+    <tr><td style="padding:6px 10px;background:#f6f7f6"><strong>Consequência</strong></td>
+        <td style="padding:6px 10px">{{consequencia}}</td></tr>
+  </table>
+  <p>{{justificativa}}</p>
+
+  <h3 style="margin-top:28px;border-bottom:2px solid #0f2b26;padding-bottom:6px">
+    4. Fontes
+  </h3>
+  {{lista_fontes}}
+
+  <h3 style="margin-top:28px;border-bottom:2px solid #0f2b26;padding-bottom:6px">
+    5. Agendamento e rodízio
+  </h3>
+  <p>
+    Publicação prevista: <strong>{{data_agendamento}} às 17:30</strong> (Campo Grande, UTC-4).<br>
+    Cota do mês após esta publicação — Tributário {{cota_trib}}/4 ·
+    Empresarial {{cota_emp}}/2 · Contratual {{cota_cont}}/2.
+  </p>
+
+  <div style="margin-top:32px;padding-top:12px;border-top:1px solid #ddd;
+              color:#888;font-size:12px">
+    Pacote: {{caminho_pacote}} · gerado automaticamente pelo pipeline de conteúdo.
+    Nada é publicado sem a sua resposta.
+  </div>
+</div>
