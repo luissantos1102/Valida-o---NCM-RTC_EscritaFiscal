@@ -88,3 +88,7 @@
   se fechando" na thread (mensagem 1a044f7c400adc96), pedindo confirmação de
   publicação manual ou Client ID/Secret. status mantido:
   aprovado_publicacao_manual_recomendada. Reagendado para 21:14 UTC.
+- **2026-08-27 21:15 UTC** — Check-in: sem resposta nova na thread (última
+  mensagem é o próprio lembrete). Hora local em Campo Grande = 17:15, ainda
+  antes das 17:30. status mantido: aprovado_publicacao_manual_recomendada.
+  Reagendado para 21:45 UTC.
