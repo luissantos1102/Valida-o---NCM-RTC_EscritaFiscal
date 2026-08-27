@@ -21,9 +21,27 @@ restritiva, e descobrir isso no meio da redação custa a execução inteira.
 `hoje - 5 dias` até `hoje`. Nada anterior entra como pauta principal. Material
 mais antigo só entra como **contexto** dentro de um post cuja âncora é recente.
 
+## Orçamento de busca
+
+**No máximo 6 chamadas de `WebSearch` por execução.** Cada resultado volta com
+resumo longo, e oito buscas custam ~24 mil tokens — mais que todos os protocolos
+somados. O limite não reduz a cobertura se você buscar com intenção:
+
+- **Agrupe.** Uma busca por eixo cobre a semana inteira daquele eixo. Não gaste
+  uma chamada por órgão.
+- **Não confirme o que já sabe.** Se dois resultados já trouxeram a mesma norma
+  com o mesmo número e data, isso é a dupla fonte independente — não busque uma
+  terceira vez para "ter certeza".
+- **Gaste `WebFetch`, não `WebSearch`.** Abrir a fonte primária é o que sustenta
+  o texto e custa menos que uma busca. Buscar de novo sobre o mesmo achado é o
+  gasto que não retorna nada.
+
+Se as 6 buscas não produzirem achado suficiente, é sinal de janela vazia — siga a
+regra de janela vazia do `SKILL.md`, não estenda o orçamento.
+
 ## Onde procurar
 
-Use `WebSearch` e `WebFetch` em várias rodadas. Cubra, no mínimo:
+Cubra, no mínimo:
 
 **Fonte primária (obrigatório — é o que sustenta o texto)**
 - Portal do Planalto / DOU: leis, MPs, decretos publicados na janela.

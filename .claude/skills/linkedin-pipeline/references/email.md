@@ -33,58 +33,46 @@ Use `templates/email_aprovacao.html`. Ele traz, nesta ordem:
 6. **Agendamento previsto** — data e hora: 17:30 do dia seguinte ao disparo.
 7. **Rodízio** — eixo desta publicação e como fica a cota do mês.
 
-## Como anexar o criativo
+## Como entregar o criativo
 
-A ferramenta de e-mail recebe anexo como **base64 dentro do próprio argumento**
-(`attachments[].content`) — ela não aceita caminho de arquivo. Sete PNGs de
-1080x1350 viram cerca de 800 KB de base64 numa única chamada: caro e sujeito a
-truncamento. Por isso o anexo é **uma folha de contato**, não os sete slides.
+**Por link, não por anexo.** A ferramenta de e-mail recebe anexo como base64
+dentro do próprio argumento, o que obriga o conteúdo a atravessar o contexto do
+modelo: uma folha de contato de 1600 px custa cerca de 96 mil tokens numa
+execução de ~197 mil. Metade do gasto, para exibir na tela do e-mail algo que já
+está commitado e que um link resolve por algumas dezenas de tokens — e ainda em
+resolução cheia, melhor do que o anexo reduzido.
+
+Três coisas, nesta ordem:
+
+**1. Gere e commite a folha de contato.**
 
 ```
 python3 bin/folha_contato.py estado/publicacoes/<AAAA-MM-DD>-<slug>
 ```
 
-Isso gera `criativo/folha-contato.png` e `folha-contato.png.b64`. O padrão são
-1600 px de largura: cada slide sai com cerca de 390 px, legível no celular, e o
-base64 fica em torno de 337 KB — cabe numa chamada.
+Ela precisa estar **commitada e no `origin`** antes de você mandar o e-mail,
+senão o link cai em 404.
 
-**A resolução do e-mail não afeta a publicação.** O LinkedIn recebe os PNGs
-1080x1350 originais, direto do pacote. A folha existe só para o usuário aprovar.
-Medições que levaram a esse padrão, num carrossel de 7 slides:
+**2. Escreva o roteiro dos slides em texto**, no corpo do e-mail — kicker e
+título de cada slide, uma linha por slide. É isto que permite aprovar por
+leitura, sem depender de abrir nada. Custa uns 300 tokens e é a parte que mais
+serve ao usuário.
 
-| Opção | base64 | Cada slide |
-|---|---|---|
-| 7 PNGs em resolução cheia | 733 KB (~188k tokens) | 1080 px |
-| Folha a 1600 px (**padrão**) | 337 KB | ~390 px |
-| Folha a 900 px | 150 KB | ~225 px |
-
-Anexar os sete em resolução cheia é possível, mas gasta ~188k tokens por
-execução para exibir na tela do e-mail algo que será publicado a partir de outro
-arquivo. Só faça isso se o usuário pedir explicitamente.
-
-No `send_message`, monte **um** anexo:
+**3. Linke as duas resoluções:**
 
 ```
-attachments: [{
-  filename: "carrossel-<slug>.png",
-  mimeType: "image/png",
-  content:  <conteúdo de folha-contato.png.b64>
-}]
+Carrossel (7 slides, visão geral):
+https://github.com/luissantos1102/Valida-o---NCM-RTC_EscritaFiscal/blob/claude/linkedin-content-agent-7hnba3/estado/publicacoes/<PACOTE>/criativo/folha-contato.png
+
+Slides em 1080x1350 (o que vai ao LinkedIn):
+https://github.com/luissantos1102/Valida-o---NCM-RTC_EscritaFiscal/tree/claude/linkedin-content-agent-7hnba3/estado/publicacoes/<PACOTE>/criativo
 ```
 
-Se o `.b64` passar de 400 KB, o próprio script avisa: rode de novo com largura
-menor (`... <pacote> 900`).
+Anexe de verdade (`bin/folha_contato.py <pacote> 900 --b64`) apenas se o usuário
+pedir. Nunca anexe os sete PNGs individuais: ~800 KB de base64 numa chamada.
 
-Junto da folha, escreva no corpo o **roteiro dos slides em texto** — kicker e
-título de cada um, uma linha por slide. É o que permite aprovar por leitura, sem
-depender da imagem renderizar no cliente de e-mail.
-
-E aponte para a resolução cheia: os sete PNGs ficam commitados em
-`estado/publicacoes/<pacote>/criativo/slide-01.png` … `slide-07.png`, no branch
-`claude/linkedin-content-agent-7hnba3`. Cite o caminho no e-mail.
-
-**Nunca** tente anexar os sete PNGs individuais, e **nunca** deixe o e-mail sair
-sem criativo nenhum: sem ele o usuário não tem o que aprovar.
+**Nunca deixe o e-mail sair sem criativo nenhum** — sem o roteiro em texto e sem
+os links, o usuário não tem o que aprovar.
 
 ## Vocabulário de resposta (declare no e-mail)
 
