@@ -16,3 +16,9 @@
   **Aprovado com ajuste** — o ajuste é só a data (hoje, não amanhã). Texto e
   criativo não mudam. Aplicado: data_agendamento → 2026-08-27T17:30:00-04:00.
   Seguindo direto para publicacao.md, sem novo aval.
+- **2026-08-27 12:46 UTC** — Tentativa de publicação. Nem `claude_in_chrome` nem
+  `agent-browser` (não instalado) resolvem: sessão cloud efêmera não carrega
+  sessão do LinkedIn logada de nenhum dispositivo. Protocolo seguido: nunca
+  digitar credenciais. Avisado por e-mail na mesma thread pedindo login manual
+  no ambiente de automação, com prazo até 17:30 de hoje. status →
+  aprovado_bloqueado_login_linkedin. Check-in reagendado para 30 min.
