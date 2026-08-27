@@ -1,10 +1,19 @@
 {
   "mes_referencia": "2026-08",
-  "meta": { "tributario": 4, "empresarial": 2, "contratual": 2 },
-  "cotas": { "tributario": 0, "empresarial": 0, "contratual": 0 },
+  "meta": {
+    "tributario": 4,
+    "empresarial": 2,
+    "contratual": 2
+  },
+  "cotas": {
+    "tributario": 0,
+    "empresarial": 0,
+    "contratual": 0
+  },
   "fila_prioritaria": [],
   "observacao": "",
   "historico": [],
   "historico_mensal": {},
-  "descartados": []
+  "descartados": [],
+  "ultimo_template": null
 }

@@ -54,11 +54,11 @@ def main():
     )
     html = f"""<meta charset="utf-8"><style>
       *{{margin:0;padding:0;box-sizing:border-box}}
-      body{{background:#0a1c18;padding:{pad}px;display:grid;
+      body{{background:#06111d;padding:{pad}px;display:grid;
            grid-template-columns:repeat({COLUNAS},{cel}px);gap:{gap}px}}
       .c{{position:relative;line-height:0}}
       .c img{{width:{cel}px;display:block;border-radius:6px}}
-      .c span{{position:absolute;right:6px;top:6px;background:#6FCF9F;color:#0E2A25;
+      .c span{{position:absolute;right:6px;top:6px;background:#D6A544;color:#0B1B2E;
               font:700 13px/1 Arial,sans-serif;padding:4px 7px;border-radius:4px}}
     </style>{cards}"""
 

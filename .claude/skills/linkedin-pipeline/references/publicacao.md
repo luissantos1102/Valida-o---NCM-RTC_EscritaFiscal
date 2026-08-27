@@ -54,8 +54,9 @@ rascunho, avise por e-mail e pare.
 
 1. Responda na thread do e-mail confirmando: post agendado, data/hora, com o
    screenshot anexado.
-2. Atualize `estado/rodizio.json`: incremente a cota do eixo, acrescente ao
-   `historico` (data, eixo, tema, slug, URL/ID do post se disponível).
+2. Atualize `estado/rodizio.json`: incremente a cota do eixo, grave o template
+   usado em `ultimo_template`, e acrescente ao `historico` (data, eixo, tema,
+   slug, template, URL/ID do post se disponível).
 3. Grave `status: "agendado"` e a data/hora em `estado/publicacoes/<...>/meta.json`.
 4. Commite e faça push no branch de trabalho.
 5. Encerre. Não agende mais check-ins para este pacote.

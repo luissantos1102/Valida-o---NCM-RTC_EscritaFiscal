@@ -7,7 +7,8 @@ Uso:
 <pacote> é o diretório da publicação, que deve conter `roteiro.json`.
 Saída: <pacote>/criativo/slide-NN.png em 1080x1350, e os HTML em criativo/html/.
 
-Formato do roteiro.json — ver bin/roteiro.exemplo.json. Em qualquer campo de
+O roteiro.json aceita "template": "editorial" | "dossie" | "tese".
+Formato completo — ver bin/roteiro.exemplo.json. Em qualquer campo de
 texto, **assim** vira destaque na cor de realce.
 
 Tipos de slide:
@@ -15,6 +16,7 @@ Tipos de slide:
   texto       kicker, titulo (opcional), corpo (lista de parágrafos)
   comparativo kicker, blocos [{lab, val}], rodape (opcional)
   lista       kicker, titulo (opcional), itens (lista, numerada)
+  dados       kicker, itens [{n, d}], rodape — números/prazos em grade 2x2
   fecho       kicker, titulo, assinatura (lista de 2 linhas)
 """
 import html
@@ -25,44 +27,10 @@ import shutil
 import subprocess
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from temas import ASSINATURA, TEMPLATES, css  # noqa: E402
+
 W, H = 1080, 1350
-
-CSS = """
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{width:1080px;height:1350px}
-body{background:#0E2A25;color:#F4F7F5;
-     font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
-     padding:88px 84px;display:flex;flex-direction:column;
-     position:relative;overflow:hidden}
-.kicker{font-size:26px;letter-spacing:.16em;text-transform:uppercase;
-        color:#6FCF9F;font-weight:700}
-h1{font-size:82px;line-height:1.07;font-weight:800;letter-spacing:-.02em}
-h2{font-size:58px;line-height:1.13;font-weight:800;letter-spacing:-.01em}
-p{font-size:38px;line-height:1.45;color:#D7E2DC}
-p + p{margin-top:32px}
-.hi{color:#6FCF9F;font-weight:700}
-.grow{flex:1}
-.rule{width:120px;height:8px;background:#6FCF9F;border-radius:4px}
-.num{position:absolute;right:84px;bottom:40px;font-size:24px;color:#4A655C;
-     font-weight:700}
-.sig{font-size:26px;line-height:1.5;color:#8FA79D;font-weight:600}
-.box{background:#153A33;border-left:8px solid #6FCF9F;border-radius:12px;
-     padding:36px 42px}
-.box + .box{margin-top:30px}
-.box .lab{font-size:27px;color:#6FCF9F;font-weight:700;letter-spacing:.06em;
-          text-transform:uppercase;margin-bottom:14px}
-.box .val{font-size:35px;line-height:1.35;color:#F4F7F5}
-ol{list-style:none;counter-reset:i}
-ol li{counter-increment:i;font-size:37px;line-height:1.4;color:#D7E2DC;
-      padding-left:82px;position:relative}
-ol li + li{margin-top:38px}
-ol li::before{content:counter(i);position:absolute;left:0;top:-2px;
-      width:56px;height:56px;border-radius:28px;background:#6FCF9F;color:#0E2A25;
-      font-size:32px;font-weight:800;display:flex;align-items:center;
-      justify-content:center}
-.gap{height:40px}
-"""
-
 
 def rich(text):
     """Escapa HTML e converte **destaque** em span de realce."""
@@ -70,7 +38,7 @@ def rich(text):
                   html.escape(text or ""))
 
 
-def render(slide, idx, total):
+def render(slide, idx, total, template):
     t = slide.get("tipo", "texto")
     out = []
     if slide.get("kicker"):
@@ -88,12 +56,23 @@ def render(slide, idx, total):
             pe.append(f'<span class="hi">{rich(slide["destaque"])}</span>')
         if pe:
             out.append("<p>" + "<br>".join(pe) + "</p>")
+        out.append('<div class="faixa top"></div><div class="faixa bot"></div>')
 
     elif t == "comparativo":
         for b in slide.get("blocos", []):
             val = "<br>".join(rich(v) for v in str(b["val"]).split("\n"))
             out.append(f'<div class="box"><div class="lab">{rich(b["lab"])}</div>'
                        f'<div class="val">{val}</div></div>')
+        if slide.get("rodape"):
+            out.append('<div class="gap"></div>')
+            out.append(f'<p>{rich(slide["rodape"])}</p>')
+        out.append('<div class="grow"></div>')
+
+    elif t == "dados":
+        out.append('<div class="dados">' + "".join(
+            f'<div class="dado"><div class="n">{rich(d["n"])}</div>'
+            f'<div class="d">{rich(d["d"])}</div></div>'
+            for d in slide.get("itens", [])) + "</div>")
         if slide.get("rodape"):
             out.append('<div class="gap"></div>')
             out.append(f'<p>{rich(slide["rodape"])}</p>')
@@ -110,7 +89,7 @@ def render(slide, idx, total):
         out.append(f'<h2>{rich(slide["titulo"])}</h2>')
         out.append('<div class="grow"></div><div class="rule"></div>'
                    '<div class="gap"></div>')
-        sig = slide.get("assinatura", [])
+        sig = slide.get("assinatura") or ASSINATURA
         out.append('<div class="sig">' + "<br>".join(rich(s) for s in sig)
                    + "</div>")
 
@@ -124,7 +103,7 @@ def render(slide, idx, total):
 
     if idx > 1:
         out.append(f'<div class="num">{idx}/{total}</div>')
-    return f'<meta charset="utf-8"><style>{CSS}</style>' + "".join(out)
+    return f'<meta charset="utf-8"><style>{css(template)}</style>' + "".join(out)
 
 
 def chromium():
@@ -147,7 +126,11 @@ def main():
     if not os.path.exists(roteiro):
         sys.exit(f"roteiro.json não encontrado em {pkg}")
 
-    slides = json.load(open(roteiro, encoding="utf-8"))["slides"]
+    dados = json.load(open(roteiro, encoding="utf-8"))
+    template = dados.get("template", "editorial")
+    if template not in TEMPLATES:
+        sys.exit(f"template '{template}' não existe. Use: {', '.join(TEMPLATES)}")
+    slides = dados["slides"]
     if not 5 <= len(slides) <= 8:
         print(f"aviso: {len(slides)} slides — o protocolo pede de 5 a 8.")
 
@@ -159,7 +142,7 @@ def main():
     for i, s in enumerate(slides, 1):
         hp = os.path.join(htmldir, f"slide-{i:02d}.html")
         pp = os.path.join(out, f"slide-{i:02d}.png")
-        open(hp, "w", encoding="utf-8").write(render(s, i, len(slides)))
+        open(hp, "w", encoding="utf-8").write(render(s, i, len(slides), template))
         subprocess.run([binary, "--headless", "--disable-gpu", "--no-sandbox",
                         "--hide-scrollbars", "--force-device-scale-factor=1",
                         f"--window-size={W},{H}", f"--screenshot={pp}",
@@ -167,7 +150,7 @@ def main():
                        check=True, capture_output=True)
         print(f"slide-{i:02d}.png  ({s.get('tipo', 'texto')})")
 
-    print(f"\n{len(slides)} slides em {W}x{H} → {out}")
+    print(f"\n{len(slides)} slides em {W}x{H}, template '{template}' → {out}")
     print("Confira ao menos a capa e o slide mais denso antes de enviar.")
 
 

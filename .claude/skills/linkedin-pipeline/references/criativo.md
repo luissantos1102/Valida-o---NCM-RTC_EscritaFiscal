@@ -35,7 +35,8 @@ Modelo completo: `bin/roteiro.exemplo.json`. Em qualquer campo de texto,
 | `capa` | kicker, titulo, fonte, destaque | slide 1, sempre |
 | `texto` | kicker, titulo, corpo[] | desenvolvimento de uma ideia |
 | `comparativo` | kicker, blocos[{lab,val}], rodape | duas rotas, antes × depois, dois regimes |
-| `lista` | kicker, titulo, itens[] | passos, obrigações, o que fazer |
+| `lista` | kicker, titulo, itens[] | passos, obrigações, fundamentos de uma tese |
+| `dados` | kicker, itens[{n,d}], rodape | prazos, percentuais, valores — grade 2x2 |
 | `fecho` | kicker, titulo, assinatura[] | último slide, sempre |
 
 Quebra de linha dentro de `val` (comparativo): use `\n`.
@@ -58,12 +59,36 @@ sistema, o roteiro escorregou — refaça a partir da análise.
 Nunca coloque no criativo um número de lei que não foi verificado. Erro em imagem
 não se corrige depois de publicado.
 
-## Identidade visual
+## Identidade visual: o que é fixo, o que varia
 
-Está travada no `bin/carrossel.py` e **não muda entre publicações** — é o que faz
-a rede reconhecer o autor antes de ler o nome. Fundo petróleo `#0E2A25`, texto
-`#F4F7F5`, realce verde `#6FCF9F` usado só no dado que importa. Sem foto de banco
-de imagens. Se um dia precisar mexer na paleta, mexa no script, não no roteiro.
+Duas armadilhas opostas. Um feed onde todo post é idêntico faz o leitor parar de
+ver — o olho reconhece e pula. Um feed sem constância faz o leitor não reconhecer
+o autor. A saída é separar o que se repete do que muda.
+
+**Fixo em toda publicação** (está travado em `bin/temas.py`, não mexa por post):
+fundo marinho `#0B1B2E`, acento âmbar `#D6A544`, faixa âmbar na capa, assinatura
+no fecho, numeração no rodapé, formato 1080x1350.
+
+**Varia conforme o conteúdo**: o template, declarado no `roteiro.json`.
+
+| Template | Quando | Como se apresenta |
+|---|---|---|
+| `editorial` | Análise doutrinária, tese que se desenvolve em prosa. É o padrão | Título em serifa Charter, régua curta, muito respiro |
+| `dossie` | Prazos, percentuais, comparação de regimes, retrospecto de semana | Sans display, grade de números, blocos de comparação |
+| `tese` | Uma tese única e forte, com pouco texto | Serifa em corpo muito grande, alto contraste |
+
+```json
+{ "template": "editorial", "slides": [ ... ] }
+```
+
+**Não repita o template da publicação anterior** quando o conteúdo permitir
+outro. O campo `ultimo_template` em `estado/rodizio.json` registra qual foi o
+último; consulte antes de escolher. Se o conteúdo pedir mesmo o mesmo template
+duas vezes seguidas — dois posts de prazos, por exemplo — use, mas varie a
+estrutura interna: onde antes veio `comparativo`, use `dados` ou `lista`.
+
+O template serve ao conteúdo, nunca o contrário. Não force um `dossie` num tema
+que não tem números, só para variar.
 
 ## Verificação final (obrigatória)
 
