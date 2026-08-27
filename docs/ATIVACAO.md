@@ -58,16 +58,39 @@ não estão nessa lista — daí o `403`.
 10. Em **Allowed domains**, cole (um por linha):
 
 ```
+gov.br
+www.gov.br
 *.gov.br
+planalto.gov.br
+www.planalto.gov.br
+in.gov.br
+www.in.gov.br
+cgibs.gov.br
+www.cgibs.gov.br
+confaz.fazenda.gov.br
+fazenda.gov.br
+jus.br
 *.jus.br
-*.conjur.com.br
-*.jota.info
-*.migalhas.com.br
-*.contabeis.com.br
+stf.jus.br
+portal.stf.jus.br
+stj.jus.br
+www.stj.jus.br
+conjur.com.br
+www.conjur.com.br
+jota.info
+www.jota.info
+migalhas.com.br
+www.migalhas.com.br
+contabeis.com.br
+www.contabeis.com.br
 ```
 
-`*.gov.br` já cobre Planalto, DOU (in.gov.br), Receita Federal, CGIBS, Fazenda e
-CONFAZ. `*.jus.br` cobre STF e STJ.
+> **Por que a lista é redundante.** Um teste real mostrou que `*.gov.br` sozinho
+> liberou `www.gov.br` e `www.cgibs.gov.br`, mas **não** `www.planalto.gov.br`,
+> `www.in.gov.br` nem `www.confaz.fazenda.gov.br`; `*.jus.br` não liberou STF nem
+> STJ. O casamento de wildcard não cobriu todos os níveis de subdomínio de forma
+> previsível, então cada host entra explicitamente, com e sem `www.`. Redundância
+> aqui não custa nada; um domínio faltando custa a execução.
 
 11. **Marque a caixa "Also include default list of common package managers".**
     Não pule este passo: sem ela, a allowlist passa a ser *só* a sua lista, e você
@@ -81,13 +104,42 @@ CONFAZ. `*.jus.br` cobre STF e STJ.
 
 ---
 
+---
+
+## Parte C — Repositório (a persistência do estado)
+
+Esta pendência apareceu no primeiro teste: o pipeline rodou inteiro, mandou o
+e-mail, e o `git push` falhou com **403**. Causa: a Routine foi criada por
+ferramenta, e a ferramenta não tem campo de repositório — então a Routine ficou
+**sem repositório declarado**. A sessão consegue *clonar* (leitura), mas o proxy
+do git só aceita *push* para repositórios declarados na Routine.
+
+Sem isso, o `estado/rodizio.json` não persiste: o container é reciclado no fim da
+execução e a cota 4/2/2 do mês volta ao que estava.
+
+13. Ainda no **Edit routine**, vá até **Select repositories**
+14. Adicione **`luissantos1102/Valida-o---NCM-RTC_EscritaFiscal`**
+15. Salve
+
+O branch de trabalho é `claude/linkedin-content-agent-7hnba3`. O prefixo `claude/`
+é sempre aceito pelo proxy, então nada mais precisa ser liberado.
+
+O `bin/preflight.sh` agora testa isso no começo da execução, com
+`git push --dry-run`. Se falhar, o agente sabe desde o primeiro minuto que o
+estado não vai sobreviver — anexa o `rodizio.json` ao e-mail e avisa você, em vez
+de descobrir depois de vinte minutos de trabalho.
+
+---
+
 ## Fechar e testar
 
 13. Salve a Routine
 14. Na página de detalhe dela, clique em **Run now** para disparar fora do horário
 15. Abra a sessão criada e confira as duas coisas:
-    - o `bin/preflight.sh` deve imprimir **MODO=COMPLETO** (e não DEGRADADO)
+    - o `bin/preflight.sh` deve imprimir **MODO=COMPLETO** (e não DEGRADADO) e
+      **OK** na linha de push
     - o e-mail deve chegar em `luis.santos@copasul.coop.br`
+    - o commit deve aparecer no branch no GitHub
 
 Se o pré-voo ainda acusar bloqueio, o `Custom` não foi salvo ou a Routine ficou
 apontada para outro ambiente. Se o e-mail não chegar, o Gmail não entrou nos

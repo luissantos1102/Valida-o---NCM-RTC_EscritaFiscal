@@ -80,6 +80,11 @@ turno. Não fique em espera ativa, não use `sleep`.
 ## Invariantes
 
 - Uma execução = uma publicação. Nunca produza duas.
+- Se o pré-voo acusar `AVISO=SEM_PERSISTENCIA`, o container morre levando o estado
+  junto. Não descubra isso no fim: **anexe `estado/rodizio.json` ao e-mail de
+  aprovação** e diga ao usuário, em uma linha, que a cota do mês terá de ser
+  reaplicada à mão e qual configuração corrige (o repositório em
+  **Select repositories**, na edição da Routine).
 - Nada vai ao LinkedIn sem o "aprovado" chegar por e-mail.
 - Toda afirmação normativa carrega a fonte (número da lei/artigo, órgão, data),
   no nível de verificação que o ambiente permitiu — e em modo degradado o e-mail
@@ -92,7 +97,7 @@ turno. Não fique em espera ativa, não use `sleep`.
 
 | Script | Quando |
 |---|---|
-| `bin/preflight.sh` | início da etapa 2 — diz se as fontes primárias são alcançáveis |
+| `bin/preflight.sh` | início da etapa 2 — fontes primárias alcançáveis + o push funciona |
 | `bin/contar.py` | fim da etapa 4 — reprova o texto fora dos limites do protocolo |
 | `bin/carrossel.py` | etapa 5 — gera os PNGs a partir de `roteiro.json` |
 | `bin/roteiro.exemplo.json` | modelo de roteiro, com os cinco tipos de slide |
