@@ -9,3 +9,5 @@
   cumulatividade plena da LC 214/2025. Carrossel regerado no template
   `editorial` (nova identidade visual, âmbar/marinho). 1.757 caracteres,
   aprovado em `bin/contar.py`.
+- **2026-08-27** — E-mail de aprovação enviado. thread_id=1a043206b241f6ea. Status:
+  aguardando_aprovacao. Check-in agendado para 30 min.
