@@ -109,11 +109,20 @@ que tenha os conectores: o pipeline é o mesmo.
 | Jurisprudência | conector Jusratio | segue só com fonte normativa |
 | Criativo | `bin/carrossel.py` + Chromium | bloqueia a etapa 5 |
 | E-mail | conector Gmail | bloqueia o envio de aprovação |
-| Publicação | skill `claude_in_chrome` | fallback `agent-browser` com sessão logada |
+| Publicação | API oficial do LinkedIn (`bin/publicar_linkedin.py`) | bloqueia — avisa por e-mail e pede reautorização |
 
 O Canva **não** entra no caminho do carrossel: nenhuma das duas ferramentas de
 geração produz 5–8 slides em 4:5 sem um passo interativo. Detalhes e o teste que
 mostrou isso estão em `references/criativo.md`.
+
+**Publicação é via API, não navegador.** Uma sessão cloud efêmera não carrega
+login de nenhum dispositivo do usuário — a tentativa de automatizar por
+navegador foi abandonada por esse motivo. `bin/publicar_linkedin.py` usa a API
+oficial (self-serve, escopo `w_member_social`) e publica como post
+multi-imagem PNG (não Documento/PDF — decisão do usuário, que verificou
+engajamento melhor nesse formato). Configuração em `docs/ATIVACAO.md`, Parte D.
+O token dura ~60 dias; sem refresh automático, é preciso reautorizar
+periodicamente com `bin/linkedin_oauth.py`.
 
 ## Rede: o que precisa estar liberado
 

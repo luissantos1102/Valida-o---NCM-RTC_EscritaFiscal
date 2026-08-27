@@ -161,3 +161,88 @@ publicação agendada para 17:30 do dia seguinte.
 
 Para pausar sem perder a configuração: use o botão na seção **Repeats** da página
 de detalhe da Routine.
+
+---
+
+## Parte D — Criar o app do LinkedIn (para a publicação automática funcionar)
+
+Isso substitui a tentativa de login por navegador, que não funciona numa
+sessão cloud efêmera. É a única parte que exige uma ação sua — eu não posso
+criar o app nem autorizar em seu nome, porque é você quem precisa consentir
+com sua conta do LinkedIn.
+
+Leva uns 10 minutos, feito uma única vez (e repetido a cada ~60 dias, quando o
+token expira — é um clique, não repete a criação do app).
+
+### D.1 — Criar o app
+
+1. Acesse **https://www.linkedin.com/developers/apps** e faça login com sua
+   conta pessoal do LinkedIn.
+2. Clique em **Create app**.
+3. Preencha:
+   - **App name**: qualquer nome, ex. `Pipeline de Conteúdo Luis`
+   - **LinkedIn Page**: o LinkedIn exige uma Page vinculada, mesmo para uso
+     pessoal. Se você não tem uma, crie uma Page qualquer em
+     **linkedin.com/company/setup/new** (pode ser com seu próprio nome — ela
+     não aparece em lugar nenhum do fluxo de publicação, é só um requisito de
+     cadastro do app).
+   - **App logo**: qualquer imagem quadrada, é obrigatório mas não importa.
+   - Marque a caixa de termos e clique em **Create app**.
+
+### D.2 — Adicionar o produto "Share on LinkedIn"
+
+4. Na página do app recém-criado, vá na aba **Products**.
+5. Encontre **"Share on LinkedIn"** e clique em **Request access**.
+6. A aprovação é **instantânea** — não tem revisão manual, diferente de outros
+   produtos do LinkedIn.
+7. Adicione também **"Sign In with LinkedIn using OpenID Connect"** (também
+   instantâneo) — é usado só para eu identificar sua conta ao gerar o token,
+   não dá acesso a nada além disso.
+
+### D.3 — Configurar o redirecionamento
+
+8. Vá na aba **Auth**.
+9. Em **OAuth 2.0 settings → Redirect URLs**, adicione:
+   ```
+   http://localhost:8000/callback
+   ```
+10. Salve. Nesta mesma aba, você verá **Client ID** e **Client Secret** —
+    clique para revelar o Client Secret.
+
+### D.4 — Me passar as credenciais
+
+11. Copie o **Client ID** e o **Client Secret** e me envie aqui na conversa.
+    (Eles não vão para o repositório — ficam só na configuração da Routine,
+    como variável de ambiente.)
+
+### D.5 — Autorizar (o único passo que só você pode clicar)
+
+12. Eu gero um link com `bin/linkedin_oauth.py auth-url` e te devolvo aqui.
+13. Você abre o link **no navegador onde já está logado no LinkedIn** e clica
+    em **Allow**.
+14. O navegador tenta ir para `http://localhost:8000/callback?code=...` e
+    **vai falhar ao carregar** — isso é esperado, não existe servidor ali.
+    O que importa é a **URL na barra de endereço**, que vai conter o código.
+15. Copie a URL inteira da barra de endereço e me devolva aqui.
+16. Eu troco esse código pelo token de acesso (`bin/linkedin_oauth.py exchange`)
+    e te devolvo três valores para colar em **Environment variables** da
+    Routine (mesma tela de **Edit routine** das Partes A e B):
+    ```
+    LINKEDIN_ACCESS_TOKEN=...
+    LINKEDIN_PERSON_URN=...
+    ```
+
+### D.6 — Liberar o domínio da API
+
+17. Ainda na tela de rede (Parte B), adicione à lista de **Allowed domains**:
+    ```
+    api.linkedin.com
+    ```
+    Sem isso, o script de publicação recebe bloqueio de rede — mesmo com o
+    token certo.
+
+### Quando o token expirar (a cada ~60 dias)
+
+O LinkedIn não emite token de longa duração para apps padrão. Quando o
+`bin/publicar_linkedin.py` receber erro 401, é isso — repita só o **D.5**
+(gerar link, autorizar, colar o código de volta). Não precisa recriar o app.

@@ -102,6 +102,14 @@ Abra ao menos **a capa e o slide mais denso** e confira:
 Se um slide estourou a altura, o corpo está longo demais: corte texto ou divida
 em dois slides. Não reduza a fonte.
 
+## Como o carrossel chega ao LinkedIn
+
+Os PNGs saem direto daqui para `bin/publicar_linkedin.py`, como post
+**multi-imagem** — não como Documento/PDF. Decisão do usuário: o post de
+Documento tem visual de leitura de slide, e ele já verificou que o multi-imagem
+engaja melhor. Isso também significa que **nada muda nesta etapa** por causa da
+publicação — o formato de saída (PNG, 1080x1350) já era o que a etapa 6 precisa.
+
 ## Sobre o Canva
 
 O conector Canva **não serve** para este passo, e isso já foi testado:

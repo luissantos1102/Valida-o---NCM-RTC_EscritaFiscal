@@ -116,4 +116,6 @@ turno. Não fique em espera ativa, não use `sleep`.
 | `bin/contar.py` | fim da etapa 4 — reprova o texto fora dos limites do protocolo |
 | `bin/carrossel.py` | etapa 5 — gera os PNGs a partir de `roteiro.json` |
 | `bin/folha_contato.py` | etapa 6 — folha de contato + base64 para anexar no e-mail |
+| `bin/publicar_linkedin.py` | publicação — sobe as imagens e cria o post via API oficial |
+| `bin/linkedin_oauth.py` | reautorização da API, a cada ~60 dias (rodado pelo usuário) |
 | `bin/roteiro.exemplo.json` | modelo de roteiro, com os cinco tipos de slide |
