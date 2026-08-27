@@ -92,3 +92,11 @@
   mensagem é o próprio lembrete). Hora local em Campo Grande = 17:15, ainda
   antes das 17:30. status mantido: aprovado_publicacao_manual_recomendada.
   Reagendado para 21:45 UTC.
+- **2026-08-27 21:45 UTC** — Check-in: sem resposta nova na thread. Hora local
+  em Campo Grande = 17:45 — já passou das 17:30, o slot de hoje não foi
+  cumprido (sem confirmação de publicação manual e sem Client ID/Secret).
+  status → **aprovado_slot_perdido_hoje**. `data_agendamento` movida para
+  2026-08-28T17:30:00-04:00 (mesmo horário, amanhã). Check-ins pausados até
+  as 7h de Campo Grande de amanhã (11:00 UTC), retomando a cadência de 30 em
+  30 min dentro da janela 7h-20h. Enviado e-mail na thread informando o
+  reagendamento (mensagem 1a0453046e6e80b5).
