@@ -1,0 +1,20 @@
+{
+  "slug": "receita-modulo-agro-cooperativismo",
+  "tema": "Módulo da Receita para agro e cooperativismo: a doutrina que o ERP ainda não fala",
+  "eixo": "tributario",
+  "data_producao": "2026-08-27",
+  "data_agendamento": "2026-08-28",
+  "status": "aguardando_aprovacao",
+  "rodada": 1,
+  "assunto_email": "[LinkedIn] Aprovação — Módulo RTC agro e cooperativismo — 2026-08-27",
+  "thread_id": "1a042fc4d372c28b",
+  "desvio_justificado": null,
+  "link_primeiro_comentario": null,
+  "pontuacao": 65,
+  "formato_criativo": "carrossel",
+  "n_slides": 7,
+  "caracteres_texto": 1803,
+  "criativo_via": "bin/carrossel.py",
+  "verificacao_fonte_primaria": "PRIMARIA — gov.br/receitafederal aberta e conferida diretamente (WebFetch); demais fontes primárias do eixo tributário seguiam bloqueadas no ambiente (planalto.gov.br, in.gov.br, STF, STJ, CONFAZ)",
+  "modo_execucao": "DEGRADADO"
+}

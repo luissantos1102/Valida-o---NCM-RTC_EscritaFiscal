@@ -1,0 +1,42 @@
+{
+  "slug": "receita-modulo-agro-cooperativismo",
+  "slides": [
+    { "tipo": "capa",
+      "kicker": "Reforma Tributária do Consumo",
+      "titulo": "A aula ensina a regra; o sistema não",
+      "fonte": "Receita Federal — 14º módulo do curso",
+      "destaque": "25 de agosto de 2026 — Cascavel/PR" },
+
+    { "tipo": "texto",
+      "kicker": "O que aconteceu",
+      "titulo": "Receita dedica módulo ao agro e ao cooperativismo",
+      "corpo": ["Evento presencial em Cascavel (PR), com técnicos da própria Receita, dentro do Curso Reforma Tributária do Consumo."] },
+
+    { "tipo": "texto",
+      "kicker": "O que a aula ensina",
+      "titulo": "A doutrina do regime diferenciado",
+      "corpo": ["A **LC 214/2025** já reserva tratamento diferenciado a insumos agropecuários e a cooperativas, dentro de IBS e CBS."] },
+
+    { "tipo": "texto",
+      "kicker": "Onde a doutrina para",
+      "titulo": "Qual insumo entra no regime é doutrina",
+      "corpo": ["Como o ERP calcula isso todo mês é outra pergunta — e o curso não responde."] },
+
+    { "tipo": "texto",
+      "kicker": "A tradução que falta",
+      "titulo": "Da categoria jurídica ao parâmetro técnico",
+      "corpo": ["O sistema precisa de **código de item**, regra de tributação e teste de nota — trabalho de fiscal e Key User."] },
+
+    { "tipo": "lista",
+      "kicker": "O que fazer agora",
+      "titulo": "Antes da vigência",
+      "itens": ["Mapear naturezas fiscais que ainda não distinguem insumo agropecuário de mercadoria comum.",
+                "Simular a apuração com o regime de cooperativa ligado.",
+                "Testar em ambiente controlado antes de valer."] },
+
+    { "tipo": "fecho",
+      "kicker": "Para vigiar",
+      "titulo": "A regulamentação ainda vai detalhar percentuais e prazos",
+      "assinatura": ["Luis Santos", "Direito Tributário e Análise de Dados Fiscais"] }
+  ]
+}
