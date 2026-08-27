@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px}
+  body{background:#0E2A25;color:#F4F7F5;
+       font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+       padding:88px 84px;display:flex;flex-direction:column;
+       position:relative;overflow:hidden}
+  .kicker{font-size:26px;letter-spacing:.16em;text-transform:uppercase;
+          color:#6FCF9F;font-weight:700}
+  h1{font-size:88px;line-height:1.06;font-weight:800;letter-spacing:-.02em}
+  h2{font-size:60px;line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  p{font-size:38px;line-height:1.45;color:#D7E2DC;font-weight:400}
+  .hi{color:#6FCF9F;font-weight:700}
+  .grow{flex:1}
+  .rule{width:120px;height:8px;background:#6FCF9F;border-radius:4px}
+  .num{position:absolute;right:84px;bottom:74px;font-size:26px;color:#5C7A70;font-weight:700}
+  .sig{font-size:26px;color:#5C7A70;font-weight:600}
+  .box{background:#153A33;border-left:8px solid #6FCF9F;border-radius:12px;
+       padding:38px 42px}
+  .box + .box{margin-top:32px}
+  .box .lab{font-size:28px;color:#6FCF9F;font-weight:700;letter-spacing:.06em;
+            text-transform:uppercase;margin-bottom:14px}
+  .box .val{font-size:36px;line-height:1.35;color:#F4F7F5}
+  ol{list-style:none;counter-reset:i}
+  ol li{counter-increment:i;font-size:38px;line-height:1.4;color:#D7E2DC;
+        padding-left:82px;position:relative}
+  ol li + li{margin-top:40px}
+  ol li::before{content:counter(i);position:absolute;left:0;top:-2px;
+        width:56px;height:56px;border-radius:28px;background:#6FCF9F;color:#0E2A25;
+        font-size:32px;font-weight:800;display:flex;align-items:center;
+        justify-content:center}
+</style>
+<div class="kicker">Para vigiar</div>
+    <div style="height:40px"></div>
+    <h2>Cadastro desatualizado deixa de ser ruído e vira glosa</h2>
+    <div class="grow"></div>
+    <div class="rule"></div>
+    <div style="height:36px"></div>
+    <div class="sig">Luis Santos<br>Direito Tributário e Análise de Dados Fiscais</div><div class="num">7/7</div>
