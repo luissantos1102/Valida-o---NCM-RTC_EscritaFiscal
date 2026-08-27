@@ -22,3 +22,14 @@
   digitar credenciais. Avisado por e-mail na mesma thread pedindo login manual
   no ambiente de automação, com prazo até 17:30 de hoje. status →
   aprovado_bloqueado_login_linkedin. Check-in reagendado para 30 min.
+- **2026-08-27 12:5x UTC** — Decisão do usuário: investigar a API oficial do
+  LinkedIn em vez de sessão de browser. Pesquisado: "Share on LinkedIn" +
+  w_member_social é self-serve, sem revisão, serve para perfil pessoal (ao
+  contrário da Community Management API, que exige CNPJ). Carrossel = post de
+  Documento (PDF), 1080x1350 já é o formato recomendado. Token de acesso padrão
+  dura 60 dias sem refresh automático — reautorização manual periódica. Sem
+  agendamento nativo na API: a própria Routine, ao chamar a API às 17:30, FAZ o
+  agendamento — não precisa simular o botão do LinkedIn.
+  Implementação não cabe a tempo do slot de hoje (17:30). Publicação manual
+  recomendada para esta rodada, via e-mail. status →
+  aprovado_publicacao_manual_recomendada.
