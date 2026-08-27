@@ -41,3 +41,9 @@
   LINKEDIN_ACCESS_TOKEN/LINKEDIN_PERSON_URN (aguardando o usuário criar o app e
   passar Client ID/Secret). Publicação manual de hoje segue como recomendação
   vigente. status mantido: aprovado_publicacao_manual_recomendada. Reagendado.
+- **2026-08-27 14:24–15:53 UTC (falha de monitoramento)** — O check-in das
+  14:24 UTC foi processado, mas a sessão não reagendou o próximo — ficou ~1h30
+  sem monitoramento ativo. Corrigido: novo trigger criado
+  (trig_014iKfWaHBPNWc4d1HacRUrn) para 16:23 UTC. Nenhuma resposta do usuário
+  na thread neste intervalo; nada foi perdido, mas o gap não deveria ter
+  acontecido. status mantido: aprovado_publicacao_manual_recomendada.
