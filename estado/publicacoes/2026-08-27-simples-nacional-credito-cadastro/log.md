@@ -47,3 +47,6 @@
   (trig_014iKfWaHBPNWc4d1HacRUrn) para 16:23 UTC. Nenhuma resposta do usuário
   na thread neste intervalo; nada foi perdido, mas o gap não deveria ter
   acontecido. status mantido: aprovado_publicacao_manual_recomendada.
+- **2026-08-27 16:23 UTC** — Check-in: sem resposta nova na thread; sem
+  Client ID/Secret recebidos no chat. status mantido:
+  aprovado_publicacao_manual_recomendada. Reagendado para 16:53 UTC.
