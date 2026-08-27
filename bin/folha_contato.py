@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
-"""Monta uma folha de contato dos slides, leve o bastante para anexar por e-mail.
+"""Monta uma folha de contato dos slides: os sete numa imagem só.
 
 Uso:
-    python3 bin/folha_contato.py <pacote> [largura_total]
+    python3 bin/folha_contato.py <pacote> [largura_total] [--b64]
 
-Gera <pacote>/criativo/folha-contato.png e o .b64 pronto para o campo
-`attachments[].content` da ferramenta do Gmail.
+Gera <pacote>/criativo/folha-contato.png. Ela é commitada junto com o pacote e
+**linkada** no e-mail de aprovação — um clique, e o usuário vê o carrossel
+inteiro em resolução cheia no GitHub.
 
-Por que existe: a ferramenta de e-mail recebe o anexo como base64 dentro do
-próprio argumento. Sete PNGs de 1080x1350 viram ~800 KB de base64 numa única
-chamada — caro e sujeito a truncamento. Uma folha de contato dos mesmos sete
-slides fica na casa das dezenas de KB, porque o design é de cores chapadas e o
-PNG comprime bem. O usuário vê o carrossel inteiro no corpo do e-mail; os PNGs
-em resolução cheia ficam no pacote commitado.
+Por que NÃO anexamos: a ferramenta de e-mail recebe anexo como base64 dentro do
+próprio argumento, o que obriga o conteúdo a passar pelo contexto do modelo. Uma
+folha de 1600 px custa ~96 mil tokens numa execução de ~197 mil — metade do
+gasto, para exibir na tela do e-mail algo que já está commitado e linkável por
+algumas dezenas de tokens.
+
+`--b64` gera o .b64 mesmo assim, para quando o usuário pedir anexo de verdade.
 """
 import base64
 import glob
@@ -28,10 +30,12 @@ COLUNAS = 4
 
 
 def main():
-    if not 2 <= len(sys.argv) <= 3:
+    args = [a for a in sys.argv[1:] if a != "--b64"]
+    quer_b64 = "--b64" in sys.argv
+    if not 1 <= len(args) <= 2:
         sys.exit(__doc__)
-    pkg = os.path.abspath(sys.argv[1])
-    largura = int(sys.argv[2]) if len(sys.argv) == 3 else LARGURA_PADRAO
+    pkg = os.path.abspath(args[0])
+    largura = int(args[1]) if len(args) == 2 else LARGURA_PADRAO
 
     out = os.path.join(pkg, "criativo")
     slides = sorted(glob.glob(os.path.join(out, "slide-*.png")))
@@ -69,17 +73,18 @@ def main():
                     f"--screenshot={png}", f"file://{hp}"],
                    check=True, capture_output=True)
 
-    b64 = base64.b64encode(open(png, "rb").read()).decode()
-    open(png + ".b64", "w").write(b64)
-
-    kb, kb64 = os.path.getsize(png) / 1024, len(b64) / 1024
+    kb = os.path.getsize(png) / 1024
     print(f"{len(slides)} slides → folha-contato.png  {largura}x{altura}  {kb:.0f} KB")
-    print(f"base64: {kb64:.0f} KB  →  {png}.b64")
-    if kb64 > 400:
-        print("\nAVISO: base64 acima de 400 KB. Rode de novo com uma largura menor,")
-        print("       por exemplo: python3 bin/folha_contato.py <pacote> 900")
-    print("\nOs PNGs em 1080x1350 seguem intactos no pacote — são eles que vão ao")
-    print("LinkedIn. Esta folha serve só para a aprovação por e-mail.")
+
+    if quer_b64:
+        b64 = base64.b64encode(open(png, "rb").read()).decode()
+        open(png + ".b64", "w").write(b64)
+        kb64 = len(b64) / 1024
+        print(f"base64: {kb64:.0f} KB (~{kb64 * 1024 / 3.5 / 1000:.0f}k tokens) → {png}.b64")
+        print("Lembre: anexar faz esse conteúdo passar pelo contexto. Prefira o link.")
+
+    print("\nCommite e linke no e-mail. Os PNGs em 1080x1350 seguem intactos no")
+    print("pacote — são eles que vão ao LinkedIn.")
 
 
 if __name__ == "__main__":

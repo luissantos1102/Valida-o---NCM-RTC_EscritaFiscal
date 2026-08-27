@@ -137,6 +137,31 @@ secundárias independentes, dados de fonte única não viram afirmação, julgam
 sem confirmação saem da pauta, e o e-mail de aprovação abre com um aviso dizendo
 o que não pôde ser verificado. As regras estão em `references/pesquisa.md`.
 
+## Custo por execução
+
+Uma execução completa gira em torno de **200 mil tokens**. A distribuição importa
+mais que o número, porque quase tudo que é caro é opcional:
+
+| Item | ~tokens | Observação |
+|---|---|---|
+| Schemas dos conectores MCP | 22.000 | Gmail (29 tools) + Jusratio (11). Remover conector não usado corta direto |
+| WebSearch, ~8 buscas | 24.000 | Cada resultado vem com resumo longo |
+| PDFs de fonte primária | 15.000 | É o que sustenta o rigor. Não corte |
+| Skill + 7 protocolos | 10.000 | Custo fixo, carregado toda vez |
+| Raciocínio, escrita, revisão | 20.000 | O orçamento de caracteres reduziu as reescritas |
+| Screenshots de verificação | 3.000 | Dois slides conferidos |
+| ~~base64 do anexo~~ | ~~96.000~~ | **Eliminado**: o criativo vai por link |
+
+O anexo em base64 chegou a ser metade do gasto da execução — o conteúdo precisa
+atravessar o contexto do modelo para entrar no argumento da ferramenta. Trocado
+por link para o arquivo commitado, que sai por dezenas de tokens e ainda entrega
+resolução cheia.
+
+**Se precisar cortar mais:** tire o conector Jusratio da Routine (~6.000/execução)
+— na primeira execução real ele só devolveu matéria eleitoral. E limite a pesquisa
+a 6 buscas. Não corte a leitura de fonte primária nem os protocolos: é o que
+separa uma análise publicável de um resumo de imprensa.
+
 ## Regras que o agente não quebra
 
 - Uma execução produz **uma** publicação.
