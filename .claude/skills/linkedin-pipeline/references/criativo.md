@@ -44,7 +44,11 @@ Quebra de linha dentro de `val` (comparativo): use `\n`.
 
 O carrossel não repete a legenda. Ele é o **esqueleto visual** do argumento.
 
-- **Capa.** A tese em no máximo 8 palavras. Sem "arrasta pro lado". O campo
+O carrossel segue o eixo do texto: **é o argumento jurídico em slides**, não um
+passo a passo operacional. Se os slides do meio viraram uma lista de tarefas de
+sistema, o roteiro escorregou — refaça a partir da análise.
+
+- **Capa.** A tese jurídica em no máximo 8 palavras. Sem "arrasta pro lado". O campo
   `fonte` leva a referência normativa; `destaque` leva a data (DOU, julgamento).
 - **Miolo.** Uma ideia por slide. Máximo 25 palavras de corpo por slide. Se não
   couber, a ideia vira dois slides — nunca reduza a fonte para caber.

@@ -11,19 +11,34 @@ quando o conteúdo estiver enviado para aprovação.
 
 ## Perfil do autor (nunca escreva fora dele)
 
-Luis Santos. Setor fiscal e contábil da Copasul (cooperativa agrícola, Naviraí/MS),
-Key User de Oracle EBS. Cursa Direito na UEMS. Faz a ponte entre operação fiscal e
-sistemas: levanta requisitos, homologa melhorias, testa parametrizações. Constrói
-dashboards (Power BI, Looker Studio) e automações (Python, VBA, GAS).
+Luis Santos, estudante de Direito na UEMS. **Estas publicações constroem
+autoridade jurídica** — é isso que elas existem para fazer.
 
-Frentes jurídicas: **Direito Tributário** (com ênfase em Reforma Tributária — IBS,
-CBS, LC 214/25 e LC 227/2026), **Direito Empresarial** e **Direito Contratual**.
+Frentes: **Direito Tributário** (com ênfase em Reforma Tributária — IBS, CBS,
+LC 214/25 e LC 227/2026), **Direito Empresarial** e **Direito Contratual**.
 
-O diferencial que todo texto deve carregar implicitamente: ele entende a norma **e**
-o sistema que precisa executá-la — enxerga o impacto de uma mudança legislativa
-antes que ela vire custo ou passivo.
+Atua também no setor fiscal e contábil da Copasul (cooperativa agrícola,
+Naviraí/MS), como Key User de Oracle EBS.
 
-Objetivo das publicações: autoridade na rede, engajamento, network e oportunidades.
+### O eixo, e o que é tempero
+
+O texto é **análise jurídica**: o que a norma estabelece, onde as leituras
+divergem, qual posição se sustenta e por quê. É esse raciocínio que constrói
+autoridade e é por ele que a rede julga o autor.
+
+A vivência fiscal e de sistemas entra como **fonte de evidência**, não como tese.
+Ela dá acesso a fatos que o analista puramente doutrinário não tem — como uma
+regra se comporta quando precisa ser executada, qual prazo não fecha na prática,
+onde a norma não diz o suficiente para ser aplicada. Isso enriquece o argumento
+jurídico. **Não o substitui.**
+
+Um texto que abre com uma norma e termina em código de item, parametrização e
+teste de nota fiscal deixou de ser análise jurídica e virou relato de rotina de
+trabalho. O leitor que se quer atrair — advogados, tributaristas, quem contrata
+análise jurídica — para de ler ali.
+
+Regra prática: **a aterrissagem operacional é no máximo um parágrafo, e nunca é
+a conclusão do texto.** A conclusão é sempre jurídica.
 
 ## Execução
 

@@ -17,12 +17,12 @@ Pontue cada candidato de 1 a 5 em cada critério e some com o peso.
 | Recência | 3 | Fato dos últimos 2 dias, ainda em ciclo de discussão |
 | Impacto prático | 3 | Muda rotina, caixa, obrigação acessória ou parametrização de sistema já no curto prazo |
 | Densidade de discussão | 2 | Já há debate na rede (posts, artigos, divergência de leitura), mas ainda **não saturado** |
-| Autoridade do autor | 3 | Luis tem ângulo próprio e não replicável: a interseção norma × Oracle EBS × cooperativa agrícola |
+| Autoridade jurídica | 3 | Há questão jurídica real em aberto — divergência de leitura, lacuna, prazo que não fecha, competência disputada — sobre a qual Luis consegue sustentar uma posição própria e fundamentada |
 | Vida útil | 1 | Continua relevante daqui a 30 dias |
 | Aderência ao rodízio | 2 | É o eixo em dívida no mês (ver `rotacao.md`) |
 
 Máximo 70. Escolha o de maior soma. Empate: vence o eixo em dívida no rodízio;
-persistindo, vence o de maior "Autoridade do autor".
+persistindo, vence o de maior "Autoridade jurídica".
 
 ## Sinal de saturação (penalize)
 
@@ -44,6 +44,12 @@ CONSEQUÊNCIA: o que o leitor deveria fazer ou vigiar a partir disso
 
 Se você não consegue preencher TENSÃO e ÂNGULO com algo específico, a pauta é
 fraca — volte e pegue a segunda colocada.
+
+**TENSÃO e ÂNGULO são jurídicos.** Se a única tensão que você encontra é
+operacional ("o sistema ainda não faz isso"), a pauta não sustenta um texto de
+análise jurídica: ou você acha a questão de direito por trás, ou troca de pauta.
+"Falta parametrizar" não é questão jurídica; "a norma não define quem responde
+pelo crédito quando o fornecedor muda de regime" é.
 
 ## Saída
 
