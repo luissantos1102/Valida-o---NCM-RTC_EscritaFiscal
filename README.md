@@ -78,6 +78,22 @@ ou use a lista de Routines da conta.
 > terça e quinta às 17:30 — que era o par de dias mencionado no pedido original.
 > O dia útil de intervalo é o que dá margem para a rodada de aprovação.
 
+### Pendência: conectores da Routine
+
+A Routine foi criada por ferramenta, e nesta organização o gatilho **não pôde
+receber os conectores** — as sessões que ele dispara sobem sem `Gmail` e sem
+`Canva`. Sem Gmail, o pipeline chega até o criativo e **não consegue enviar o
+e-mail de aprovação**.
+
+Para resolver, abra a Routine em **claude.ai → Routines**
+(`LinkedIn — Produção de Conteúdo (seg/qua 07:00)`, id `trig_01WSnNxWZRN4G9pgPBYN7gv2`)
+e anexe os conectores **Gmail** e **Canva** — opcionalmente **Jusratio**, que o
+protocolo de pesquisa usa para jurisprudência. O restante da configuração
+(horário, prompt, notificação) já está correto.
+
+Enquanto isso não for feito, rode `/linkedin-pipeline` manualmente numa sessão
+que tenha os conectores: o pipeline é o mesmo.
+
 ## Dependências
 
 | Função | Ferramenta | Se faltar |
