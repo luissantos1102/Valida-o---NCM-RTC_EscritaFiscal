@@ -41,12 +41,26 @@ A ferramenta de e-mail recebe anexo como **base64 dentro do próprio argumento**
 truncamento. Por isso o anexo é **uma folha de contato**, não os sete slides.
 
 ```
-python3 bin/folha_contato.py estado/publicacoes/<AAAA-MM-DD>-<slug> 900
+python3 bin/folha_contato.py estado/publicacoes/<AAAA-MM-DD>-<slug>
 ```
 
-Isso gera `criativo/folha-contato.png` (~112 KB) e `folha-contato.png.b64`
-(~150 KB). A 900 px de largura o texto dos slides fica legível — o usuário aprova
-o conteúdo sem abrir nada.
+Isso gera `criativo/folha-contato.png` e `folha-contato.png.b64`. O padrão são
+1600 px de largura: cada slide sai com cerca de 390 px, legível no celular, e o
+base64 fica em torno de 337 KB — cabe numa chamada.
+
+**A resolução do e-mail não afeta a publicação.** O LinkedIn recebe os PNGs
+1080x1350 originais, direto do pacote. A folha existe só para o usuário aprovar.
+Medições que levaram a esse padrão, num carrossel de 7 slides:
+
+| Opção | base64 | Cada slide |
+|---|---|---|
+| 7 PNGs em resolução cheia | 733 KB (~188k tokens) | 1080 px |
+| Folha a 1600 px (**padrão**) | 337 KB | ~390 px |
+| Folha a 900 px | 150 KB | ~225 px |
+
+Anexar os sete em resolução cheia é possível, mas gasta ~188k tokens por
+execução para exibir na tela do e-mail algo que será publicado a partir de outro
+arquivo. Só faça isso se o usuário pedir explicitamente.
 
 No `send_message`, monte **um** anexo:
 
@@ -59,7 +73,7 @@ attachments: [{
 ```
 
 Se o `.b64` passar de 400 KB, o próprio script avisa: rode de novo com largura
-menor (`... <pacote> 760`).
+menor (`... <pacote> 900`).
 
 Junto da folha, escreva no corpo o **roteiro dos slides em texto** — kicker e
 título de cada um, uma linha por slide. É o que permite aprovar por leitura, sem

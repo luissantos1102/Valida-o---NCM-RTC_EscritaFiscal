@@ -23,7 +23,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from carrossel import chromium  # noqa: E402
 
-LARGURA_PADRAO = 1200
+LARGURA_PADRAO = 1600
 COLUNAS = 4
 
 
@@ -78,6 +78,8 @@ def main():
     if kb64 > 400:
         print("\nAVISO: base64 acima de 400 KB. Rode de novo com uma largura menor,")
         print("       por exemplo: python3 bin/folha_contato.py <pacote> 900")
+    print("\nOs PNGs em 1080x1350 seguem intactos no pacote — são eles que vão ao")
+    print("LinkedIn. Esta folha serve só para a aprovação por e-mail.")
 
 
 if __name__ == "__main__":
