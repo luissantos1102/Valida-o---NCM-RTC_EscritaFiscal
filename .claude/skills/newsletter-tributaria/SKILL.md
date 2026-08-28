@@ -61,6 +61,10 @@ visual. Resumindo o que não se negocia:
 - **Use sempre `background-color`, nunca `background`.** Também testado:
   `background:#0B1B2E` é removido do HTML enviado; `background-color:#0B1B2E`
   sobrevive. O template já segue essa regra — mantenha-a em qualquer edição.
+- **Zero travessão (—) no texto da edição.** Proibido, sem exceção, desde a
+  auditoria de 2026-08-28. Resolva com ponto, vírgula, dois-pontos,
+  parênteses ou conectivo. Antes de enviar, procure "—" no HTML pronto; se
+  aparecer, reescreva a frase.
 
 Antes de escrever, leia `estado/newsletter/enviados.json` — não repita, como
 item novo, algo já coberto nos últimos 7 dias. Se o mesmo fato voltar por ter

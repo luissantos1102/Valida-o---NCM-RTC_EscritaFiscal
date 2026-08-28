@@ -34,6 +34,16 @@ aprovada como padrão. Ao escrever cada edição, mire nisto:
   Poppins) — diferente do carrossel do LinkedIn (marinho/âmbar). Ver a
   paleta completa e a justificativa no cabeçalho de
   `templates/email_newsletter.html`. Não volte a copiar `bin/temas.py` aqui.
+- **Layout sóbrio e claro, não cartão escuro.** Numa 2ª rodada da mesma
+  auditoria (mesmo dia), o usuário viu a versão de cartão escuro e pediu algo
+  mais leve, no estilo dos sistemas internos da Copasul: fundo cinza claro
+  (`#D9D9D9`) sempre, cartão de conteúdo branco, barra verde só no cabeçalho.
+  Cor mais escura para blocos grandes, amarelo só em realces pontuais e
+  pequenos (nunca texto corrido nem bloco grande, contraste ruim em branco).
+  O template já implementa isso; não volte para fundo escuro.
+- **Zero travessão (—), nem "com moderação".** Mesma 2ª rodada: a régua de
+  "no máximo 1 a cada 2-3 parágrafos" não bastou, agora é proibição total.
+  Troque por ponto, vírgula, dois-pontos, parênteses ou conectivo.
 
 Tom: informativo e analítico, como um boletim editorial de escritório
 especializado — mais formal que o post de LinkedIn, sem precisar da abertura
@@ -93,10 +103,12 @@ título — nunca apresente proposta como se fosse norma vigente.
 - Não invente fonte. Se o achado só tem fonte secundária única, ou não entra,
   ou entra qualificado como não confirmado (ver modo degradado em
   `pesquisa.md`).
-- **Abusar do travessão.** Apontado pelo usuário como problema real na
-  auditoria de 2026-08-28 — é a marca mais visível de texto gerado por IA. No
-  máximo 1 travessão a cada 2-3 parágrafos; prefira ponto final ou vírgula.
-  Ao revisar, procure "—" no texto pronto e corte pelo menos metade.
+- **Usar travessão.** Proibido, sem exceção. Apontado pelo usuário como
+  problema real na auditoria de 2026-08-28, e depois de ver que "no máximo 1
+  a cada 2-3 parágrafos" não bastou, a régua virou zero. É a marca mais
+  visível de texto gerado por IA. Resolva com ponto final, vírgula,
+  dois-pontos, parênteses ou um conectivo. Ao revisar, procure "—" no texto
+  pronto: qualquer ocorrência, reescreva antes de enviar.
 
 ## Dia sem novidade
 

@@ -64,3 +64,25 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   rede (allowlist) do ambiente de execução, não algo corrigível em código;
   correção fica a cargo do usuário na configuração do environment (Claude
   Code on the web).
+
+- **2026-08-28 12:00-12:25 UTC — usuário adicionou os domínios ao ambiente e
+  pediu 2ª rodada de auditoria visual.** Usuário confirmou ter adicionado a
+  lista completa de domínios (PRIMARIAS + IMPRENSA) na configuração de rede
+  dos dois ambientes (LinkedIn e Newsletter) — efeito só aparece em sessão
+  nova, não nesta. Em seguida, mandou prints do sistema interno "Validador
+  de Conformidade Fiscal" da Copasul (fundo cinza claro, barra verde no
+  topo, cartão de conteúdo branco) como referência e pediu duas mudanças:
+  (1) travessão passa de "no máximo 1 a cada 2-3 parágrafos" para **proibido,
+  sem exceção** — atualizado em `references/redacao.md`, `SKILL.md` e
+  `linkedin-pipeline/references/redacao.md` (mesma regra vale pro LinkedIn);
+  (2) layout visual trocado de cartão escuro para o padrão sóbrio dos
+  sistemas internos Copasul: fundo `#D9D9D9` sempre, cartão branco, barra
+  verde `#014726` só no cabeçalho, amarelo `#FFDD21` restrito a realces
+  pontuais e pequenos (nunca bloco grande nem texto corrido, contraste ruim
+  em branco) — regra "mais escuro para mais volume, mais claro só para
+  destaque" documentada no cabeçalho do template.
+  `templates/email_newsletter.html` reescrito. Teste enviado na thread
+  1a04854e75ff5bd6 com o mesmo conteúdo das rodadas anteriores, revisado
+  para zero travessão (conferido com grep antes do envio) e confirmado
+  entregue em tamanho completo (14,3 KB, sem o erro de shell da rodada
+  anterior).

@@ -40,12 +40,13 @@ Acadêmico, jornalístico e informativo. Na prática:
   só então, em uma frase, notaria que essa indefinição se manifesta na
   aplicação.
 - Adjetivar sem prova ("absurdo", "gravíssimo") — o fato carrega o peso sozinho.
-- **Abusar do travessão.** É a marca de fábrica mais visível de texto gerado por
-  IA nesta pauta — foi apontado pelo usuário como problema real. No máximo 1
-  travessão a cada 2-3 parágrafos, e só quando ele faz o trabalho de uma
-  aposição curta que vírgula ou ponto não fariam melhor. Prefira ponto final
-  (frase nova) ou vírgula. Ao revisar, procure "—" no texto pronto e corte pelo
-  menos metade das ocorrências.
+- **Usar travessão.** Proibido, sem exceção — decisão do usuário em
+  2026-08-28 depois de ver que a régua de "no máximo 1 a cada 2-3 parágrafos"
+  não bastou. É a marca de fábrica mais visível de texto gerado por IA nesta
+  pauta. Toda vez que a frase pedir um travessão, resolva com ponto final
+  (frase nova), vírgula, dois-pontos, parênteses ou um conectivo ("e", "mas",
+  "já que", "porque", "quando"). Ao revisar, procure "—" no texto pronto: se
+  achar qualquer ocorrência, reescreva a frase antes de entregar.
 
 ## Orçamento de caracteres (respeite ao escrever, não depois)
 
@@ -132,7 +133,7 @@ custa uma reescrita inteira.
 - [ ] Cortando o parágrafo operacional, o texto continua de pé.
 - [ ] Passa no `humanizer`: sem inflação, sem estrutura repetitiva, sem palavra
       de IA. Se estiver na dúvida, rode a skill `humanizer` no rascunho.
-- [ ] Travessão (—) não vira tique de escrita: no máximo 1 a cada 2-3 parágrafos.
+- [ ] Zero travessão (—) no texto. Nenhum, não é questão de dosagem.
 - [ ] Perto de 1.800 caracteres, nunca acima de 1.900 (teto do LinkedIn: 3.000).
 - [ ] A pergunta final é respondível por alguém do fiscal em uma frase.
 
