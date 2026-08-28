@@ -65,13 +65,17 @@ visual. Resumindo o que não se negocia:
   auditoria de 2026-08-28. Resolva com ponto, vírgula, dois-pontos,
   parênteses ou conectivo. Antes de enviar, procure "—" no HTML pronto; se
   aparecer, reescreva a frase.
-- **Corpo do item vai dentro da caixa verde do template, não solto no
-  cartão.** Desde a 4ª rodada da auditoria de 2026-08-28 (o usuário mandou
-  um e-mail real de comunicação interna da Copasul como referência de
-  layout), o padrão é: título do item fora, corpo inteiro (fato, raciocínio,
-  "E na prática...", desdobramento) dentro de uma caixa `#014726`, com o
-  dado central de cada parágrafo em `<strong style="color:#FFDD21">`. Ver
-  `references/redacao.md` e o template.
+- **Layout definitivo: "Editorial + Cartão leve", sem caixa no corpo.**
+  Depois de 4 rodadas de layout rejeitadas no mesmo dia (cartão escuro,
+  cartão sóbrio cinza, cartão com texto grosso, caixa verde estilo e-mail de
+  compliance), o usuário pesquisou referências reais de newsletter e
+  escolheu a junção de duas: cartão em `#F9F9F9` (não mais `#D9D9D9`),
+  corpo do texto em **serifa** (Georgia, não Poppins), item em prosa
+  corrida sem caixa colorida, "E na prática..." como chamada em itálico
+  dentro do parágrafo, selo pequeno (22px) e amarelo só como régua fina de
+  3px. Ver a seção "Padrão definitivo de layout" em `references/redacao.md`
+  e o template. Não reintroduza cartão escuro, caixa verde no corpo, ou
+  Radar em faixa verde cheia sem pedido explícito do usuário.
 
 Antes de escrever, leia `estado/newsletter/enviados.json` — não repita, como
 item novo, algo já coberto nos últimos 7 dias. Se o mesmo fato voltar por ter
@@ -81,9 +85,9 @@ não como novidade, e diga isso explicitamente ("como cobrimos em DD/MM...").
 ### 3. Enviar
 
 Monte o e-mail com `templates/email_newsletter.html` (cartão HTML em tabelas,
-paleta Copasul (verde/amarelo, fonte Poppins), banner e selos — padrão
-validado no teste visual e atualizado na auditoria de 2026-08-28).
-Assunto:
+fundo `#F9F9F9`, corpo em serifa Georgia, paleta Copasul verde/amarelo —
+padrão definitivo fechado em 2026-08-28 depois de 5 rodadas de teste
+visual). Assunto:
 
 ```
 Newsletter Tributária — <AAAA-MM-DD>

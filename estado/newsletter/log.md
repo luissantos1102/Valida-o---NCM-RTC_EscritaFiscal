@@ -117,3 +117,24 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   imagem e seria removida no envio). `templates/email_newsletter.html`,
   `references/redacao.md` e `SKILL.md` atualizados. Teste enviado na thread
   1a048674023be132, confirmado entregue em tamanho completo (15,4 KB).
+
+- **2026-08-28 13:00-13:20 UTC — layout definitivo (5ª rodada).** Usuário
+  não gostou da 4ª rodada ("Não consegui gostar!"). Pesquisado na web
+  referências reais de newsletter (editorial, "smart brevity" corporativo,
+  cartão leve, memorando interno) e montada uma vitrine com quatro layouts
+  completos, mesmo conteúdo real (RFB/CARF), publicada como artifact para o
+  usuário escolher antes de qualquer envio. Usuário pediu uma 5ª opção:
+  junção de "Editorial" (prosa em serifa, sem caixa) e "Cartão leve"
+  (cartão arredondado com identidade Copasul discreta), com o fundo do
+  cartão trocado de `#D9D9D9` para `#F9F9F9`. Adicionada essa 5ª opção à
+  mesma vitrine; usuário aprovou e pediu para seguir com a fonte serifa.
+  `templates/email_newsletter.html` reescrito com essa identidade
+  definitiva: cartão `#F9F9F9`, corpo em Georgia (serifa nativa de e-mail,
+  não depende de fonte web), item em prosa corrida sem caixa colorida,
+  "E na prática..." como chamada em itálico dentro do parágrafo, selo
+  pequeno (22px), amarelo restrito à régua fina de 3px sob o título, Radar
+  de volta a lista simples. `references/redacao.md` e `SKILL.md`
+  atualizados, com o histórico das rodadas 1 a 4 marcado como superado (não
+  implementar de novo sem pedido explícito). Teste final enviado na thread
+  1a0488736d991569, confirmado entregue em tamanho completo (13,5 KB). Este
+  é o padrão de produção a partir de agora.

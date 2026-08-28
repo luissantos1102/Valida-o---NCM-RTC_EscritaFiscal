@@ -34,29 +34,55 @@ aprovada como padrão. Ao escrever cada edição, mire nisto:
   Poppins) — diferente do carrossel do LinkedIn (marinho/âmbar). Ver a
   paleta completa e a justificativa no cabeçalho de
   `templates/email_newsletter.html`. Não volte a copiar `bin/temas.py` aqui.
-- **Layout sóbrio e claro, não cartão escuro.** Numa 2ª rodada da mesma
-  auditoria (mesmo dia), o usuário viu a versão de cartão escuro e pediu algo
-  mais leve, no estilo dos sistemas internos da Copasul: fundo cinza claro
-  (`#D9D9D9`) sempre, cartão de conteúdo branco, barra verde só no cabeçalho.
-  Cor mais escura para blocos grandes, amarelo só em realces pontuais e
-  pequenos (nunca texto corrido nem bloco grande, contraste ruim em branco).
-  O template já implementa isso; não volte para fundo escuro.
-- **Zero travessão (—), nem "com moderação".** Mesma 2ª rodada: a régua de
-  "no máximo 1 a cada 2-3 parágrafos" não bastou, agora é proibição total.
-  Troque por ponto, vírgula, dois-pontos, parênteses ou conectivo.
-- **Corpo do item dentro de uma caixa verde escura, termos-chave em
-  amarelo.** 4ª rodada da mesma auditoria: o usuário mandou um e-mail real
-  do setor de comunicação da Copasul ("Pílula do Compliance") como
-  referência de layout. O padrão adotado a partir daí: o título do item fica
-  fora, em texto normal sobre o cartão cinza; todo o corpo do item (fato,
-  raciocínio, "E na prática..." e desdobramento) fica dentro de uma caixa
-  `#014726` com texto quase branco (`#F2F5F8`), e o dado central de cada
-  parágrafo (número, valor, data, norma) vai em `<strong style="color:#FFDD21">`,
-  replicando os termos em amarelo do e-mail de referência. O cabeçalho
-  também mudou: kicker + linha em itálico com os três eixos + título com a
-  data, e um selo circular como destaque à direita. O Radar virou uma faixa
-  verde cheia (`#049444`) com texto branco, no lugar da lista simples. O
-  template já implementa tudo isso; siga a estrutura dele item por item.
+- **Zero travessão (—), nem "com moderação".** A régua inicial de "no
+  máximo 1 a cada 2-3 parágrafos" não bastou, é proibição total desde
+  2026-08-28. Troque por ponto, vírgula, dois-pontos, parênteses ou
+  conectivo.
+
+### Histórico de layout (rodadas 1 a 4, todas superadas)
+
+No mesmo dia (2026-08-28), o layout visual passou por quatro rodadas antes
+de chegar ao padrão definitivo (ver seção seguinte): cartão escuro
+marinho/verde (rejeitado, "não consegui gostar"), depois cartão sóbrio
+cinza `#D9D9D9`/branco no estilo dos sistemas internos Copasul, depois o
+mesmo cartão com o cinza movido para o próprio cartão e texto mais grosso,
+depois um layout baseado num e-mail real de comunicação interna da Copasul
+("Pílula do Compliance") com caixa verde escura por item e termos em
+amarelo. Nenhuma agradou por completo. Não implemente nenhuma dessas —
+elas ficam registradas só para não serem repetidas por engano. O padrão
+atual é o da seção abaixo.
+
+## Padrão definitivo de layout (Editorial + Cartão leve)
+
+Depois das quatro rodadas acima não convencerem, o usuário pediu uma
+pesquisa de referências reais de newsletter fora do projeto e escolheu uma
+5ª opção, junção de duas dessas referências:
+
+- **Fundo do cartão em `#F9F9F9`** (cinza quase branco, não mais `#D9D9D9`
+  nem cartão escuro), sobre página branca. É mais sutil que o cinza médio
+  anterior, mas ainda separa visualmente o cartão da página.
+- **Corpo do texto em serifa (Georgia/"Source Serif 4"), não em Poppins.**
+  Títulos e parágrafos usam serifa; só kickers, selos e legendas pequenas
+  continuam em Poppins/Arial. Isso é uma mudança de identidade tipográfica,
+  não só estética: Georgia é nativa de e-mail e não depende de fonte web,
+  ao contrário de Poppins (que é removida no envio de qualquer forma).
+- **Sem caixa pesada no corpo do item.** O item é prosa corrida direto sobre
+  o cartão (estilo "Editorial"), não uma caixa verde escura nem um bloco
+  colorido. "E na prática, o que muda para a Copasul" voltou a ser uma
+  chamada em itálico (`<em style="color:#005E32">`) dentro do próprio
+  parágrafo, não um sub-título nem uma caixa separada.
+- **Selo pequeno e discreto** (22px, não 36-44px como nas rodadas
+  anteriores): círculo verde Copasul com a letra do eixo em branco, ao lado
+  do kicker de seção, sem disputar atenção com o texto.
+- **Régua amarela fina** (3px) sob o título/data do cabeçalho é o único uso
+  de amarelo no layout inteiro. Nada de faixa, pílula ou caixa amarela.
+- **Radar voltou a ser lista simples** com bullet verde, não a faixa verde
+  cheia da rodada anterior (baseada no e-mail de compliance).
+
+O template já implementa tudo isso; siga a estrutura dele item por item, e
+não reintroduza nenhum elemento das rodadas 1 a 4 (cartão escuro, caixa
+verde no corpo, faixa verde no Radar, corpo em sans) sem o usuário pedir de
+novo explicitamente.
 
 Tom: informativo e analítico, como um boletim editorial de escritório
 especializado — mais formal que o post de LinkedIn, sem precisar da abertura
