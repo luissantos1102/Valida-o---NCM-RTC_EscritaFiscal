@@ -86,3 +86,15 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   para zero travessão (conferido com grep antes do envio) e confirmado
   entregue em tamanho completo (14,3 KB, sem o erro de shell da rodada
   anterior).
+
+- **2026-08-28 12:32 UTC — 3ª rodada de ajuste visual, mesma auditoria.**
+  Usuário corrigiu a 2ª versão: o CARTÃO em si (não só a página por trás)
+  precisa estar em `#D9D9D9`, e o texto do corpo precisa de mais peso
+  ("grossura") para dar corpo à leitura. Invertido o esquema: página agora
+  branca, cartão cinza claro; caixas internas (aviso, fontes) viraram
+  brancas para se destacar de dentro do cartão cinza; parágrafos de corpo
+  ganharam `font-weight:600` (Arial só tem 400/700 reais, mas a maioria dos
+  motores sintetiza traço mais grosso a partir de 600; documentado no
+  template por que não usar 500). `templates/email_newsletter.html`
+  reescrito de novo. Teste enviado na thread 1a0485b3b209b205, confirmado
+  entregue em tamanho completo (13,6 KB).

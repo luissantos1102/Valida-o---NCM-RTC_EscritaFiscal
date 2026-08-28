@@ -1,12 +1,11 @@
 <!--
-  Template de referência da newsletter — 2ª geração da identidade Copasul,
-  auditoria de 2026-08-28 (2ª rodada). O usuário viu a 1ª versão (cartão
-  escuro, marinho/verde) e pediu algo mais leve e sóbrio, no estilo dos
-  sistemas internos da Copasul (fundo cinza claro, barra verde no topo,
-  conteúdo em cartão branco) — ver os prints anexados na conversa
-  (Validador de Conformidade Fiscal). Não é mais um cartão escuro de ponta a
-  ponta: agora é canvas cinza claro + cartão branco, com verde só na barra
-  superior e nos textos/realces.
+  Template de referência da newsletter — 3ª geração da identidade Copasul,
+  auditoria de 2026-08-28 (3ª rodada). O usuário corrigiu a 2ª versão: o
+  CARTÃO em si (não só a página por trás) tem que estar em #D9D9D9, e o
+  texto do corpo precisa de mais peso (grossura) para dar corpo à leitura.
+  Isso inverteu o esquema anterior: agora a PÁGINA é branca e o CARTÃO é
+  cinza claro; as caixas internas (aviso, fontes) viraram brancas para se
+  destacar de dentro do cartão cinza.
 
   ATENÇÃO — regras de HTML que não são estéticas, são obrigatórias:
 
@@ -22,38 +21,47 @@
   3. Parágrafos de corpo levam `text-align:justify`.
 
   4. ZERO travessão (—) em qualquer texto preenchido nos placeholders.
-     Proibido desde 2026-08-28 (2ª rodada de auditoria) — nem "no máximo 1 a
-     cada parágrafos" mais. Resolva com ponto, vírgula, dois-pontos,
-     parênteses ou conectivo. Antes de enviar, procure "—" no HTML pronto.
+     Proibido desde 2026-08-28 — nem "com moderação". Resolva com ponto,
+     vírgula, dois-pontos, parênteses ou conectivo. Antes de enviar, procure
+     "—" no HTML pronto.
 
   5. A tag <link> do Google Fonts (Poppins) também é removida no envio —
      testado em 2026-08-28. O resultado real entregue é o fallback Arial;
      mantenha o <link> mesmo assim (não custa, pode funcionar em algum
      cliente que preserve <head>), mas não trate Poppins como garantido.
+     Como Arial só tem duas variações reais (400 e 700), o "mais peso" do
+     corpo pedido pelo usuário vem de `font-weight:600` nos parágrafos: em
+     clientes que carregam Poppins de verdade isso pesa de leve; no
+     fallback Arial, a maioria dos motores de renderização sintetiza um
+     traço mais grosso para valores >= 600. Não use 500 (não muda nada
+     perceptível no fallback).
 
   Paleta Copasul e a lógica de uso — "mais escuro para mais volume, mais
-  claro só para destaque pontual", pedido explícito do usuário:
-    #D9D9D9  cinza claro   → fundo da página (SEMPRE), caixas neutras
-                             (aviso, fontes) por trás do cartão branco
-    #FFFFFF  branco        → cartão de conteúdo (a maior área "colorida"
-                             visualmente, mas neutra, como nos prints da
-                             Copasul)
+  claro só para destaque pontual":
+    #D9D9D9  cinza claro   → fundo do CARTÃO inteiro (pedido explícito do
+                             usuário na 3ª rodada: não é mais o branco)
+    #FFFFFF  branco        → página por trás do cartão, e as caixas internas
+                             (aviso, fontes) que precisam se destacar de
+                             dentro do cartão cinza
     #014726  verde mais forte → barra superior (maior bloco de cor cheia:
                              cabeçalho do cartão), textos de maior destaque
     #005E32  verde escuro  → subtítulos, bordas de selo, kicker de seção
-    #049444  verde Copasul → links, bullets, bordas finas, texto secundário
-                             com um pouco mais de peso que o cinza
+    #049444  verde Copasul → links, bullets, bordas finas
     #FFDD21  amarelo Copasul → SÓ para realces pontuais e pequenos: barra
                              fininha de abertura/fechamento do cartão,
-                             sublinhado do título, pílula de aviso — nunca
-                             como cor de bloco grande nem como cor de texto
-                             corrido (contraste ruim em branco)
+                             pílula de aviso — nunca como cor de bloco
+                             grande nem como cor de texto corrido
     #777777  cinza escuro  → texto secundário/legenda, rodapé
+    #333333  texto de corpo → usado nos parágrafos de item (não é cor
+                             Copasul oficial, mas dá contraste suficiente
+                             no cinza claro sem competir com o verde)
 
   Tipografia: Poppins com fallback Arial/sans-serif (ver item 5 acima).
+  Peso do corpo: `font-weight:600` nos parágrafos de item (pedido do
+  usuário na 3ª rodada, "mais grossura para dar corpo ao texto"); títulos
+  e kickers continuam em 700.
 
-  Largura: cartão em 840px (pedido do usuário na 1ª rodada de auditoria,
-  mantido nesta).
+  Largura: cartão em 840px.
 
   Preencha os placeholders <...>. Cada item de eixo leva 3 a 5 parágrafos.
   Toda fonte é link <a href> real, com etiqueta de nível de verificação.
@@ -61,12 +69,12 @@
   o bloco "Dia sem novidade" no fim deste arquivo.
 -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<body style="margin:0;padding:32px 16px;background-color:#D9D9D9;font-family:'Poppins',Arial,'Helvetica Neue',sans-serif;">
+<body style="margin:0;padding:32px 16px;background-color:#FFFFFF;font-family:'Poppins',Arial,'Helvetica Neue',sans-serif;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:840px;margin:0 auto;">
 <tr><td>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
-         style="background-color:#FFFFFF;border-radius:10px;overflow:hidden;border:1px solid #D9D9D9;">
+         style="background-color:#D9D9D9;border-radius:10px;overflow:hidden;">
 
     <!-- FAIXA SUPERIOR FININHA — abre o cartão -->
     <tr><td style="height:4px;background-color:#FFDD21;line-height:4px;font-size:0;">&nbsp;</td></tr>
@@ -85,15 +93,15 @@
 
       <!-- só quando o pré-voo acusou modo degradado -->
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
-             style="background-color:#D9D9D9;border-left:4px solid #FFDD21;border-radius:6px;margin-bottom:26px;">
-        <tr><td style="padding:14px 18px;font-size:13px;color:#014726;line-height:1.5;">
+             style="background-color:#FFFFFF;border-left:4px solid #FFDD21;border-radius:6px;margin-bottom:26px;">
+        <tr><td style="padding:14px 18px;font-size:13px;font-weight:600;color:#014726;line-height:1.5;">
           <strong>Aviso de verificação:</strong> edição em modo degradado, com itens sem dupla fonte
           independente marcados como não confirmados.
         </td></tr>
       </table>
 
       <!-- PARÁGRAFO EDITORIAL DE ABERTURA -->
-      <div style="font-size:15px;line-height:1.7;color:#014726;margin-bottom:8px;text-align:justify;">
+      <div style="font-size:15px;font-weight:600;line-height:1.7;color:#014726;margin-bottom:8px;text-align:justify;">
         <strong><data por extenso, ex: 28 de agosto de 2026.></strong> <parágrafo curto (60-100
         palavras) dizendo qual é o fio que liga os achados do dia, sem usar travessão>
       </div>
@@ -105,7 +113,7 @@
         Resumo executivo
       </div>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:0 0 10px;font-size:15px;line-height:1.5;color:#014726;">
+        <tr><td style="padding:0 0 10px;font-size:15px;font-weight:600;line-height:1.5;color:#014726;">
           <span style="color:#049444;font-weight:700;">→</span> <item 1 em uma linha, com número de norma/acórdão quando houver>
         </td></tr>
         <!-- repita por item; 5-7 bullets é o normal -->
@@ -114,7 +122,7 @@
 
     <!-- SEÇÃO DE EIXO — repita este miolo (selo CSS + itens) para Reforma Tributária e Contabilidade -->
     <tr><td style="padding:8px 40px 0;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #D9D9D9;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #FFFFFF;">
         <tr>
           <!-- SELO CSS — círculo verde-escuro com uma letra, substitui ícone em imagem.
                Trocar a letra por eixo: T (Tributário), R (Reforma), C (Contabilidade). -->
@@ -141,25 +149,25 @@
           <!-- prefixe com "[projeto] " quando tipo=projeto_proposta -->
           <título do item>
         </td></tr>
-        <tr><td style="font-size:14.5px;line-height:1.7;color:#333333;padding-bottom:10px;text-align:justify;">
+        <tr><td style="font-size:14.5px;font-weight:600;line-height:1.7;color:#333333;padding-bottom:10px;text-align:justify;">
           <parágrafo 1 — o fato, com detalhe técnico: número de norma/acórdão, artigo, data, órgão.
           Use <strong style="color:#014726;">destaque</strong> para o dado central. Sem travessão.>
         </td></tr>
-        <tr><td style="font-size:14.5px;line-height:1.7;color:#333333;padding-bottom:10px;text-align:justify;">
+        <tr><td style="font-size:14.5px;font-weight:600;line-height:1.7;color:#333333;padding-bottom:10px;text-align:justify;">
           <parágrafo 2 — o raciocínio/fundamento técnico por trás, se houver espaço.>
         </td></tr>
-        <tr><td style="font-size:14.5px;line-height:1.7;color:#333333;padding-bottom:10px;text-align:justify;">
+        <tr><td style="font-size:14.5px;font-weight:600;line-height:1.7;color:#333333;padding-bottom:10px;text-align:justify;">
           <strong style="color:#014726;">E na prática, o que muda para a Copasul:</strong>
           <parágrafo 3 — efeito prático, ancorado na operação real (fiscal, Oracle EBS, cadastro
           de item, apuração, crédito do adquirente) ou "sem efeito direto hoje, mas...".>
         </td></tr>
-        <tr><td style="font-size:14.5px;line-height:1.7;color:#333333;padding-bottom:10px;text-align:justify;">
+        <tr><td style="font-size:14.5px;font-weight:600;line-height:1.7;color:#333333;padding-bottom:10px;text-align:justify;">
           <parágrafo 4 (opcional) — desdobramento esperado, contexto histórico, ou a ressalva de
           verificação quando a fonte for única.>
         </td></tr>
         <tr><td>
-          <table role="presentation" cellpadding="0" cellspacing="0" style="background-color:#D9D9D9;border-left:3px solid #049444;border-radius:6px;">
-            <tr><td style="padding:12px 16px;font-size:12.5px;color:#333333;line-height:1.6;">
+          <table role="presentation" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF;border-left:3px solid #049444;border-radius:6px;">
+            <tr><td style="padding:12px 16px;font-size:12.5px;font-weight:600;color:#333333;line-height:1.6;">
               <strong style="color:#005E32;">Fontes (dupla/múltipla independente | fonte única, tratar com cautela):</strong><br>
               <a href="<URL real>" style="color:#049444;"><nome do veículo, data se relevante></a>
               &nbsp;·&nbsp;
@@ -174,7 +182,7 @@
 
     <!-- PARA FECHAR -->
     <tr><td style="padding:4px 40px 0;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #D9D9D9;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #FFFFFF;">
         <tr><td style="padding:26px 0 14px;">
           <div style="font:700 12px/1 'Poppins',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#005E32;">
             Para fechar
@@ -182,7 +190,7 @@
         </td></tr>
       </table>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:0 0 14px;font-size:14.5px;line-height:1.7;color:#333333;text-align:justify;">
+        <tr><td style="padding:0 0 14px;font-size:14.5px;font-weight:600;line-height:1.7;color:#333333;text-align:justify;">
           <parágrafo de síntese (80-150 palavras) — o que os itens do dia têm em comum, sem
           travessão.>
         </td></tr>
@@ -191,7 +199,7 @@
 
     <!-- RADAR -->
     <tr><td style="padding:4px 40px 8px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #D9D9D9;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #FFFFFF;">
         <tr><td style="padding:26px 0 14px;">
           <div style="font:700 12px/1 'Poppins',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#005E32;">
             Radar
@@ -199,14 +207,14 @@
         </td></tr>
       </table>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:0 0 10px;font-size:14.5px;line-height:1.6;color:#333333;">
+        <tr><td style="padding:0 0 10px;font-size:14.5px;font-weight:600;line-height:1.6;color:#333333;">
           <span style="color:#049444;">•</span> <o que acompanhar nos próximos dias>
         </td></tr>
       </table>
     </td></tr>
 
     <!-- RODAPÉ / ASSINATURA -->
-    <tr><td style="padding:28px 40px 32px;border-top:1px solid #D9D9D9;">
+    <tr><td style="padding:28px 40px 32px;border-top:1px solid #FFFFFF;">
       <div style="font-size:12px;color:#777777;line-height:1.6;">
         Newsletter automática · varredura das últimas 24h em fontes primárias e
         imprensa especializada · Luis Santos
