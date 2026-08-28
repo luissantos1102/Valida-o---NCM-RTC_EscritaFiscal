@@ -8,10 +8,10 @@ abaixo dos 10-15 min prometidos. A segunda rodada corrigiu isso e foi
 aprovada como padrão. Ao escrever cada edição, mire nisto:
 
 - Cada item de eixo tem **3 a 5 parágrafos** (não duas linhas): o fato com
-  detalhe técnico (número de acórdão/norma, artigo, data), um parágrafo de
-  "por que importa" na prática, e um parágrafo de desdobramento/contexto
-  ("o que vem agora", histórico, ou ressalva de verificação quando a fonte
-  for única).
+  detalhe técnico (número de acórdão/norma, artigo, data), um parágrafo
+  "E na prática, o que muda para a Copasul", e um parágrafo de
+  desdobramento/contexto ("o que vem agora", histórico, ou ressalva de
+  verificação quando a fonte for única).
 - Toda fonte é **link `<a href="URL">` de verdade**, com a URL real —
   encontrada na busca ou aberta via WebFetch — e uma etiqueta explícita do
   nível de verificação (dupla/múltipla fonte independente, ou fonte única a
@@ -26,6 +26,14 @@ aprovada como padrão. Ao escrever cada edição, mire nisto:
   `background-color` + letra) ao lado do título de cada seção de eixo. Use
   sempre `background-color`, nunca `background` (também removida no envio).
   O template já implementa isso — só troque a letra do selo por eixo.
+- **Parágrafos justificados** (`text-align:justify` no `<td>`/`<div>` do
+  corpo), não alinhados à esquerda — apontado pelo usuário na auditoria de
+  2026-08-28. O template já aplica isso; mantenha em qualquer edição manual.
+- **Paleta Copasul, não a paleta do LinkedIn.** A partir da auditoria de
+  2026-08-28, a newsletter usa cores e fonte próprias (verde/amarelo Copasul,
+  Poppins) — diferente do carrossel do LinkedIn (marinho/âmbar). Ver a
+  paleta completa e a justificativa no cabeçalho de
+  `templates/email_newsletter.html`. Não volte a copiar `bin/temas.py` aqui.
 
 Tom: informativo e analítico, como um boletim editorial de escritório
 especializado — mais formal que o post de LinkedIn, sem precisar da abertura
@@ -63,10 +71,11 @@ o resumo executivo já cobre isso implicitamente por ausência.
 
 **O que mudou:** 1-2 frases, direto ao ponto.
 
-**Por que importa:** o efeito prático — para tributarista, para quem opera
-sistema fiscal, ou para quem decide. Pode citar a vivência Copasul/Oracle EBS
-como exemplo concreto quando fizer sentido, mas não é obrigatório em toda
-edição.
+**E na prática, o que muda para a Copasul:** o efeito prático, ancorado na
+operação real — fiscal, Oracle EBS, cadastro de item, apuração, crédito do
+adquirente. Pode ficar em "sem efeito prático direto para a Copasul hoje,
+mas..." quando for o caso; não force o ângulo cooperativista onde ele não
+existe, mas procure-o antes de descartar.
 
 **Fonte:** identificação normativa + link.
 ```
@@ -84,6 +93,10 @@ título — nunca apresente proposta como se fosse norma vigente.
 - Não invente fonte. Se o achado só tem fonte secundária única, ou não entra,
   ou entra qualificado como não confirmado (ver modo degradado em
   `pesquisa.md`).
+- **Abusar do travessão.** Apontado pelo usuário como problema real na
+  auditoria de 2026-08-28 — é a marca mais visível de texto gerado por IA. No
+  máximo 1 travessão a cada 2-3 parágrafos; prefira ponto final ou vírgula.
+  Ao revisar, procure "—" no texto pronto e corte pelo menos metade.
 
 ## Dia sem novidade
 

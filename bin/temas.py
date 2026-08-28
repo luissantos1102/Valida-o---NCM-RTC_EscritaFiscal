@@ -81,7 +81,7 @@ h1{{font-family:{t['titulo_fonte']};font-weight:{t['titulo_peso']};
    font-size:{t['capa_tamanho']};line-height:1.08;letter-spacing:{t['capa_espaco']}}}
 h2{{font-family:{t['titulo_fonte']};font-weight:{t['titulo_peso']};
    font-size:{t['h2_tamanho']};line-height:1.16;letter-spacing:-.01em}}
-p{{font-size:{t['corpo_tamanho']};line-height:1.46;color:{c['secundario']}}}
+p{{font-size:{t['corpo_tamanho']};line-height:1.46;color:{c['secundario']};text-align:justify}}
 p + p{{margin-top:30px}}
 .hi{{color:{c['acento']};font-weight:700}}
 .grow{{flex:1}}

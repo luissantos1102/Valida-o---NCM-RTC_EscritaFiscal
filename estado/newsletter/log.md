@@ -40,3 +40,27 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   erro de data na fonte de cruzamento (matéria de 2022 confundida com 2026) —
   registrado no e-mail como aviso e no Radar como item a confirmar. E-mail
   enviado para luis.santos@copasul.coop.br, thread 1a047e917f5d0c36.
+
+- **2026-08-28 11:47-11:48 UTC — auditoria e teste de layout (identidade
+  Copasul).** Usuário apontou, na 1ª edição de produção: abuso de travessão
+  no texto (tanto aqui quanto no carrossel do LinkedIn) e parágrafos
+  alinhados à esquerda em vez de justificados. Também pediu mudança de
+  layout só para a newsletter: paleta Copasul (verde #049444/#005E32/#014726,
+  amarelo #FFDD21, cinzas #D9D9D9/#777777) no lugar do marinho/âmbar do
+  LinkedIn; fonte Poppins; label "E na prática, o que muda para a Copasul"
+  no lugar de "Por que importa"; cartão mais largo (660px → 840px, ~2,5cm a
+  mais de cada lado). `template/email_newsletter.html`,
+  `references/redacao.md`, `SKILL.md` e `bin/temas.py` (justify no carrossel)
+  atualizados. Reenviado teste de layout na thread 1a048324a9d64987 (1º envio
+  saiu quebrado por erro operacional meu — mandei `$(cat ...)` de shell em
+  vez do conteúdo HTML lido; reenviado corrigido logo em seguida). Confirmado
+  por leitura do HTML entregue: paleta/justify/label sobreviveram; a tag
+  `<link>` do Google Fonts foi removida no envio (mesmo padrão do `<img>`),
+  então a fonte real entregue é o fallback Arial, documentado no template.
+  Usuário também perguntou por que o pré-voo está em modo degradado: rodado
+  `bin/preflight.sh` de novo, confirma bloqueio total (http=000) de
+  planalto.gov.br, in.gov.br, portal.stf.jus.br, confaz.fazenda.gov.br,
+  cfc.org.br e valor.globo.com, e HTTP 403 de stj.jus.br — é a política de
+  rede (allowlist) do ambiente de execução, não algo corrigível em código;
+  correção fica a cargo do usuário na configuração do environment (Claude
+  Code on the web).

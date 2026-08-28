@@ -37,8 +37,9 @@ visual. Resumindo o que não se negocia:
 
 - **Prosa desenvolvida, não bullet duplo.** Cada item leva 3 a 5 parágrafos
   (o que aconteceu com detalhe técnico, por que importa na prática, o que vem
-  a seguir/desdobramento). "O que mudou" + "Por que importa" em uma linha cada
-  é insuficiente — já foi rejeitado uma vez por ser superficial.
+  a seguir/desdobramento). "O que mudou" + "E na prática, o que muda para a
+  Copasul" em uma linha cada é insuficiente — já foi rejeitado uma vez por
+  ser superficial.
 - **Todo "Fonte" é link clicável de verdade**, com a URL real que você abriu
   ou que apareceu na busca — nunca só o nome do veículo sem `<a href>`. Marque
   o nível de verificação (`dupla/múltipla independente` ou `fonte única —
@@ -69,7 +70,8 @@ não como novidade, e diga isso explicitamente ("como cobrimos em DD/MM...").
 ### 3. Enviar
 
 Monte o e-mail com `templates/email_newsletter.html` (cartão HTML em tabelas,
-paleta marinho/âmbar, banner e selos — mesmo padrão validado no teste visual).
+paleta Copasul (verde/amarelo, fonte Poppins), banner e selos — padrão
+validado no teste visual e atualizado na auditoria de 2026-08-28).
 Assunto:
 
 ```
