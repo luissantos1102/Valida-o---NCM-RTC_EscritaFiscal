@@ -24,3 +24,19 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   seção agora são círculos em CSS puro. Confirmado por leitura do HTML
   entregue (get_thread): cartão escuro e os três círculos T/R/C sobreviveram
   intactos nesta rodada. Este é o padrão definitivo a partir de agora.
+
+- **2026-08-28 — 1ª edição de produção.** Modo: degradado (2/8 fontes
+  primárias alcançáveis no pré-voo: gov.br e cgibs.gov.br OK; planalto.gov.br,
+  in.gov.br, portal.stf.jus.br, stj.jus.br, confaz.fazenda.gov.br, cfc.org.br
+  e valor.globo.com bloqueados). 2 itens, ambos em Direito Tributário: (1) RFB
+  — Malha Fiscal Digital notifica 3.455 PJ por divergência de PIS/Cofins,
+  R$ 299.090.225,86 em ajustes, prazo até 30/10/2026 (verificação primária,
+  fonte aberta em gov.br); (2) CARF afasta IRPJ/CSLL sobre incentivo de ICMS
+  do Fomentar/Produzir-GO, LC 160/2017 (verificação dupla_secundaria —
+  Contábeis + Rota da Jurisprudência — número de acórdão não localizado).
+  Reforma Tributária (IBS/CBS) e Contabilidade: 0 itens na janela de 24h —
+  seções omitidas, não é dia sem novidade (há 2 itens no eixo Tributário).
+  Um candidato sobre STF/CARF (fim do voto de qualidade) foi descartado por
+  erro de data na fonte de cruzamento (matéria de 2022 confundida com 2026) —
+  registrado no e-mail como aviso e no Radar como item a confirmar. E-mail
+  enviado para luis.santos@copasul.coop.br, thread 1a047e917f5d0c36.

@@ -1,3 +1,18 @@
 {
-  "itens": []
+  "itens": [
+    {
+      "titulo": "RFB — Malha Fiscal Digital notifica 3.455 PJ por divergência de PIS/Cofins",
+      "eixo": "tributario",
+      "data": "2026-08-27",
+      "fonte": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/agosto/receita-federal-oferece-oportunidade-de-regularizacao-de-divergencias-de-pis-e-cofins",
+      "enviado_em": "2026-08-28"
+    },
+    {
+      "titulo": "CARF afasta IRPJ/CSLL sobre incentivo de ICMS do Fomentar/Produzir-GO",
+      "eixo": "tributario",
+      "data": "2026-08-27",
+      "fonte": "https://www.contabeis.com.br/noticias/79048/carf-incentivos-de-icms-nao-integram-irpj-e-csll",
+      "enviado_em": "2026-08-28"
+    }
+  ]
 }
