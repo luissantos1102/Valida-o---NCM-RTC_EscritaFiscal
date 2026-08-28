@@ -98,3 +98,22 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   template por que não usar 500). `templates/email_newsletter.html`
   reescrito de novo. Teste enviado na thread 1a0485b3b209b205, confirmado
   entregue em tamanho completo (13,6 KB).
+
+- **2026-08-28 12:45 UTC — 4ª rodada, layout baseado em referência real da
+  Copasul.** Usuário anexou um e-mail de verdade do setor de comunicação
+  interna ("Pílula do Compliance: Relacionamento com Agentes Públicos") e
+  pediu para seguir aquele layout. Extraído com `pdftotext`/leitura de PDF
+  (foi preciso instalar `poppler-utils` via apt, ausente no ambiente).
+  Elementos replicados em CSS puro (sem `<img>`, sem gradiente): cabeçalho
+  com kicker + linha em itálico com os três eixos + título com a data, selo
+  circular de destaque à direita; corpo de cada item movido para dentro de
+  uma caixa `#014726` com texto quase branco (`#F2F5F8`) e o dado central
+  de cada parágrafo em `<strong style="color:#FFDD21">`, replicando os
+  termos-chave em amarelo do e-mail de referência ("Corrupção/Propina/
+  Suborno"); sub-título "E na prática, o que muda para a Copasul" também em
+  amarelo dentro da caixa; Radar virou faixa verde cheia (`#049444`) com
+  texto branco, no lugar da lista simples; rodapé ganhou menção de marca em
+  texto estilizado ("copasul · somos coop", nunca o logo de verdade, que é
+  imagem e seria removida no envio). `templates/email_newsletter.html`,
+  `references/redacao.md` e `SKILL.md` atualizados. Teste enviado na thread
+  1a048674023be132, confirmado entregue em tamanho completo (15,4 KB).

@@ -44,6 +44,19 @@ aprovada como padrão. Ao escrever cada edição, mire nisto:
 - **Zero travessão (—), nem "com moderação".** Mesma 2ª rodada: a régua de
   "no máximo 1 a cada 2-3 parágrafos" não bastou, agora é proibição total.
   Troque por ponto, vírgula, dois-pontos, parênteses ou conectivo.
+- **Corpo do item dentro de uma caixa verde escura, termos-chave em
+  amarelo.** 4ª rodada da mesma auditoria: o usuário mandou um e-mail real
+  do setor de comunicação da Copasul ("Pílula do Compliance") como
+  referência de layout. O padrão adotado a partir daí: o título do item fica
+  fora, em texto normal sobre o cartão cinza; todo o corpo do item (fato,
+  raciocínio, "E na prática..." e desdobramento) fica dentro de uma caixa
+  `#014726` com texto quase branco (`#F2F5F8`), e o dado central de cada
+  parágrafo (número, valor, data, norma) vai em `<strong style="color:#FFDD21">`,
+  replicando os termos em amarelo do e-mail de referência. O cabeçalho
+  também mudou: kicker + linha em itálico com os três eixos + título com a
+  data, e um selo circular como destaque à direita. O Radar virou uma faixa
+  verde cheia (`#049444`) com texto branco, no lugar da lista simples. O
+  template já implementa tudo isso; siga a estrutura dele item por item.
 
 Tom: informativo e analítico, como um boletim editorial de escritório
 especializado — mais formal que o post de LinkedIn, sem precisar da abertura

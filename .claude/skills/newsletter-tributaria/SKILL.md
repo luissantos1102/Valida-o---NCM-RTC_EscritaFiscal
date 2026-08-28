@@ -65,6 +65,13 @@ visual. Resumindo o que não se negocia:
   auditoria de 2026-08-28. Resolva com ponto, vírgula, dois-pontos,
   parênteses ou conectivo. Antes de enviar, procure "—" no HTML pronto; se
   aparecer, reescreva a frase.
+- **Corpo do item vai dentro da caixa verde do template, não solto no
+  cartão.** Desde a 4ª rodada da auditoria de 2026-08-28 (o usuário mandou
+  um e-mail real de comunicação interna da Copasul como referência de
+  layout), o padrão é: título do item fora, corpo inteiro (fato, raciocínio,
+  "E na prática...", desdobramento) dentro de uma caixa `#014726`, com o
+  dado central de cada parágrafo em `<strong style="color:#FFDD21">`. Ver
+  `references/redacao.md` e o template.
 
 Antes de escrever, leia `estado/newsletter/enviados.json` — não repita, como
 item novo, algo já coberto nos últimos 7 dias. Se o mesmo fato voltar por ter
