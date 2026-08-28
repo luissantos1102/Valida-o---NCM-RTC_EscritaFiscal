@@ -20,9 +20,12 @@ aprovada como padrão. Ao escrever cada edição, mire nisto:
   bullets) amarrando o fio do dia, e fecha com um parágrafo **"Para fechar"**
   de síntese antes do Radar — é isso que dá corpo analítico à newsletter, não
   só lista de fatos soltos.
-- Elementos visuais reais no e-mail: banner no topo e um selo (ícone
-  circular) ao lado do título de cada seção de eixo — ver `SKILL.md` para os
-  caminhos dos arquivos em `estado/newsletter/assets/`.
+- Elementos visuais reais no e-mail, mas **sem nenhuma tag `<img>`** (ela é
+  removida no envio, testado e confirmado — ver `SKILL.md`): faixa de cor no
+  topo/rodapé e um selo circular em CSS puro (div + `border-radius` +
+  `background-color` + letra) ao lado do título de cada seção de eixo. Use
+  sempre `background-color`, nunca `background` (também removida no envio).
+  O template já implementa isso — só troque a letra do selo por eixo.
 
 Tom: informativo e analítico, como um boletim editorial de escritório
 especializado — mais formal que o post de LinkedIn, sem precisar da abertura

@@ -1,9 +1,26 @@
 <!--
-  Template de referência da newsletter — padrão validado na rodada 2 de teste
-  visual (ver references/redacao.md, "Padrão validado"). Mesma identidade do
-  carrossel do LinkedIn (bin/temas.py, template "editorial"): marinho profundo
-  + acento âmbar, serifa nos títulos, sans no corpo — só que em cartão de
-  e-mail, com banner e selos de imagem real (não é só cor de fundo).
+  Template de referência da newsletter — padrão validado depois de 3 rodadas
+  de teste visual (ver references/redacao.md, "Padrão validado"). Mesma
+  paleta do carrossel do LinkedIn (bin/temas.py, template "editorial"):
+  marinho profundo + acento âmbar, serifa nos títulos, sans no corpo.
+
+  ATENÇÃO — duas regras de HTML que não são estéticas, são obrigatórias:
+
+  1. NUNCA use a tag <img>, em nenhuma hipótese — nem link externo, nem
+     anexo inline com Content-ID (cid:). O envio via mcp__Gmail__send_message
+     remove a tag inteira antes de enviar (testado e confirmado nas rodadas
+     de teste: um <img src="https://..."> simples e um <img src="cid:...">
+     com anexo `inline:true` foram igualmente apagados do HTML entregue).
+     Não é bloqueio de exibição do cliente de e-mail — a tag nunca chega a
+     existir na mensagem enviada. Por isso este template não tem banner nem
+     selos em imagem: os "selos" de seção são círculos feitos em CSS puro
+     (div + border-radius + background-color + uma letra), não PNG.
+
+  2. Use sempre `background-color`, nunca a propriedade curta `background`.
+     Testado: `background:#0B1B2E` é removido do HTML enviado;
+     `background-color:#0B1B2E` sobrevive. Todo fundo colorido deste
+     template já usa `background-color` — mantenha esse padrão em qualquer
+     edição.
 
   Paleta (não mude sem mudar também em bin/temas.py, para as duas identidades
   não divergirem):
@@ -12,37 +29,34 @@
   Tipografia: serifa (Georgia/"Bitstream Charter") nos títulos, sans
   (Arial/"DejaVu Sans") no corpo.
 
-  Assets (estáticos, sem data — reaproveite todo dia, hospedados via raw
-  GitHub no branch de trabalho):
-    estado/newsletter/assets/hero.png               banner do topo
-    estado/newsletter/assets/icon-tributario.png     selo da seção Tributário
-    estado/newsletter/assets/icon-reforma.png        selo da seção Reforma
-    estado/newsletter/assets/icon-contabilidade.png  selo da seção Contabilidade
-  URL: https://raw.githubusercontent.com/luissantos1102/Valida-o---NCM-RTC_EscritaFiscal/refs/heads/claude/linkedin-content-agent-7hnba3/<caminho acima>
-
   Preencha os placeholders <...>. Cada item de eixo leva 3 a 5 parágrafos —
   não resuma em duas linhas (isso já foi rejeitado uma vez). Toda fonte é
   link <a href> real, com etiqueta de nível de verificação. Apague as seções
   de eixo sem conteúdo no dia. Em dia sem novidade, use só o bloco "Dia sem
   novidade" no fim deste arquivo.
 -->
-<body style="margin:0;padding:32px 16px;background:#e7ecf1;font-family:Arial,'DejaVu Sans',sans-serif;">
+<body style="margin:0;padding:32px 16px;background-color:#e7ecf1;font-family:Arial,'DejaVu Sans',sans-serif;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:660px;margin:0 auto;">
 <tr><td>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
-         style="background:#0B1B2E;border-radius:14px;overflow:hidden;color:#F2F5F8;">
+         style="background-color:#0B1B2E;border-radius:14px;overflow:hidden;color:#F2F5F8;">
 
-    <!-- BANNER -->
-    <tr><td>
-      <img src="https://raw.githubusercontent.com/luissantos1102/Valida-o---NCM-RTC_EscritaFiscal/refs/heads/claude/linkedin-content-agent-7hnba3/estado/newsletter/assets/hero.png"
-           width="660" style="display:block;width:100%;max-width:660px;height:auto;" alt="Newsletter Tributária — Tributário · Reforma · Contabilidade">
-    </td></tr>
+    <!-- FAIXA SUPERIOR — substitui o banner de imagem -->
+    <tr><td style="height:6px;background-color:#D6A544;line-height:6px;font-size:0;">&nbsp;</td></tr>
 
-    <tr><td style="padding:36px 44px 8px;">
+    <tr><td style="padding:40px 44px 8px;">
+      <div style="font:700 13px/1 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#D6A544;margin-bottom:12px;">
+        Newsletter Tributária
+      </div>
+      <div style="font:700 32px/1.2 Georgia,'Bitstream Charter',serif;color:#F2F5F8;margin-bottom:10px;">
+        Tributário · Reforma · Contabilidade
+      </div>
+      <div style="width:64px;height:3px;background-color:#D6A544;margin-bottom:28px;"></div>
+
       <!-- só quando o pré-voo acusou modo degradado -->
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
-             style="background:#152B44;border:1px solid #22405F;border-left:4px solid #D6A544;
+             style="background-color:#152B44;border:1px solid #22405F;border-left:4px solid #D6A544;
                     border-radius:8px;margin-bottom:30px;">
         <tr><td style="padding:14px 18px;font-size:13px;color:#A9BACB;line-height:1.5;">
           <strong style="color:#D6A544;">Aviso de verificação:</strong> edição em modo degradado —
@@ -70,13 +84,20 @@
       </table>
     </td></tr>
 
-    <!-- SEÇÃO DE EIXO — repita este miolo (selo + itens) para Reforma Tributária e Contabilidade -->
+    <!-- SEÇÃO DE EIXO — repita este miolo (selo CSS + itens) para Reforma Tributária e Contabilidade -->
     <tr><td style="padding:8px 44px 0;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #22405F;">
         <tr>
+          <!-- SELO CSS — círculo com borda âmbar e uma letra, substitui o ícone em imagem.
+               Trocar a letra por eixo: T (Tributário), R (Reforma), C (Contabilidade). -->
           <td width="52" style="padding:28px 14px 6px 0;vertical-align:middle;">
-            <img src="https://raw.githubusercontent.com/luissantos1102/Valida-o---NCM-RTC_EscritaFiscal/refs/heads/claude/linkedin-content-agent-7hnba3/estado/newsletter/assets/icon-tributario.png"
-                 width="40" height="40" style="display:block;border-radius:50%;">
+            <table role="presentation" cellpadding="0" cellspacing="0" width="40" height="40"
+                   style="width:40px;height:40px;border-radius:50%;border:2px solid #D6A544;background-color:#152B44;">
+              <tr><td align="center" valign="middle"
+                      style="font:700 18px/40px Georgia,'Bitstream Charter',serif;color:#D6A544;text-align:center;">
+                T
+              </td></tr>
+            </table>
           </td>
           <td style="padding:28px 0 6px;vertical-align:middle;">
             <div style="font:700 12px/1 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#D6A544;">
@@ -109,7 +130,7 @@
           fechado".>
         </td></tr>
         <tr><td>
-          <table role="presentation" cellpadding="0" cellspacing="0" style="background:#152B44;border:1px solid #22405F;border-left:3px solid #D6A544;border-radius:6px;">
+          <table role="presentation" cellpadding="0" cellspacing="0" style="background-color:#152B44;border:1px solid #22405F;border-left:3px solid #D6A544;border-radius:6px;">
             <tr><td style="padding:12px 16px;font-size:12.5px;color:#A9BACB;line-height:1.6;">
               <strong style="color:#D6A544;">Fontes (dupla/múltipla independente | fonte única — tratar com cautela):</strong><br>
               <a href="<URL real>" style="color:#D6A544;"><nome do veículo, data se relevante></a>
@@ -164,7 +185,7 @@
       </div>
     </td></tr>
 
-    <tr><td style="height:6px;background:#D6A544;line-height:6px;font-size:0;">&nbsp;</td></tr>
+    <tr><td style="height:6px;background-color:#D6A544;line-height:6px;font-size:0;">&nbsp;</td></tr>
   </table>
 
 </td></tr>
@@ -173,7 +194,7 @@
 
 <!--
   DIA SEM NOVIDADE — substitua tudo do <body> acima por uma versão curta do
-  mesmo cartão: banner, título "Newsletter Tributária — <data>", e um só
+  mesmo cartão: faixa âmbar, título "Newsletter Tributária — <data>", e um só
   parágrafo:
   "Nada de novo com consequência jurídica ou contábil nas últimas 24h nos três
   eixos. Radar: <1-3 itens>." — sem seções de eixo vazias.

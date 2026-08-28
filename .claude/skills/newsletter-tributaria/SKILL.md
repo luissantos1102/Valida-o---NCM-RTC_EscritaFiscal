@@ -49,15 +49,17 @@ visual. Resumindo o que não se negocia:
   itens suficientes (normalmente 2 por eixo) escritos com profundidade, mais
   um parágrafo de abertura editorial e um parágrafo de fechamento ("Para
   fechar") amarrando os achados do dia.
-- **Elementos visuais reais**, não só cor de fundo: use o banner
-  `estado/newsletter/assets/hero.png` no topo e os selos
-  `icon-tributario.png` / `icon-reforma.png` / `icon-contabilidade.png` ao
-  lado do título de cada seção — todos hospedados via
-  `https://raw.githubusercontent.com/luissantos1102/Valida-o---NCM-RTC_EscritaFiscal/refs/heads/claude/linkedin-content-agent-7hnba3/estado/newsletter/assets/<arquivo>`.
-  Esses assets são estáticos (sem data), reaproveite-os todo dia — só
-  regenere se quiser mudar o design (script de referência: renderize um HTML
-  com a paleta de `bin/temas.py` via `headless_shell` do Chromium, como feito
-  na criação original, documentada no histórico do pacote de testes).
+- **Nunca use a tag `<img>`, em nenhuma hipótese.** Testado e confirmado: o
+  envio via `mcp__Gmail__send_message` remove qualquer `<img>` do HTML antes
+  de entregar — link externo (`raw.githubusercontent.com`) e anexo inline
+  com Content-ID (`inline:true` + `cid:`) foram igualmente apagados em
+  testes separados. Não é bloqueio de exibição do cliente — a tag some da
+  mensagem enviada. Os "selos" de seção do template são círculos em CSS puro
+  (div + `border-radius` + `background-color` + uma letra), não imagem.
+  Não gaste tempo tentando imagem de novo nesta ferramenta de envio.
+- **Use sempre `background-color`, nunca `background`.** Também testado:
+  `background:#0B1B2E` é removido do HTML enviado; `background-color:#0B1B2E`
+  sobrevive. O template já segue essa regra — mantenha-a em qualquer edição.
 
 Antes de escrever, leia `estado/newsletter/enviados.json` — não repita, como
 item novo, algo já coberto nos últimos 7 dias. Se o mesmo fato voltar por ter
