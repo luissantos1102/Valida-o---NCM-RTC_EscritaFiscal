@@ -138,3 +138,11 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   implementar de novo sem pedido explícito). Teste final enviado na thread
   1a0488736d991569, confirmado entregue em tamanho completo (13,5 KB). Este
   é o padrão de produção a partir de agora.
+
+- **2026-08-28 13:46 UTC — ajuste do cabeçalho.** Logo após aprovar o
+  layout definitivo, usuário pediu que só o cabeçalho ganhasse fundo verde
+  mais escuro (`#014726`), título grande em branco e detalhes (kicker,
+  subtítulo) em amarelo. Aplicado apenas no bloco do cabeçalho; o resto do
+  cartão continua `#F9F9F9` sem fundo colorido. `templates/email_newsletter.html`
+  e `references/redacao.md` atualizados. Teste enviado na thread
+  1a0489f45f6db51b, confirmado entregue em tamanho completo (7,9 KB).

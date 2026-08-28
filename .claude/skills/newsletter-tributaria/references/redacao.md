@@ -74,15 +74,20 @@ pesquisa de referências reais de newsletter fora do projeto e escolheu uma
 - **Selo pequeno e discreto** (22px, não 36-44px como nas rodadas
   anteriores): círculo verde Copasul com a letra do eixo em branco, ao lado
   do kicker de seção, sem disputar atenção com o texto.
-- **Régua amarela fina** (3px) sob o título/data do cabeçalho é o único uso
-  de amarelo no layout inteiro. Nada de faixa, pílula ou caixa amarela.
+- **Cabeçalho com fundo verde mais escuro (`#014726`).** Ajuste feito logo
+  depois da aprovação do layout: só o bloco do cabeçalho (kicker, data,
+  subtítulo dos eixos) ganhou fundo colorido, com o título grande em branco
+  e os detalhes (kicker e subtítulo em itálico) em amarelo. É o único bloco
+  de cor cheia do layout inteiro; o resto do cartão continua `#F9F9F9`, sem
+  fundo colorido. Não é uma volta ao cartão escuro de ponta a ponta das
+  rodadas 1 e 4, é só o cabeçalho.
 - **Radar voltou a ser lista simples** com bullet verde, não a faixa verde
   cheia da rodada anterior (baseada no e-mail de compliance).
 
 O template já implementa tudo isso; siga a estrutura dele item por item, e
-não reintroduza nenhum elemento das rodadas 1 a 4 (cartão escuro, caixa
-verde no corpo, faixa verde no Radar, corpo em sans) sem o usuário pedir de
-novo explicitamente.
+não reintroduza nenhum elemento das rodadas 1 a 4 (cartão escuro de ponta a
+ponta, caixa verde no corpo do item, faixa verde no Radar, corpo em sans)
+sem o usuário pedir de novo explicitamente.
 
 Tom: informativo e analítico, como um boletim editorial de escritório
 especializado — mais formal que o post de LinkedIn, sem precisar da abertura
