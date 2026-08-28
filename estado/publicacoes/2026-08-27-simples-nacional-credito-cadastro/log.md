@@ -100,3 +100,11 @@
   as 7h de Campo Grande de amanhã (11:00 UTC), retomando a cadência de 30 em
   30 min dentro da janela 7h-20h. Enviado e-mail na thread informando o
   reagendamento (mensagem 1a0453046e6e80b5).
+- **2026-08-27 22:28 UTC (confirmado no check-in de 2026-08-28 11:02 UTC)** —
+  Usuário respondeu na thread: "Publicação feita manualmente!" (mensagem
+  1a045570ed954953), após o e-mail de "slot perdido/reagendado para 28/08".
+  Confirma que o post foi publicado manualmente em 27/08, mais tarde que as
+  17:30 mas ainda no mesmo dia (18:28 Campo Grande). status → **publicado**.
+  `data_agendamento` revertida para 2026-08-27T17:30:00-04:00 (data real do
+  ciclo) e `data_publicacao_real` registrada. Ciclo de aprovação encerrado —
+  check-ins parados, trigger removido.
