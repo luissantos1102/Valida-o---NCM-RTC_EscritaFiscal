@@ -19,11 +19,20 @@
   parágrafo. O Radar voltou a ser lista simples (não é mais a faixa verde
   cheia da rodada 4 baseada no e-mail de compliance).
 
-  AJUSTE (mesmo dia, depois da aprovação): o usuário pediu que só o
+  AJUSTE 1 (mesmo dia, depois da aprovação): o usuário pediu que só o
   CABEÇALHO ganhasse cor de fundo verde mais escuro (`#014726`), com o
   título grande em branco e os detalhes (kicker, subtítulo) em amarelo. O
   resto do cartão continua `#F9F9F9`, sem fundo colorido — é um bloco a
   mais, não uma volta ao cartão escuro de ponta a ponta das rodadas 1 e 4.
+
+  AJUSTE 2 (mesmo dia): a linha de eixos no cabeçalho ("Direito Tributário
+  · Reforma Tributária · Contabilidade") passou de amarelo/itálico para
+  branco/negrito. O corpo de texto (parágrafo de abertura, itens, resumo
+  executivo, Para fechar, Radar) subiu de tamanho (~15-15.5px para 16.5-
+  17px). E o título de cada eixo dentro do cartão (ao lado do selo) deixou
+  de ser um kicker pequeno em caixa alta e virou um subtítulo de verdade em
+  serifa, 20px, negrito — ênfase visual real, não mais uma etiqueta
+  discreta.
 
   ATENÇÃO — regras de HTML que não são estéticas, são obrigatórias:
 
@@ -91,7 +100,7 @@
       <div style="font:700 30px/1.25 Georgia,'Source Serif 4',serif;color:#FFFFFF;margin-bottom:6px;">
         <data por extenso, ex: 28 de agosto de 2026.>
       </div>
-      <div style="font-style:italic;font-size:15px;color:#FFDD21;font-family:Georgia,'Source Serif 4',serif;">
+      <div style="font-weight:700;font-size:15px;color:#FFFFFF;font-family:Georgia,'Source Serif 4',serif;">
         Direito Tributário · Reforma Tributária · Contabilidade
       </div>
     </td></tr>
@@ -100,14 +109,14 @@
       <!-- só quando o pré-voo acusou modo degradado -->
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
              style="background-color:#FFFFFF;border-left:3px solid #049444;border-radius:6px;margin-bottom:26px;">
-        <tr><td style="padding:13px 17px;font-size:13px;font-family:'Poppins',Arial,sans-serif;color:#333333;line-height:1.5;">
+        <tr><td style="padding:13px 17px;font-size:14px;font-family:'Poppins',Arial,sans-serif;color:#333333;line-height:1.5;">
           <strong style="color:#005E32;">Aviso de verificação:</strong> edição em modo degradado, com itens sem dupla fonte
           independente marcados como não confirmados.
         </td></tr>
       </table>
 
       <!-- PARÁGRAFO EDITORIAL DE ABERTURA -->
-      <div style="font-size:15.5px;line-height:1.75;color:#2b2f2c;margin-bottom:8px;text-align:justify;">
+      <div style="font-size:17px;line-height:1.75;color:#2b2f2c;margin-bottom:8px;text-align:justify;">
         <parágrafo curto (60-100 palavras) dizendo qual é o fio que liga os achados do dia, sem
         usar travessão>
       </div>
@@ -119,7 +128,7 @@
         Resumo executivo
       </div>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:0 0 9px;font-size:15px;font-family:'Poppins',Arial,sans-serif;line-height:1.5;color:#181c19;">
+        <tr><td style="padding:0 0 9px;font-size:16.5px;font-family:'Poppins',Arial,sans-serif;line-height:1.5;color:#181c19;">
           <span style="color:#049444;font-weight:700;">→</span> <item 1 em uma linha, com número de norma/acórdão quando houver>
         </td></tr>
         <!-- repita por item; 5-7 bullets é o normal -->
@@ -130,19 +139,22 @@
     <tr><td style="padding:10px 44px 0;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #FFFFFF;">
         <tr>
-          <!-- SELO — círculo pequeno verde Copasul com uma letra.
+          <!-- SELO — círculo verde Copasul com uma letra.
                Trocar a letra por eixo: T (Tributário), R (Reforma), C (Contabilidade). -->
-          <td width="30" style="padding:22px 8px 4px 0;vertical-align:top;">
-            <table role="presentation" cellpadding="0" cellspacing="0" width="22" height="22"
-                   style="width:22px;height:22px;border-radius:50%;background-color:#049444;">
+          <td width="36" style="padding:24px 10px 4px 0;vertical-align:top;">
+            <table role="presentation" cellpadding="0" cellspacing="0" width="28" height="28"
+                   style="width:28px;height:28px;border-radius:50%;background-color:#049444;">
               <tr><td align="center" valign="middle"
-                      style="font:700 10.5px/22px 'Poppins',Arial,sans-serif;color:#FFFFFF;text-align:center;">
+                      style="font:700 13px/28px 'Poppins',Arial,sans-serif;color:#FFFFFF;text-align:center;">
                 T
               </td></tr>
             </table>
           </td>
-          <td style="padding:26px 0 4px;vertical-align:middle;">
-            <div style="font:700 11px/1 'Poppins',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#005E32;">
+          <td style="padding:24px 0 4px;vertical-align:middle;">
+            <!-- Título do eixo: destaque de verdade (não é kicker pequeno como
+                 "Resumo executivo"/"Radar") — pedido do usuário para dar mais
+                 ênfase visual ao nome de cada tema. -->
+            <div style="font:700 20px/1.2 Georgia,'Source Serif 4',serif;color:#005E32;">
               Direito Tributário
             </div>
           </td>
@@ -155,25 +167,25 @@
           <!-- prefixe com "[projeto] " quando tipo=projeto_proposta -->
           <título do item>
         </td></tr>
-        <tr><td style="font-size:15.5px;line-height:1.75;color:#2b2f2c;padding-bottom:10px;text-align:justify;">
+        <tr><td style="font-size:17px;line-height:1.75;color:#2b2f2c;padding-bottom:10px;text-align:justify;">
           <parágrafo 1 — o fato, com detalhe técnico: número de norma/acórdão, artigo, data, órgão.
           Use <strong style="color:#181c19;">destaque</strong> para o dado central. Sem travessão.>
         </td></tr>
-        <tr><td style="font-size:15.5px;line-height:1.75;color:#2b2f2c;padding-bottom:10px;text-align:justify;">
+        <tr><td style="font-size:17px;line-height:1.75;color:#2b2f2c;padding-bottom:10px;text-align:justify;">
           <parágrafo 2 — o raciocínio/fundamento técnico por trás, se houver espaço.>
         </td></tr>
-        <tr><td style="font-size:15.5px;line-height:1.75;color:#2b2f2c;padding-bottom:10px;text-align:justify;">
+        <tr><td style="font-size:17px;line-height:1.75;color:#2b2f2c;padding-bottom:10px;text-align:justify;">
           <em style="color:#005E32;">E na prática, o que muda para a Copasul:</em>
           <parágrafo 3 — efeito prático, ancorado na operação real (fiscal, Oracle EBS, cadastro
           de item, apuração, crédito do adquirente) ou "sem efeito direto hoje, mas...".>
         </td></tr>
-        <tr><td style="font-size:15.5px;line-height:1.75;color:#2b2f2c;padding-bottom:14px;text-align:justify;">
+        <tr><td style="font-size:17px;line-height:1.75;color:#2b2f2c;padding-bottom:14px;text-align:justify;">
           <parágrafo 4 (opcional) — desdobramento esperado, contexto histórico, ou a ressalva de
           verificação quando a fonte for única.>
         </td></tr>
         <tr><td>
           <table role="presentation" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF;border-left:3px solid #049444;border-radius:6px;">
-            <tr><td style="padding:11px 15px;font-size:12.5px;font-family:'Poppins',Arial,sans-serif;color:#333333;line-height:1.6;">
+            <tr><td style="padding:11px 15px;font-size:13px;font-family:'Poppins',Arial,sans-serif;color:#333333;line-height:1.6;">
               <strong style="color:#005E32;">Fontes (dupla/múltipla independente | fonte única, tratar com cautela):</strong><br>
               <a href="<URL real>" style="color:#049444;"><nome do veículo, data se relevante></a>
               &nbsp;·&nbsp;
@@ -196,7 +208,7 @@
         </td></tr>
       </table>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:0 0 14px;font-size:15.5px;line-height:1.75;color:#2b2f2c;text-align:justify;">
+        <tr><td style="padding:0 0 14px;font-size:17px;line-height:1.75;color:#2b2f2c;text-align:justify;">
           <parágrafo de síntese (80-150 palavras) — o que os itens do dia têm em comum, sem
           travessão.>
         </td></tr>
@@ -213,7 +225,7 @@
         </td></tr>
       </table>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:0 0 9px;font-size:15px;line-height:1.65;color:#2b2f2c;">
+        <tr><td style="padding:0 0 9px;font-size:16.5px;line-height:1.65;color:#2b2f2c;">
           <span style="color:#049444;">•</span> <o que acompanhar nos próximos dias>
         </td></tr>
       </table>
