@@ -31,9 +31,33 @@ válida e vira o e-mail curto da seção 3.
 
 ### 2. Escrever
 
-Siga `references/redacao.md`. Formato elaborado (10-15 min de leitura),
-organizado por eixo: Tributário, Reforma Tributária, Contabilidade. Cada item
-traz o que mudou, por que importa e a fonte.
+Siga `references/redacao.md` — inclusive a seção "Padrão validado" nele, que
+registra o formato aprovado pelo usuário depois de duas rodadas de teste
+visual. Resumindo o que não se negocia:
+
+- **Prosa desenvolvida, não bullet duplo.** Cada item leva 3 a 5 parágrafos
+  (o que aconteceu com detalhe técnico, por que importa na prática, o que vem
+  a seguir/desdobramento). "O que mudou" + "Por que importa" em uma linha cada
+  é insuficiente — já foi rejeitado uma vez por ser superficial.
+- **Todo "Fonte" é link clicável de verdade**, com a URL real que você abriu
+  ou que apareceu na busca — nunca só o nome do veículo sem `<a href>`. Marque
+  o nível de verificação (`dupla/múltipla independente` ou `fonte única —
+  tratar com cautela`) ao lado de cada link.
+- **Extensão real de 10-15 min** — isso dá, em prosa técnica, algo entre
+  1.800 e 2.800 palavras visíveis (conte com um `<[^>]+>` strip antes de
+  enviar, se tiver como). Não estufe artificialmente; construa isso tendo
+  itens suficientes (normalmente 2 por eixo) escritos com profundidade, mais
+  um parágrafo de abertura editorial e um parágrafo de fechamento ("Para
+  fechar") amarrando os achados do dia.
+- **Elementos visuais reais**, não só cor de fundo: use o banner
+  `estado/newsletter/assets/hero.png` no topo e os selos
+  `icon-tributario.png` / `icon-reforma.png` / `icon-contabilidade.png` ao
+  lado do título de cada seção — todos hospedados via
+  `https://raw.githubusercontent.com/luissantos1102/Valida-o---NCM-RTC_EscritaFiscal/refs/heads/claude/linkedin-content-agent-7hnba3/estado/newsletter/assets/<arquivo>`.
+  Esses assets são estáticos (sem data), reaproveite-os todo dia — só
+  regenere se quiser mudar o design (script de referência: renderize um HTML
+  com a paleta de `bin/temas.py` via `headless_shell` do Chromium, como feito
+  na criação original, documentada no histórico do pacote de testes).
 
 Antes de escrever, leia `estado/newsletter/enviados.json` — não repita, como
 item novo, algo já coberto nos últimos 7 dias. Se o mesmo fato voltar por ter
@@ -42,7 +66,9 @@ não como novidade, e diga isso explicitamente ("como cobrimos em DD/MM...").
 
 ### 3. Enviar
 
-Monte o e-mail com `templates/email_newsletter.html`. Assunto:
+Monte o e-mail com `templates/email_newsletter.html` (cartão HTML em tabelas,
+paleta marinho/âmbar, banner e selos — mesmo padrão validado no teste visual).
+Assunto:
 
 ```
 Newsletter Tributária — <AAAA-MM-DD>
