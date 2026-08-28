@@ -61,11 +61,10 @@ pesquisa de referências reais de newsletter fora do projeto e escolheu uma
 - **Fundo do cartão em `#F9F9F9`** (cinza quase branco, não mais `#D9D9D9`
   nem cartão escuro), sobre página branca. É mais sutil que o cinza médio
   anterior, mas ainda separa visualmente o cartão da página.
-- **Corpo do texto em serifa (Georgia/"Source Serif 4"), não em Poppins.**
-  Títulos e parágrafos usam serifa; só kickers, selos e legendas pequenas
-  continuam em Poppins/Arial. Isso é uma mudança de identidade tipográfica,
-  não só estética: Georgia é nativa de e-mail e não depende de fonte web,
-  ao contrário de Poppins (que é removida no envio de qualquer forma).
+- **Fonte: Arial em tudo.** A versão em serifa (Georgia) durou poucas horas:
+  o usuário pediu a troca de volta para Arial no mesmo dia. Não reintroduza
+  serifa/Georgia nem o `<link>` de Poppins (removido do template) sem
+  pedido explícito.
 - **Sem caixa pesada no corpo do item.** O item é prosa corrida direto sobre
   o cartão (estilo "Editorial"), não uma caixa verde escura nem um bloco
   colorido. "E na prática, o que muda para a Copasul" voltou a ser uma
@@ -77,16 +76,20 @@ pesquisa de referências reais de newsletter fora do projeto e escolheu uma
 - **Cabeçalho com fundo verde mais escuro (`#014726`).** Ajuste feito logo
   depois da aprovação do layout: só o bloco do cabeçalho (kicker, data,
   subtítulo dos eixos) ganhou fundo colorido, com o título grande em branco
-  e os detalhes (kicker e subtítulo em itálico) em amarelo. É o único bloco
-  de cor cheia do layout inteiro; o resto do cartão continua `#F9F9F9`, sem
-  fundo colorido. Não é uma volta ao cartão escuro de ponta a ponta das
-  rodadas 1 e 4, é só o cabeçalho.
+  e o kicker em amarelo. É o único bloco de cor cheia do layout inteiro; o
+  resto do cartão continua `#F9F9F9`, sem fundo colorido. Não é uma volta
+  ao cartão escuro de ponta a ponta das rodadas 1 e 4, é só o cabeçalho.
+- **Subtítulo dos eixos no cabeçalho em branco e negrito** (não amarelo
+  itálico). Corpo de texto (abertura, itens, resumo executivo, Para fechar,
+  Radar) em ~16.5-17px, maior que a versão anterior. Título de cada eixo
+  dentro do cartão (ao lado do selo) é um subtítulo de verdade, negrito,
+  20px, não um kicker pequeno em caixa alta.
 - **Radar voltou a ser lista simples** com bullet verde, não a faixa verde
   cheia da rodada anterior (baseada no e-mail de compliance).
 
 O template já implementa tudo isso; siga a estrutura dele item por item, e
 não reintroduza nenhum elemento das rodadas 1 a 4 (cartão escuro de ponta a
-ponta, caixa verde no corpo do item, faixa verde no Radar, corpo em sans)
+ponta, caixa verde no corpo do item, faixa verde no Radar, serifa/Georgia)
 sem o usuário pedir de novo explicitamente.
 
 Tom: informativo e analítico, como um boletim editorial de escritório

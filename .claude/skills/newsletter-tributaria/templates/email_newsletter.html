@@ -30,9 +30,15 @@
   branco/negrito. O corpo de texto (parágrafo de abertura, itens, resumo
   executivo, Para fechar, Radar) subiu de tamanho (~15-15.5px para 16.5-
   17px). E o título de cada eixo dentro do cartão (ao lado do selo) deixou
-  de ser um kicker pequeno em caixa alta e virou um subtítulo de verdade em
-  serifa, 20px, negrito — ênfase visual real, não mais uma etiqueta
-  discreta.
+  de ser um kicker pequeno em caixa alta e virou um subtítulo de verdade,
+  20px, negrito — ênfase visual real, não mais uma etiqueta discreta.
+
+  AJUSTE 3 (mesmo dia): a fonte do corpo e dos títulos voltou de serifa
+  (Georgia) para Arial. A identidade "Editorial" da 5ª rodada (prosa em
+  serifa) foi abandonada por pedido direto do usuário; Arial passou a ser a
+  única família tipográfica do template, do kicker ao corpo (o `<link>` do
+  Google Fonts/Poppins foi removido do arquivo por não servir mais pra
+  nada). Não reintroduza Georgia/serifa nem Poppins sem pedido explícito.
 
   ATENÇÃO — regras de HTML que não são estéticas, são obrigatórias:
 
@@ -50,10 +56,8 @@
      Resolva com ponto, vírgula, dois-pontos, parênteses ou conectivo.
      Antes de enviar, procure "—" no HTML pronto.
 
-  5. A tag <link> do Google Fonts (Poppins) é removida no envio; o fallback
-     real é Arial. Isso pesa menos agora porque o corpo do texto usa Georgia
-     (serifa nativa, sem depender de fonte web nenhuma) — só os kickers em
-     Poppins dependem do fallback Arial, e isso é cosmético, não estrutural.
+  5. Fonte alvo é Arial em tudo (ver AJUSTE 3) — não há mais `<link>` de
+     Google Fonts neste template, então não há fallback a se preocupar.
 
   Paleta Copasul e a lógica de uso nesta versão:
     #FFFFFF  branco    → página por trás do cartão
@@ -70,10 +74,8 @@
                          parágrafos, um tom mais suave que o título)
     #777777  cinza escuro → texto de legenda/fontes pequenas
 
-  Tipografia: Georgia/'Source Serif 4' (serifa, corpo e títulos), Poppins
-  com fallback Arial (kickers, selos, legendas pequenas). `font-weight` no
-  corpo fica no peso normal do Georgia (não precisa do 600 sintético que a
-  versão em sans precisava para dar corpo ao texto).
+  Tipografia: Arial/'Helvetica Neue' em tudo (títulos, corpo, kickers,
+  selos, legendas). Sem serifa nesta versão.
 
   Largura: cartão em 840px.
 
@@ -82,8 +84,7 @@
   Apague as seções de eixo sem conteúdo no dia. Em dia sem novidade, use só
   o bloco "Dia sem novidade" no fim deste arquivo.
 -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<body style="margin:0;padding:32px 16px;background-color:#FFFFFF;font-family:Georgia,'Source Serif 4',serif;">
+<body style="margin:0;padding:32px 16px;background-color:#FFFFFF;font-family:Arial,'Helvetica Neue',sans-serif;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:840px;margin:0 auto;">
 <tr><td>
 
@@ -94,13 +95,13 @@
          escuro, título grande em branco, detalhes (kicker e subtítulo) em
          amarelo. O resto do cartão continua em #F9F9F9, sem cor de fundo. -->
     <tr><td style="background-color:#014726;padding:36px 44px;">
-      <div style="font:700 11px/1 'Poppins',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FFDD21;margin-bottom:10px;">
+      <div style="font:700 11px/1 Arial,'Helvetica Neue',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FFDD21;margin-bottom:10px;">
         Newsletter Tributária
       </div>
-      <div style="font:700 30px/1.25 Georgia,'Source Serif 4',serif;color:#FFFFFF;margin-bottom:6px;">
+      <div style="font:700 30px/1.25 Arial,'Helvetica Neue',sans-serif;color:#FFFFFF;margin-bottom:6px;">
         <data por extenso, ex: 28 de agosto de 2026.>
       </div>
-      <div style="font-weight:700;font-size:15px;color:#FFFFFF;font-family:Georgia,'Source Serif 4',serif;">
+      <div style="font-weight:700;font-size:15px;color:#FFFFFF;font-family:Arial,'Helvetica Neue',sans-serif;">
         Direito Tributário · Reforma Tributária · Contabilidade
       </div>
     </td></tr>
@@ -109,7 +110,7 @@
       <!-- só quando o pré-voo acusou modo degradado -->
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
              style="background-color:#FFFFFF;border-left:3px solid #049444;border-radius:6px;margin-bottom:26px;">
-        <tr><td style="padding:13px 17px;font-size:14px;font-family:'Poppins',Arial,sans-serif;color:#333333;line-height:1.5;">
+        <tr><td style="padding:13px 17px;font-size:14px;font-family:Arial,'Helvetica Neue',sans-serif;color:#333333;line-height:1.5;">
           <strong style="color:#005E32;">Aviso de verificação:</strong> edição em modo degradado, com itens sem dupla fonte
           independente marcados como não confirmados.
         </td></tr>
@@ -124,11 +125,11 @@
 
     <!-- RESUMO EXECUTIVO -->
     <tr><td style="padding:16px 44px 8px;">
-      <div style="font:700 11px/1 'Poppins',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#005E32;margin-bottom:12px;">
+      <div style="font:700 11px/1 Arial,'Helvetica Neue',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#005E32;margin-bottom:12px;">
         Resumo executivo
       </div>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:0 0 9px;font-size:16.5px;font-family:'Poppins',Arial,sans-serif;line-height:1.5;color:#181c19;">
+        <tr><td style="padding:0 0 9px;font-size:16.5px;font-family:Arial,'Helvetica Neue',sans-serif;line-height:1.5;color:#181c19;">
           <span style="color:#049444;font-weight:700;">→</span> <item 1 em uma linha, com número de norma/acórdão quando houver>
         </td></tr>
         <!-- repita por item; 5-7 bullets é o normal -->
@@ -145,7 +146,7 @@
             <table role="presentation" cellpadding="0" cellspacing="0" width="28" height="28"
                    style="width:28px;height:28px;border-radius:50%;background-color:#049444;">
               <tr><td align="center" valign="middle"
-                      style="font:700 13px/28px 'Poppins',Arial,sans-serif;color:#FFFFFF;text-align:center;">
+                      style="font:700 13px/28px Arial,'Helvetica Neue',sans-serif;color:#FFFFFF;text-align:center;">
                 T
               </td></tr>
             </table>
@@ -154,7 +155,7 @@
             <!-- Título do eixo: destaque de verdade (não é kicker pequeno como
                  "Resumo executivo"/"Radar") — pedido do usuário para dar mais
                  ênfase visual ao nome de cada tema. -->
-            <div style="font:700 20px/1.2 Georgia,'Source Serif 4',serif;color:#005E32;">
+            <div style="font:700 20px/1.2 Arial,'Helvetica Neue',sans-serif;color:#005E32;">
               Direito Tributário
             </div>
           </td>
@@ -163,7 +164,7 @@
 
       <!-- ITEM — 3 a 5 parágrafos em prosa corrida, sem caixa -->
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
-        <tr><td style="font:700 21px/1.3 Georgia,'Source Serif 4',serif;color:#181c19;padding:14px 0 12px;">
+        <tr><td style="font:700 21px/1.3 Arial,'Helvetica Neue',sans-serif;color:#181c19;padding:14px 0 12px;">
           <!-- prefixe com "[projeto] " quando tipo=projeto_proposta -->
           <título do item>
         </td></tr>
@@ -185,7 +186,7 @@
         </td></tr>
         <tr><td>
           <table role="presentation" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF;border-left:3px solid #049444;border-radius:6px;">
-            <tr><td style="padding:11px 15px;font-size:13px;font-family:'Poppins',Arial,sans-serif;color:#333333;line-height:1.6;">
+            <tr><td style="padding:11px 15px;font-size:13px;font-family:Arial,'Helvetica Neue',sans-serif;color:#333333;line-height:1.6;">
               <strong style="color:#005E32;">Fontes (dupla/múltipla independente | fonte única, tratar com cautela):</strong><br>
               <a href="<URL real>" style="color:#049444;"><nome do veículo, data se relevante></a>
               &nbsp;·&nbsp;
@@ -202,7 +203,7 @@
     <tr><td style="padding:4px 44px 0;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #FFFFFF;">
         <tr><td style="padding:24px 0 12px;">
-          <div style="font:700 11px/1 'Poppins',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#005E32;">
+          <div style="font:700 11px/1 Arial,'Helvetica Neue',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#005E32;">
             Para fechar
           </div>
         </td></tr>
@@ -219,7 +220,7 @@
     <tr><td style="padding:4px 44px 8px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #FFFFFF;">
         <tr><td style="padding:24px 0 12px;">
-          <div style="font:700 11px/1 'Poppins',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#005E32;">
+          <div style="font:700 11px/1 Arial,'Helvetica Neue',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#005E32;">
             Radar
           </div>
         </td></tr>
@@ -233,7 +234,7 @@
 
     <!-- RODAPÉ -->
     <tr><td style="padding:26px 44px 32px;border-top:1px solid #FFFFFF;">
-      <div style="font-size:12px;font-family:'Poppins',Arial,sans-serif;color:#777777;line-height:1.6;">
+      <div style="font-size:12px;font-family:Arial,'Helvetica Neue',sans-serif;color:#777777;line-height:1.6;">
         Newsletter automática · varredura das últimas 24h em fontes primárias e
         imprensa especializada · Luis Santos
       </div>
