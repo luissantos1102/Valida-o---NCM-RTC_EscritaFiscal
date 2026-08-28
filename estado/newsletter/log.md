@@ -14,3 +14,13 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   `enviados.json` não foi atualizado com esses itens — são teste, não edição
   real; a primeira edição de produção (Routine de amanhã) começa o dedup do
   zero.
+
+- **2026-08-28 02:00 UTC — rodada 4 (final) de teste visual.** Causa raiz
+  encontrada: `mcp__Gmail__send_message` remove toda tag `<img>` do HTML
+  antes de enviar (testado com link externo e com anexo inline via
+  Content-ID — ambos removidos) e remove a propriedade CSS `background`
+  (mas preserva `background-color`). Template, SKILL.md e redacao.md
+  atualizados para nunca usar `<img>` e sempre `background-color`. Selos de
+  seção agora são círculos em CSS puro. Confirmado por leitura do HTML
+  entregue (get_thread): cartão escuro e os três círculos T/R/C sobreviveram
+  intactos nesta rodada. Este é o padrão definitivo a partir de agora.
