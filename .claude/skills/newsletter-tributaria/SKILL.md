@@ -1,0 +1,81 @@
+---
+name: newsletter-tributaria
+description: Produz a newsletter diária de Luis Santos sobre Direito Tributário, Reforma Tributária e Contabilidade (varredura das últimas 24h em fontes primárias e imprensa especializada, redação elaborada de 10-15 min de leitura) e envia por e-mail — sem fluxo de aprovação, é conteúdo de consumo próprio. Use quando a Routine "Newsletter Tributária — Produção Diária" disparar, ou quando o usuário pedir para "rodar a newsletter", "produzir a newsletter tributária" ou "mandar o resumo do dia".
+---
+
+# Newsletter diária — Tributário, Reforma Tributária e Contabilidade
+
+Diferente do `linkedin-pipeline`, esta é **para consumo próprio de Luis Santos**,
+não para publicação pública. Isso muda duas coisas: não há fluxo de aprovação —
+o e-mail sai direto — e a cobertura é ampla (tudo que é relevante), não filtrada
+por potencial de post.
+
+Destinatário: **luis.santos@copasul.coop.br** (mesmo e-mail da rotina do LinkedIn).
+
+## Execução
+
+Rode as 3 etapas na ordem. Uma execução = um e-mail. Sempre termina com o envio
+— mesmo em dia sem novidade, o e-mail curto de "dia tranquilo" conta como
+conclusão do ciclo.
+
+### 1. Pré-voo e pesquisar
+
+Comece por `bash bin/preflight.sh` (mesmo script do pipeline do LinkedIn — cobre
+as fontes primárias de tributário e, agora, `cfc.org.br` para contabilidade).
+Depois siga `references/pesquisa.md`, inclusive a seção "Modo degradado" se o
+pré-voo acusar bloqueio.
+
+Janela: **últimas 24h**, contadas da data/hora de execução. Nada de recuar a
+janela para "sempre ter conteúdo" — dia sem novidade normativa é informação
+válida e vira o e-mail curto da seção 3.
+
+### 2. Escrever
+
+Siga `references/redacao.md`. Formato elaborado (10-15 min de leitura),
+organizado por eixo: Tributário, Reforma Tributária, Contabilidade. Cada item
+traz o que mudou, por que importa e a fonte.
+
+Antes de escrever, leia `estado/newsletter/enviados.json` — não repita, como
+item novo, algo já coberto nos últimos 7 dias. Se o mesmo fato voltar por ter
+ganhado desdobramento (ex.: um projeto virou norma), trate como atualização,
+não como novidade, e diga isso explicitamente ("como cobrimos em DD/MM...").
+
+### 3. Enviar
+
+Monte o e-mail com `templates/email_newsletter.html`. Assunto:
+
+```
+Newsletter Tributária — <AAAA-MM-DD>
+```
+
+Envie via `mcp__Gmail__send_message` direto para luis.santos@copasul.coop.br —
+**sem esperar resposta, sem fluxo de aprovação**. Depois:
+
+1. Acrescente uma linha em `estado/newsletter/log.md`: data/hora, quantos itens,
+   eixos cobertos, se saiu em modo completo ou degradado.
+2. Atualize `estado/newsletter/enviados.json` com os itens novos desta edição
+   (título curto + data + fonte), removendo entradas com mais de 7 dias.
+3. Commite e faça push no branch de trabalho.
+
+Não agende monitoramento de resposta — esta skill não tem ciclo de aprovação,
+encerra no envio.
+
+## Dia sem novidade
+
+Se a varredura de 24h não encontrar nenhum fato normativo novo nos três eixos,
+não force pauta. Envie um e-mail curto avisando o dia tranquilo, com no máximo
+um parágrafo de contexto (ex.: "nada publicado nas últimas 24h; o radar segue
+em: <2-3 itens pendentes de regulamentação a acompanhar>"). Isso conta como
+edição enviada — registre e feche o ciclo normalmente.
+
+## Invariantes
+
+- Uma execução = um e-mail. Nunca envie duas edições no mesmo dia.
+- Toda afirmação normativa carrega a fonte (número, órgão, data), no nível de
+  verificação que o ambiente permitiu — em modo degradado, o e-mail abre
+  avisando isso.
+- Sem fluxo de aprovação: o conteúdo vai direto ao e-mail. Não invente fluxo de
+  aprovação nem espere resposta do usuário para considerar o ciclo concluído.
+- Se `AVISO=SEM_PERSISTENCIA` aparecer no pré-voo, avise no rodapé do e-mail:
+  o dedup de 7 dias pode repetir itens até a persistência ser corrigida
+  (repositório em "Select repositories" na configuração da Routine).

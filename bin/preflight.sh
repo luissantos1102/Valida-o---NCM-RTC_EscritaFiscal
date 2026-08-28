@@ -13,12 +13,14 @@ PRIMARIAS=(
   portal.stf.jus.br
   www.stj.jus.br
   www.confaz.fazenda.gov.br
+  cfc.org.br               # Conselho Federal de Contabilidade — NBCs
 )
 IMPRENSA=(
   www.conjur.com.br
   www.jota.info
   www.migalhas.com.br
   www.contabeis.com.br
+  valor.globo.com
 )
 
 testa() {
