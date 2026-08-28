@@ -157,3 +157,36 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   esta execução não gerou pesquisa nem novo e-mail; nenhuma alteração em
   `enviados.json`. Próximo disparo da rotina deve produzir a edição de
   amanhã normalmente.
+
+- **2026-08-28 (fim de tarde) — 6ª geração de layout: verde Copasul sobre a
+  edição real.** Usuário anexou o PDF da própria 1ª edição de produção do
+  dia (enviada de manhã, thread `1a047e917f5d0c36`, ainda no template
+  marinho/âmbar herdado do LinkedIn) e pediu duas versões idênticas, só
+  trocando o azul do fundo do cartão por verde: `#184B44` e `#013220`.
+  Montada uma vitrine (artifact) com as duas réplicas; usuário escolheu
+  `#013220`. Rodadas seguintes de ajuste, todas no mesmo dia: fonte
+  Arial (com a exceção do título do cabeçalho, mantido em Georgia a
+  pedido), "E na prática, o que muda para a Copasul" virou linha própria
+  em caixa alta e negrito, zero travessão (reescrita de todo o texto
+  herdado do e-mail original, que tinha vários), painéis internos trocados
+  do azul original para verde V3 (`#1B5E42`/borda `#2F8C63`, entre 4
+  opções apresentadas), destaques de dado-chave restaurados em âmbar
+  (tinham se perdido na reescrita sem travessão), título de eixo maior
+  (12px → 17px), cartão alargado de 660px para 890px, texto justificado,
+  cor do corpo trocada de cinza apagado (`#A9BACB`) para quase-branco
+  (`#F2F5F8`), título do cabeçalho com os nomes por extenso
+  ("Direito Tributário · Reforma Tributária · Contabilidade") reduzido
+  para caber em uma linha. Na revisão por e-mail, usuário reportou cores
+  "muito diferentes"; investigado via `get_thread` e descoberta a causa
+  real: o Gmail autolinkifica menções de domínio em texto puro (ex.:
+  "planalto.gov.br") com o azul padrão dele, ilegível sobre fundo escuro,
+  mesmo com o HTML enviado batendo 100% com o template. Corrigido
+  transformando toda menção de domínio em `<a href>` real com
+  `color:#D6A544` explícito. Testes finais enviados nas threads
+  `1a049ba5e84fa118` e `1a049bfcc4a2bf07` (esta última já com os links
+  corrigidos), ambos confirmados entregues em tamanho completo (~22 KB).
+  **`templates/email_newsletter.html` foi reescrito do zero** para essa
+  6ª geração (a versão anterior, cartão `#F9F9F9` em serifa, nunca tinha
+  sido portada do rascunho de teste pro arquivo real do projeto — só
+  existia nos artifacts da conversa). `references/redacao.md` e
+  `SKILL.md` atualizados. Este é o padrão de produção a partir de agora.
