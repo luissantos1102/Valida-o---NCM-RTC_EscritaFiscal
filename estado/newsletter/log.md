@@ -146,3 +146,14 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   cartão continua `#F9F9F9` sem fundo colorido. `templates/email_newsletter.html`
   e `references/redacao.md` atualizados. Teste enviado na thread
   1a0489f45f6db51b, confirmado entregue em tamanho completo (7,9 KB).
+
+- **2026-08-28 17:09 UTC — execução agendada, sem envio (invariante "um
+  e-mail por dia").** Rotina disparou pedindo a edição de hoje, mas a
+  varredura deste log mostra que a 1ª edição de produção do dia já havia
+  sido enviada (thread `1a047e917f5d0c36`, itens já registrados em
+  `enviados.json` com `enviado_em: 2026-08-28`), e o relógio do sistema
+  confirma que ainda é 2026-08-28 (17:09 UTC), mesmo dia calendário. Como o
+  invariante da skill veda expressamente uma segunda edição no mesmo dia,
+  esta execução não gerou pesquisa nem novo e-mail; nenhuma alteração em
+  `enviados.json`. Próximo disparo da rotina deve produzir a edição de
+  amanhã normalmente.
