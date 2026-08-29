@@ -190,3 +190,23 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   sido portada do rascunho de teste pro arquivo real do projeto — só
   existia nos artifacts da conversa). `references/redacao.md` e
   `SKILL.md` atualizados. Este é o padrão de produção a partir de agora.
+
+- **2026-08-29 10:56 UTC — 2ª edição de produção.** Modo: completo (3/8
+  fontes primárias alcançáveis no pré-voo: gov.br, cgibs.gov.br e
+  cfc.org.br OK; planalto.gov.br, in.gov.br, portal.stf.jus.br,
+  confaz.fazenda.gov.br bloqueados com http=000, stj.jus.br com HTTP 403;
+  imprensa especializada 100% alcançável). 2 itens, ambos em Direito
+  Tributário: (1) IN RFB 2.339/2026, que altera a IN RFB 2.316/2026 e
+  ajusta o domínio "Consistência" do Programa Sintonia (verificação
+  primária, fonte aberta em gov.br); (2) LC 235/2026, que reduz tributos
+  federais sobre combustíveis e cria subsídio para etanol e crédito para
+  fertilizantes, em resposta ao choque de preços do conflito no Oriente
+  Médio (verificação dupla_secundaria: planalto.gov.br/in.gov.br
+  inacessíveis nesta sessão, número e termos confirmados de forma cruzada
+  em notas do Senado e da Câmara, com reforço de imprensa; e-mail traz
+  ressalva de verificação explícita no item e no radar). Reforma
+  Tributária (IBS/CBS) e Contabilidade: 0 itens na janela de 24h, seções
+  omitidas. Layout: template verde Copasul (6ª geração) do dia anterior
+  usado sem alterações. E-mail enviado para luis.santos@copasul.coop.br,
+  thread `1a04d29c64c1b33c`, confirmado entregue em tamanho completo
+  (21,3 KB) via `get_thread`.
