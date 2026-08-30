@@ -210,3 +210,28 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   usado sem alterações. E-mail enviado para luis.santos@copasul.coop.br,
   thread `1a04d29c64c1b33c`, confirmado entregue em tamanho completo
   (21,3 KB) via `get_thread`.
+
+- **2026-08-30 12:25 UTC — 3ª edição de produção, "dia sem novidade".**
+  Pré-voo: `MODO=COMPLETO` (limiar `ok_p>=3`; na prática só 3/8 fontes
+  primárias alcançáveis: gov.br, cgibs.gov.br, cfc.org.br OK; planalto.gov.br,
+  in.gov.br, portal.stf.jus.br, stj.jus.br e confaz.fazenda.gov.br
+  bloqueados). Pesquisa delegada ao agente `pesquisador-fiscal`: 29 e
+  30/08/2026 caíram em sábado e domingo, sem publicação no DOU nem ato novo
+  de RFB, CARF ou CFC nas últimas 24h, confirmado por varredura direta das
+  páginas de notícias de cada órgão. Os achados mais recentes localizados
+  (27 e 28/08) já constavam em `enviados.json` (RFB/Malha Fiscal PIS-Cofins,
+  CARF/Fomentar-GO, IN RFB 2.339/2026, LC 235/2026) ou ficaram fora da
+  janela de 24h. Nenhum item novo verificável nos três eixos: seguiu a
+  seção "Dia sem novidade" da skill, sem forçar pauta. `enviados.json` não
+  foi alterado nesta edição (nenhum item novo a registrar; as entradas
+  existentes seguem dentro dos 7 dias). E-mail curto enviado, com um
+  parágrafo de contexto e Radar com 3 itens pendentes de desdobramento
+  (PLP 108/2024 no Senado, efeitos práticos do julgamento do STF de 26/08
+  sobre voto de qualidade no CARF, debate do modelo do Simples Nacional
+  2027 híbrido/puro). Bloqueio adicional identificado pelo agente, fora da
+  lista do preflight: `www.camara.leg.br` (EGRESS_BLOCKED); e as
+  ferramentas `mcp__Jusratio__pesquisar_documentos` e
+  `mcp__Jusratio__informativo_juridico` não estavam registradas nesta
+  sessão, limitando a cobertura independente de STF/STJ. E-mail enviado
+  para luis.santos@copasul.coop.br, thread `1a052a17f36d4606`, confirmado
+  entregue em tamanho completo (5,6 KB) via `get_thread`.
