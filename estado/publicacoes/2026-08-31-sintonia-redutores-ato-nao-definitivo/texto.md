@@ -1,19 +1,17 @@
-A Receita Federal publicou no DOU de 28 de agosto a IN RFB nº 2.339/2026, que altera o Programa Sintonia. Por ela, perde-se nota por atos que ainda não são definitivos.
+A Receita classifica cada empresa de A+ a D conforme o grau de conformidade. Quem chega em A+ leva o Selo Sintonia e, com ele, desconto de até 3% na CSLL. A IN RFB nº 2.339/2026 mudou como se perde essa nota.
 
-A instrução cria dois redutores no domínio Consistência. O item 4.1.6 reduz 0,05 na nota quando o contribuinte é fiscalizado e o procedimento se encerra com constituição de crédito tributário. O item 4.1.7 reduz 0,2 quando há representação penal formalizada.
+A nota vem de quatro domínios: Cadastro, Declarações, Consistência e Pagamento. Consistência pesa o dobro dos outros (IN RFB nº 2.316/2026, art. 6º, § 4º). É nele que a nova instrução criou dois redutores: 0,05 se a fiscalização terminar com crédito tributário constituído, 0,2 se houver representação penal formalizada.
 
-O mesmo ato admitiu divulgação de nova classificação fora do prazo ordinário (art. 9º, § 4º) e fixou em um ano a validade do Selo Sintonia (art. 10, § 2º).
+Nenhum dos dois eventos é definitivo. Crédito constituído ainda comporta impugnação. Representação penal é encaminhamento ao Ministério Público, não condenação. A nota cai antes de qualquer decisão.
 
-A questão é o momento do efeito. Crédito constituído não é crédito definitivo, porque a impugnação ainda corre. Representação penal formalizada é encaminhamento ao Ministério Público, não condenação. Ainda assim, as duas já rebaixam a nota.
+O problema está na saída. O pedido de revisão da classificação só cabe para erro material, e o art. 17, § 1º exclui dele, expressamente, a impugnação de lançamento. E o redutor só é desconsiderado se o lançamento for anulado ou julgado totalmente improcedente.
 
-A própria instrução admite a provisoriedade. O item 4.1.6.1 manda desconsiderar o redutor se o lançamento for anulado ou julgado totalmente improcedente. O art. 14, § 4º manda restabelecer o benefício se a conduta não se confirmar.
+Enquanto o processo corre, então, não há porta: uma via não trata do assunto, a outra ainda não decidiu. A instrução admite que o pressuposto pode cair, mas escolheu quem espera. E procedência parcial, o desfecho mais comum, mantém o redutor inteiro.
 
-O que ela não faz é suspender o efeito até a decisão. O contribuinte é rebaixado primeiro e reabilitado depois, e o tempo do contencioso corre contra ele. E o indício pesa quatro vezes mais que o crédito constituído.
+No fechamento fiscal isso cria uma vigilância nova: encerramento de fiscalização e despacho decisório passam a mexer em um indicador, não só em um processo.
 
-Na rotina fiscal, muda o que se monitora: a nota passa a depender de eventos de fiscalização, que chegam por canais distintos da apuração.
+A assimetria está no Anexo Único, não na LC nº 225/2026. Para quem acompanha contencioso, fica a pergunta: um redutor por lançamento ainda sob impugnação cabe num programa que se diz de estímulo?
 
-Vale acompanhar como a Receita tratará o pedido de revisão da classificação (art. 17) com o mérito ainda pendente no contencioso. Quem já teve nota rebaixada por lançamento sob impugnação: o pedido foi conhecido?
-
-Fontes: IN RFB nº 2.339/2026 (DOU de 28/08/2026, Seção 1, p. 62), que altera a IN RFB nº 2.316/2026; LC nº 225/2026.
+Fontes: IN RFB nº 2.339/2026 (DOU de 28/08/2026, Seção 1, p. 62), que altera a IN RFB nº 2.316/2026 (arts. 6º, 8º, 12, 14 e 17); LC nº 225/2026.
 
 #DireitoTributário #ConformidadeTributária #ReceitaFederal #GestãoFiscal #Sintonia

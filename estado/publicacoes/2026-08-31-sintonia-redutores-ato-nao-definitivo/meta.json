@@ -1,21 +1,32 @@
 {
   "slug": "sintonia-redutores-ato-nao-definitivo",
-  "tema": "IN RFB 2.339/2026: o Sintonia rebaixa a nota por ato que ainda não é definitivo",
+  "tema": "IN RFB 2.339/2026: a nota do Sintonia cai antes de a decisão sair",
   "eixo": "tributario",
   "data_producao": "2026-08-31",
   "data_agendamento": "2026-09-01T17:30:00-04:00",
   "status": "aguardando_aprovacao",
-  "rodada": 1,
-  "assunto_email": "[LinkedIn] Aprovação — Sintonia e ato não definitivo — 2026-08-31",
+  "rodada": 2,
+  "assunto_email": "[LinkedIn] Aprovação — Sintonia e ato não definitivo — 2026-08-31 (rev. 2)",
   "thread_id": "1a0582caf2beb194",
   "desvio_justificado": "Eixo sugerido pelo rodízio era o empresarial (dívida 2 e dois posts tributários em sequência). Não houve fato normativo empresarial nem contratual na janela de 26 a 31/08, após duas buscas dedicadas e varredura do DOU e da imprensa. Melhor candidato do eixo sugerido: 0 pontos; escolhido: 56. Diferença acima dos 10 pontos exigidos por rotacao.md. Empresarial sobe ao topo da fila_prioritaria, imune a novo desvio.",
   "link_primeiro_comentario": null,
   "pontuacao": 56,
   "formato_criativo": "carrossel",
-  "n_slides": 6,
-  "caracteres_texto": 1834,
+  "n_slides": 7,
+  "caracteres_texto": 1829,
   "criativo_via": "bin/carrossel.py",
   "template": "dossie",
-  "verificacao_fonte_primaria": "PRIMARIA — texto integral da IN RFB nº 2.339/2026 aberto e conferido no DOU (in.gov.br, Seção 1 de 28/08/2026, p. 62); ementa e data da IN RFB nº 2.316/2026 conferidas no SIJUT/RFB; LC nº 225/2026 e demais leis citadas apenas como nomeadas no preâmbulo e no corpo da própria IN lida. Não foram citadas normas do CTN nem da CF porque planalto.gov.br está bloqueado neste ambiente.",
-  "modo_execucao": "COMPLETO"
+  "verificacao_fonte_primaria": "PRIMARIA — texto integral da IN RFB nº 2.339/2026 (DOU de 28/08/2026, Seção 1, p. 62) e da IN RFB nº 2.316/2026 (DOU de 27/03/2026) abertos e conferidos no DOU via in.gov.br. Escala A+ a D (art. 8º), pesos dos domínios (art. 6º, § 4º), Selo Sintonia (art. 10), bônus de adimplência de até 3% na CSLL (arts. 12 e 13) e limites do pedido de revisão (art. 17, § 1º) conferidos no texto oficial. Nenhuma norma do CTN ou da CF citada, porque planalto.gov.br está bloqueado neste ambiente.",
+  "modo_execucao": "COMPLETO",
+  "historico_rodadas": [
+    {
+      "rodada": 1,
+      "resultado": "REFAZER",
+      "critica": "muito difícil de entender; sugeriu mudar de tema ou escrever texto e slides de forma mais didática"
+    },
+    {
+      "rodada": 2,
+      "mudanca": "mantido o tema; texto e carrossel reescritos em chave didática, explicando o programa antes dos redutores. Tese reforçada com o art. 17, § 1º da IN 2.316/2026, que exclui a impugnação de lançamento do pedido de revisão da classificação."
+    }
+  ]
 }
