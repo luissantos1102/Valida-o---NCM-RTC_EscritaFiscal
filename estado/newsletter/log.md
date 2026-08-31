@@ -235,3 +235,31 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   sessão, limitando a cobertura independente de STF/STJ. E-mail enviado
   para luis.santos@copasul.coop.br, thread `1a052a17f36d4606`, confirmado
   entregue em tamanho completo (5,6 KB) via `get_thread`.
+
+- **2026-08-31 14:15 UTC — 4ª edição de produção, "dia sem novidade".**
+  Pré-voo: `MODO=COMPLETO` (3/8 fontes primárias alcançáveis: gov.br,
+  cgibs.gov.br, cfc.org.br OK; planalto.gov.br, in.gov.br, portal.stf.jus.br
+  e confaz.fazenda.gov.br bloqueados com http=000, stj.jus.br com HTTP 403;
+  toda a imprensa especializada acessível). Pesquisa delegada ao agente
+  `pesquisador-fiscal`: nenhum fato normativo novo nos três eixos na janela
+  de 24h (30 a 31/08). Achados reais localizados ficaram fora da janela
+  (ADE CORAT 63/2026 de 26/08, Soluções de Consulta RFB 154 e 155 de 20/08,
+  Resolução CGSN 186/2026 e julgamento do STF sobre voto de qualidade no
+  CARF, ambos de 26/08, sem desdobramento novo) ou eram apenas prazos de
+  agenda recorrente (vencimentos de 31/08 já previstos em norma
+  preexistente). Confirmado também que o item de radar "PLP 108/2024 no
+  Senado" estava desatualizado: o projeto já virou LC 227/2026 há meses,
+  sem tramitação nova a reportar. `mcp__Jusratio__pesquisar_documentos` e
+  `mcp__Jusratio__informativo_juridico` não estavam registrados nesta
+  sessão; `valor.globo.com` e `jota.info` não serviram como fonte
+  confiável via WebFetch (falha de rede e conteúdo carregado via JS,
+  respectivamente), sem impacto no resultado porque não havia achado a
+  confirmar por essas vias. Seguiu a seção "Dia sem novidade" da skill,
+  sem forçar pauta; `enviados.json` não foi alterado (nenhum item novo;
+  entradas existentes seguem dentro dos 7 dias). E-mail curto enviado com
+  um parágrafo de contexto e Radar com 3 itens atualizados (janela do
+  Simples Nacional 2027 híbrido/puro em setembro, acórdão pendente do STF
+  sobre voto de qualidade no CARF, agenda tributária de setembro via ADE
+  CORAT 63/2026). E-mail enviado para luis.santos@copasul.coop.br, thread
+  `1a0582ca33b9176f`, confirmado entregue em tamanho completo (5,5 KB) via
+  `get_thread`.
