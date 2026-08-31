@@ -17,3 +17,14 @@
 - 2026-08-31 — criativo: 6 slides 1080x1350, template `dossie` (o anterior foi
   `editorial`). Capa, slide de dados e slide mais denso conferidos visualmente.
 - 2026-08-31 — rodada 1 enviada para aprovação em luis.santos@copasul.coop.br.
+- 2026-08-31, ~11h30 (UTC-4) — e-mail rodada 1 enviado. Assunto:
+  "[LinkedIn] Aprovação — Sintonia e ato não definitivo — 2026-08-31".
+  thread_id do Gmail: 1a0582caf2beb194. Monitoramento agendado para 30 minutos
+  (skill `linkedin-aprovacao`).
+- 2026-08-31 — ATENÇÃO: a ferramenta `send_later` (MCP claude-code-remote) que o
+  protocolo manda usar **não existe neste ambiente**. O monitoramento foi agendado
+  pelo substituto disponível, `CronCreate` (one-shot 14:46 UTC, job 1a9e7b1b), que
+  é **session-only**: não é gravado em disco e morre junto com a sessão. Como esta
+  é uma Routine remota em container efêmero, o check-in de 30 minutos provavelmente
+  **não vai disparar**. A aprovação precisa ser retomada à mão, ou o conector
+  claude-code-remote precisa ser habilitado na Routine.
