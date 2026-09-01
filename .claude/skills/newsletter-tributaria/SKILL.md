@@ -1,16 +1,19 @@
 ---
 name: newsletter-tributaria
-description: Produz a newsletter diária de Luis Santos sobre Direito Tributário, Reforma Tributária e Contabilidade (varredura das últimas 24h em fontes primárias e imprensa especializada, redação elaborada de 10-15 min de leitura) e envia por e-mail — sem fluxo de aprovação, é conteúdo de consumo próprio. Use quando a Routine "Newsletter Tributária — Produção Diária" disparar, ou quando o usuário pedir para "rodar a newsletter", "produzir a newsletter tributária" ou "mandar o resumo do dia".
+description: Produz a newsletter diária de Luis Santos sobre Direito Tributário, Reforma Tributária e Contabilidade (varredura das últimas 24h em fontes primárias e imprensa especializada, redação elaborada de 10-15 min de leitura) e envia por e-mail. O envio a Luis é direto, sem aprovação; a distribuição para a equipe depende da decisão dele na mesma thread (skill `newsletter-aprovacao`). Use quando a Routine "Newsletter Tributária — Produção Diária" disparar, ou quando o usuário pedir para "rodar a newsletter", "produzir a newsletter tributária" ou "mandar o resumo do dia".
 ---
 
 # Newsletter diária — Tributário, Reforma Tributária e Contabilidade
 
-Diferente do `linkedin-pipeline`, esta é **para consumo próprio de Luis Santos**,
-não para publicação pública. Isso muda duas coisas: não há fluxo de aprovação —
-o e-mail sai direto — e a cobertura é ampla (tudo que é relevante), não filtrada
-por potencial de post.
+Diferente do `linkedin-pipeline`, o envio a Luis Santos é direto, sem aprovação —
+a cobertura é ampla (tudo que é relevante), não filtrada por potencial de post.
+Existe, porém, uma segunda etapa: a **distribuição para a equipe**, que depende
+da decisão de Luis na mesma thread (ver seção "Distribuição para a equipe" e a
+skill `newsletter-aprovacao`).
 
-Destinatário: **luis.santos@copasul.coop.br** (mesmo e-mail da rotina do LinkedIn).
+Destinatário do envio direto: **luis.santos@copasul.coop.br** (mesmo e-mail da
+rotina do LinkedIn). Destinatário da distribuição, só se aprovada:
+**escritafiscal.centralizada@copasul.coop.br**.
 
 ## Execução
 
@@ -104,17 +107,47 @@ de várias rodadas de teste visual). Assunto:
 Newsletter Tributária — <AAAA-MM-DD>
 ```
 
+O template inclui, logo abaixo do título, o painel fixo "Como decidir a
+distribuição" — nunca remova esse bloco. É ele que explica a Luis que pode
+responder **ENVIAR** (manda para a equipe) ou **Não enviar** (fica só com ele),
+na mesma thread.
+
 Envie via `mcp__Gmail__send_message` direto para luis.santos@copasul.coop.br —
-**sem esperar resposta, sem fluxo de aprovação**. Depois:
+**sem esperar resposta para este envio**, ele já sai direto. Guarde o `id` da
+mensagem enviada (não só o `threadId`) — é ele que a etapa de distribuição usa
+para encaminhar por `mcp__Gmail__forward`. Depois:
 
 1. Acrescente uma linha em `estado/newsletter/log.md`: data/hora, quantos itens,
    eixos cobertos, se saiu em modo completo ou degradado.
 2. Atualize `estado/newsletter/enviados.json` com os itens novos desta edição
    (título curto + data + fonte), removendo entradas com mais de 7 dias.
-3. Commite e faça push no branch de trabalho.
+3. Crie `estado/newsletter/aprovacoes/<AAAA-MM-DD>/meta.json`:
+   ```json
+   {
+     "data": "<AAAA-MM-DD>",
+     "thread_id": "<threadId retornado pelo envio>",
+     "message_id": "<id da mensagem enviada>",
+     "assunto": "Newsletter Tributária — <AAAA-MM-DD>",
+     "enviado_luis_em": "<timestamp ISO do envio>",
+     "status": "aguardando_decisao"
+   }
+   ```
+4. Agende o próprio retorno com `send_later` (MCP claude-code-remote),
+   `delay_minutes: 30`, com uma mensagem instruindo a invocar a skill
+   `newsletter-aprovacao` para a data de hoje. Encerre o turno — nada de
+   espera ativa.
+5. Commite e faça push no branch de trabalho.
 
-Não agende monitoramento de resposta — esta skill não tem ciclo de aprovação,
-encerra no envio.
+## Distribuição para a equipe
+
+Ver `newsletter-aprovacao` para o ciclo completo (classificação da resposta,
+cadência de check-in, encaminhamento). Regras que valem já nesta etapa:
+
+- A distribuição é **opt-in por dia**: sem resposta inequívoca de Luis, a
+  newsletter nunca sai da caixa dele. Silêncio nunca é "ENVIAR".
+- A janela de decisão é o próprio dia: 7h às 19h (Campo Grande, UTC-4). Depois
+  disso, o ciclo se encerra como não distribuído — não carrega para o dia
+  seguinte, que já traz edição nova.
 
 ## Dia sem novidade
 
@@ -126,12 +159,14 @@ edição enviada — registre e feche o ciclo normalmente.
 
 ## Invariantes
 
-- Uma execução = um e-mail. Nunca envie duas edições no mesmo dia.
+- Uma execução = um e-mail para Luis. Nunca envie duas edições no mesmo dia.
 - Toda afirmação normativa carrega a fonte (número, órgão, data), no nível de
   verificação que o ambiente permitiu — em modo degradado, o e-mail abre
   avisando isso.
-- Sem fluxo de aprovação: o conteúdo vai direto ao e-mail. Não invente fluxo de
-  aprovação nem espere resposta do usuário para considerar o ciclo concluído.
+- O envio a Luis não tem aprovação: o conteúdo vai direto ao e-mail dele. A
+  distribuição para a equipe (`escritafiscal.centralizada@copasul.coop.br`)
+  é a única etapa com aprovação, e é dele, por e-mail (`newsletter-aprovacao`).
+  Não distribua para a equipe sem "ENVIAR" inequívoco.
 - Se `AVISO=SEM_PERSISTENCIA` aparecer no pré-voo, avise no rodapé do e-mail:
   o dedup de 7 dias pode repetir itens até a persistência ser corrigida
   (repositório em "Select repositories" na configuração da Routine).

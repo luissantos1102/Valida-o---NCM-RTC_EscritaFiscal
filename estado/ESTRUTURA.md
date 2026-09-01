@@ -53,3 +53,23 @@ log.md             uma linha por evento: data/hora, rodada, ação, thread_id
 `status` percorre:
 `aguardando_aprovacao` → `aguardando_direcionamento` (se reprovado) →
 `aguardando_aprovacao` (rev. N) → `agendado` | `expirado`.
+
+## `newsletter/aprovacoes/<AAAA-MM-DD>/meta.json`
+
+Um por edição da newsletter tributária, controla só a decisão de
+**distribuição para a equipe** (o envio a Luis já saiu antes, sem aprovação).
+Ver `.claude/skills/newsletter-aprovacao/SKILL.md`.
+
+```json
+{
+  "data": "2026-09-01",
+  "thread_id": "1a05d56163c38164",
+  "message_id": "1a05d58bf253177c",
+  "assunto": "Newsletter Tributária — 2026-09-01",
+  "enviado_luis_em": "2026-09-01T14:21:32Z",
+  "status": "aguardando_decisao"
+}
+```
+
+`status` percorre:
+`aguardando_decisao` → `enviado_equipe` | `nao_enviado`.
