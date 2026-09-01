@@ -51,8 +51,10 @@ visual. Resumindo o que não se negocia:
   1.800 e 2.800 palavras visíveis (conte com um `<[^>]+>` strip antes de
   enviar, se tiver como). Não estufe artificialmente; construa isso tendo
   itens suficientes (normalmente 2 por eixo) escritos com profundidade, mais
-  um parágrafo de abertura editorial e um parágrafo de fechamento ("Para
-  fechar") amarrando os achados do dia.
+  um parágrafo de fechamento ("Para fechar") amarrando os achados do dia.
+- **Sem parágrafo editorial de abertura.** Removido em 2026-09-01 a pedido do
+  usuário — vai direto do título para o "Resumo executivo". Não reintroduza
+  esse parágrafo (o resumo em bullets já cumpre o papel de abrir a edição).
 - **Nunca use a tag `<img>`, em nenhuma hipótese.** Testado e confirmado: o
   envio via `mcp__Gmail__send_message` remove qualquer `<img>` do HTML antes
   de entregar — link externo (`raw.githubusercontent.com`) e anexo inline

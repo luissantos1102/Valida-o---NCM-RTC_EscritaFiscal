@@ -319,6 +319,17 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   `estado/newsletter/aprovacoes/2026-09-01/newsletter.html`. Entregue às
   17:24 UTC (thread nova `1a05dfd8ae3651c9`), confirmação registrada na
   thread original. `estado/newsletter/aprovacoes/2026-09-01/meta.json`
-  atualizado para `status: "enviado_equipe"`. Aguardando o usuário
-  confirmar recebimento antes de considerar o fluxo validado para produção
-  (remover `destino_override` e valer para o e-mail real da equipe).
+  atualizado para `status: "enviado_equipe"`.
+
+- **2026-09-01 17:35 UTC — teste validado; parágrafo de abertura removido;
+  envio real à equipe.** Usuário aprovou o teste e pediu duas coisas: (1)
+  remover o parágrafo editorial de abertura ("1º de setembro de 2026...",
+  logo abaixo do título) — não via propósito nele; (2) já que o teste
+  funcionou, mandar a edição de hoje (sem esse parágrafo) para a equipe de
+  verdade. Removido de `templates/email_newsletter.html` (bloco "PARÁGRAFO
+  EDITORIAL DE ABERTURA") e de `SKILL.md`; edição de hoje segue direto do
+  título para o "Resumo executivo". `newsletter.html` do dia corrigido e
+  reenviado como mensagem nova (sem Fwd:) para
+  escritafiscal.centralizada@copasul.coop.br às 17:35 UTC (thread
+  `1a05e0450ef58655`). `destino_override` removido do `meta.json` — o teste
+  encerrou; a partir de amanhã o ciclo roda com o destino real de produção.

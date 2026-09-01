@@ -5,7 +5,6 @@
   "assunto": "Newsletter Tributária — 2026-09-01",
   "enviado_luis_em": "2026-09-01T14:21:32Z",
   "status": "enviado_equipe",
-  "destino_override": "luishduarte.11@gmail.com",
-  "enviado_equipe_em": "2026-09-01T17:24:00Z",
-  "nota": "Ciclo de teste: destino trocado para o e-mail pessoal do usuário (pedido explícito) em vez de escritafiscal.centralizada@copasul.coop.br. Usuário respondeu ENVIAR às 17:19 UTC. Envio novo (mcp__Gmail__send_message, sem Fwd:) feito às 17:24 UTC, thread nova 1a05dfd8ae3651c9. Confirmação registrada na thread original."
+  "enviado_equipe_em": "2026-09-01T17:35:00Z",
+  "nota": "Teste em luishduarte.11@gmail.com (17:24 UTC) validado pelo usuário. Usuário pediu para remover o parágrafo de abertura editorial ('1º de setembro de 2026...') do template e reenviar. Parágrafo removido de templates/email_newsletter.html e deste newsletter.html; envio real para escritafiscal.centralizada@copasul.coop.br feito às 17:35 UTC (thread nova 1a05e0450ef58655), sem Fwd:. Ciclo de teste encerrado; destino_override removido — a partir de amanhã o fluxo roda normal (Luis recebe primeiro, aprova, depois equipe)."
 }
