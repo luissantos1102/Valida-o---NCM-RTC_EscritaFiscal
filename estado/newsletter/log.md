@@ -190,3 +190,116 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   sido portada do rascunho de teste pro arquivo real do projeto — só
   existia nos artifacts da conversa). `references/redacao.md` e
   `SKILL.md` atualizados. Este é o padrão de produção a partir de agora.
+
+- **2026-08-29 10:56 UTC — 2ª edição de produção.** Modo: completo (3/8
+  fontes primárias alcançáveis no pré-voo: gov.br, cgibs.gov.br e
+  cfc.org.br OK; planalto.gov.br, in.gov.br, portal.stf.jus.br,
+  confaz.fazenda.gov.br bloqueados com http=000, stj.jus.br com HTTP 403;
+  imprensa especializada 100% alcançável). 2 itens, ambos em Direito
+  Tributário: (1) IN RFB 2.339/2026, que altera a IN RFB 2.316/2026 e
+  ajusta o domínio "Consistência" do Programa Sintonia (verificação
+  primária, fonte aberta em gov.br); (2) LC 235/2026, que reduz tributos
+  federais sobre combustíveis e cria subsídio para etanol e crédito para
+  fertilizantes, em resposta ao choque de preços do conflito no Oriente
+  Médio (verificação dupla_secundaria: planalto.gov.br/in.gov.br
+  inacessíveis nesta sessão, número e termos confirmados de forma cruzada
+  em notas do Senado e da Câmara, com reforço de imprensa; e-mail traz
+  ressalva de verificação explícita no item e no radar). Reforma
+  Tributária (IBS/CBS) e Contabilidade: 0 itens na janela de 24h, seções
+  omitidas. Layout: template verde Copasul (6ª geração) do dia anterior
+  usado sem alterações. E-mail enviado para luis.santos@copasul.coop.br,
+  thread `1a04d29c64c1b33c`, confirmado entregue em tamanho completo
+  (21,3 KB) via `get_thread`.
+
+- **2026-08-30 12:25 UTC — 3ª edição de produção, "dia sem novidade".**
+  Pré-voo: `MODO=COMPLETO` (limiar `ok_p>=3`; na prática só 3/8 fontes
+  primárias alcançáveis: gov.br, cgibs.gov.br, cfc.org.br OK; planalto.gov.br,
+  in.gov.br, portal.stf.jus.br, stj.jus.br e confaz.fazenda.gov.br
+  bloqueados). Pesquisa delegada ao agente `pesquisador-fiscal`: 29 e
+  30/08/2026 caíram em sábado e domingo, sem publicação no DOU nem ato novo
+  de RFB, CARF ou CFC nas últimas 24h, confirmado por varredura direta das
+  páginas de notícias de cada órgão. Os achados mais recentes localizados
+  (27 e 28/08) já constavam em `enviados.json` (RFB/Malha Fiscal PIS-Cofins,
+  CARF/Fomentar-GO, IN RFB 2.339/2026, LC 235/2026) ou ficaram fora da
+  janela de 24h. Nenhum item novo verificável nos três eixos: seguiu a
+  seção "Dia sem novidade" da skill, sem forçar pauta. `enviados.json` não
+  foi alterado nesta edição (nenhum item novo a registrar; as entradas
+  existentes seguem dentro dos 7 dias). E-mail curto enviado, com um
+  parágrafo de contexto e Radar com 3 itens pendentes de desdobramento
+  (PLP 108/2024 no Senado, efeitos práticos do julgamento do STF de 26/08
+  sobre voto de qualidade no CARF, debate do modelo do Simples Nacional
+  2027 híbrido/puro). Bloqueio adicional identificado pelo agente, fora da
+  lista do preflight: `www.camara.leg.br` (EGRESS_BLOCKED); e as
+  ferramentas `mcp__Jusratio__pesquisar_documentos` e
+  `mcp__Jusratio__informativo_juridico` não estavam registradas nesta
+  sessão, limitando a cobertura independente de STF/STJ. E-mail enviado
+  para luis.santos@copasul.coop.br, thread `1a052a17f36d4606`, confirmado
+  entregue em tamanho completo (5,6 KB) via `get_thread`.
+
+- **2026-08-31 14:15 UTC — 4ª edição de produção, "dia sem novidade".**
+  Pré-voo: `MODO=COMPLETO` (3/8 fontes primárias alcançáveis: gov.br,
+  cgibs.gov.br, cfc.org.br OK; planalto.gov.br, in.gov.br, portal.stf.jus.br
+  e confaz.fazenda.gov.br bloqueados com http=000, stj.jus.br com HTTP 403;
+  toda a imprensa especializada acessível). Pesquisa delegada ao agente
+  `pesquisador-fiscal`: nenhum fato normativo novo nos três eixos na janela
+  de 24h (30 a 31/08). Achados reais localizados ficaram fora da janela
+  (ADE CORAT 63/2026 de 26/08, Soluções de Consulta RFB 154 e 155 de 20/08,
+  Resolução CGSN 186/2026 e julgamento do STF sobre voto de qualidade no
+  CARF, ambos de 26/08, sem desdobramento novo) ou eram apenas prazos de
+  agenda recorrente (vencimentos de 31/08 já previstos em norma
+  preexistente). Confirmado também que o item de radar "PLP 108/2024 no
+  Senado" estava desatualizado: o projeto já virou LC 227/2026 há meses,
+  sem tramitação nova a reportar. `mcp__Jusratio__pesquisar_documentos` e
+  `mcp__Jusratio__informativo_juridico` não estavam registrados nesta
+  sessão; `valor.globo.com` e `jota.info` não serviram como fonte
+  confiável via WebFetch (falha de rede e conteúdo carregado via JS,
+  respectivamente), sem impacto no resultado porque não havia achado a
+  confirmar por essas vias. Seguiu a seção "Dia sem novidade" da skill,
+  sem forçar pauta; `enviados.json` não foi alterado (nenhum item novo;
+  entradas existentes seguem dentro dos 7 dias). E-mail curto enviado com
+  um parágrafo de contexto e Radar com 3 itens atualizados (janela do
+  Simples Nacional 2027 híbrido/puro em setembro, acórdão pendente do STF
+  sobre voto de qualidade no CARF, agenda tributária de setembro via ADE
+  CORAT 63/2026). E-mail enviado para luis.santos@copasul.coop.br, thread
+  `1a0582ca33b9176f`, confirmado entregue em tamanho completo (5,5 KB) via
+  `get_thread`.
+
+- **2026-09-01 14:21 UTC — 5ª edição de produção, 2 itens.** Pré-voo:
+  `MODO=COMPLETO` (3/8 fontes primárias alcançáveis: gov.br, cgibs.gov.br,
+  cfc.org.br OK; planalto.gov.br, in.gov.br, portal.stf.jus.br,
+  confaz.fazenda.gov.br bloqueados com http=000, stj.jus.br com HTTP 403;
+  imprensa especializada toda acessível). Push de estado testado e
+  confirmado funcional nesta sessão (o `git push --dry-run` do preflight
+  tinha acusado bloqueio só porque o branch local estava atrás do remoto
+  por 11 commits; após `git pull --ff-only` o push funcionou normalmente,
+  sem falso positivo real de credencial). Pesquisa delegada ao agente
+  `pesquisador-fiscal` (ferramentas `mcp__Jusratio__*` não registradas
+  nesta sessão): nenhuma norma nova publicada nas últimas 24h nos três
+  eixos, mas dois fatos com consequência jurídica hoje (prazo/vigência que
+  começa), verificados por dupla fonte secundária independente cada um,
+  já que as páginas específicas de notícia no domínio gov.br não
+  renderizaram via WebFetch nesta execução (falha pontual, não bloqueio de
+  domínio): (1) IN RFB 2.332/2026 (monitoramento contínuo de benefícios
+  fiscais de PJ, EC 109/2021 e art. 43 §2º da Lei 14.973/2024) entra em
+  vigor hoje, eixo tributário; (2)
+  Resolução CGSN 186/2026 abre hoje, até 30/09/2026, a janela de opção
+  pelo regime regular de IBS/CBS para 2027 no Simples Nacional, eixo
+  reforma.
+  Eixo contabilidade: 0 achados (item mais próximo, Resolução CVM 244/2026
+  sobre relatório de sustentabilidade ISSB, fora da janela de 24h).
+  Bloqueios de egress adicionais identificados pelo agente, fora da lista
+  do preflight: taxesbrasil.com.br, www.legisweb.com.br, crcmg.org.br,
+  dtadvogados.com.br, reformatributaria360.com.br,
+  www.reformatributaria.com, www12.senado.leg.br (todos EGRESS_BLOCKED,
+  não erro transitório). `enviados.json` atualizado com os 2 itens novos;
+  entradas de 27-28/08 mantidas (dentro dos 7 dias). Falha operacional:
+  o primeiro envio (`mcp__Gmail__send_message`, thread `1a05d56163c38164`)
+  saiu com o corpo HTML substituído por engano por um placeholder literal
+  (`<LOAD_FROM_FILE>`, 838 bytes) em vez do conteúdo real, por erro do
+  operador ao montar a chamada da ferramenta. Detectado imediatamente por
+  `get_thread`. Corrigido no mesmo turno com um segundo envio na mesma
+  thread (`replyThreadId`), com nota de correção no topo do e-mail
+  avisando que a mensagem anterior falhou e essa a substitui, contendo a
+  edição completa (22,2 KB), confirmado entregue via `get_thread`. Não
+  conta como segunda edição do dia: é a correção de uma falha técnica de
+  envio da mesma execução, ambas na mesma thread.

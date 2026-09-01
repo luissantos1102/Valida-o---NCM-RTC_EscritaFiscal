@@ -1,3 +1,5 @@
 .DS_Store
 *.log
 *.b64
+__pycache__/
+*.pyc

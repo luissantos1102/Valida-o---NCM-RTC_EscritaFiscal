@@ -6,14 +6,58 @@
     "contratual": 2
   },
   "cotas": {
-    "tributario": 0,
+    "tributario": 1,
     "empresarial": 0,
     "contratual": 0
   },
-  "fila_prioritaria": [],
-  "observacao": "",
-  "historico": [],
+  "fila_prioritaria": [
+    "empresarial"
+  ],
+  "observacao": "Cotas reconciliadas em 31/08/2026 a partir de estado/publicacoes/: 1 post tributario publicado em 27/08 (simples-nacional-credito-cadastro). O pacote receita-modulo-agro-cooperativismo, de 27/08, segue aguardando aprovacao e nao entra na cota ate ser publicado; se for publicado, somar 1 em tributario. O pacote de 31/08 (sintonia-redutores-ato-nao-definitivo) tambem so entra na cota apos a aprovacao. Empresarial esta no topo da fila e imune a novo desvio ate ser publicado.",
+  "historico": [
+    {
+      "data": "2026-08-27",
+      "eixo": "tributario",
+      "slug": "simples-nacional-credito-cadastro",
+      "tema": "Simples Nacional no IBS/CBS: o credito do adquirente e a mudanca de regime do fornecedor",
+      "status": "publicado",
+      "pontuacao": 65
+    },
+    {
+      "data": "2026-08-27",
+      "eixo": "tributario",
+      "slug": "receita-modulo-agro-cooperativismo",
+      "tema": "Modulo da Receita para agro e cooperativismo",
+      "status": "aguardando_aprovacao",
+      "pontuacao": 65
+    },
+    {
+      "data": "2026-08-31",
+      "eixo": "tributario",
+      "slug": "sintonia-redutores-ato-nao-definitivo",
+      "tema": "IN RFB 2.339/2026: redutores do Sintonia por ato ainda nao definitivo",
+      "status": "aguardando_aprovacao",
+      "pontuacao": 56,
+      "desvio_justificado": "eixo sugerido era empresarial; janela vazia nesse eixo (0 pontos) contra 56 do escolhido"
+    }
+  ],
   "historico_mensal": {},
-  "descartados": [],
-  "ultimo_template": null
+  "descartados": [
+    {
+      "data": "2026-08-31",
+      "tema": "STF - voto de qualidade no CARF (ADIs 6399, 6403, 6415)",
+      "motivo": "sem fonte primaria; portal.stf.jus.br bloqueado"
+    },
+    {
+      "data": "2026-08-31",
+      "tema": "STJ - Emenda Regimental 48/2026 (conflitos IBS/CBS)",
+      "motivo": "sem fonte primaria e sem data confirmada; www.stj.jus.br responde 403"
+    },
+    {
+      "data": "2026-08-31",
+      "tema": "Malha Fiscal Digital PIS/Cofins",
+      "motivo": "nao descartada: 2a colocada com 47 pontos, candidata do proximo ciclo tributario"
+    }
+  ],
+  "ultimo_template": "dossie"
 }
