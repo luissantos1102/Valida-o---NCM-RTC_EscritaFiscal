@@ -16,7 +16,7 @@ check-in trouxer. Sem data explícita, pegue a mais recente com `status` igual
 a `aguardando_decisao`. Se não houver nenhum, não há o que fazer: encerre sem
 agendar novo check-in.
 
-Leia do `meta.json`: `thread_id`, `message_id`, `assunto`, `enviado_luis_em`.
+Leia do `meta.json`: `thread_id`, `html_path`, `assunto`, `enviado_luis_em`.
 
 ## 2. Leia a thread
 
@@ -39,15 +39,16 @@ nunca é "ENVIAR".
 ## 4. Aja conforme a classificação
 
 **ENVIAR** →
-1. `mcp__Gmail__forward` com `messageId` = `message_id` do `meta.json`,
-   `to: ["escritafiscal.centralizada@copasul.coop.br"]`. Sem `forwardText`
-   (a edição já se explica sozinha) a menos que Luis tenha pedido algo
-   específico na resposta.
-2. `mcp__Gmail__reply` na mesma thread para Luis, confirmando: "Enviado para
+1. Leia o conteúdo de `html_path` (o HTML exato que foi enviado a Luis).
+2. `mcp__Gmail__send_message` com `to: ["escritafiscal.centralizada@copasul.coop.br"]`,
+   `subject` = `assunto` do `meta.json` (sem prefixo "Fwd:" e sem citar a
+   mensagem original) e `htmlBody` = esse conteúdo. É um envio novo, não um
+   encaminhamento — a equipe recebe a edição como e-mail próprio.
+3. `mcp__Gmail__reply` na mesma thread para Luis, confirmando: "Enviado para
    a equipe (escritafiscal.centralizada@copasul.coop.br) às HH:MM."
-3. Atualize `meta.json`: `status: "enviado_equipe"`, acrescente
+4. Atualize `meta.json`: `status: "enviado_equipe"`, acrescente
    `enviado_equipe_em`.
-4. Fim do ciclo.
+5. Fim do ciclo.
 
 **NÃO ENVIAR** →
 1. Atualize `meta.json`: `status: "nao_enviado"`, acrescente `decidido_em`.

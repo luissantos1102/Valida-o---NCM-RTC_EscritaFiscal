@@ -112,10 +112,16 @@ distribuição" — nunca remova esse bloco. É ele que explica a Luis que pode
 responder **ENVIAR** (manda para a equipe) ou **Não enviar** (fica só com ele),
 na mesma thread.
 
+Antes de enviar, salve o HTML final (exatamente o que vai em `htmlBody`) em
+`estado/newsletter/aprovacoes/<AAAA-MM-DD>/newsletter.html` — é esse arquivo,
+não a mensagem entregue, que a etapa de distribuição reusa para mandar à
+equipe. Não use `mcp__Gmail__forward` para a distribuição: um encaminhamento
+chega com "Fwd:" no assunto e a mensagem original citada abaixo, o que não é
+o que se quer aqui — a equipe deve receber um e-mail próprio, indistinguível
+de um envio direto.
+
 Envie via `mcp__Gmail__send_message` direto para luis.santos@copasul.coop.br —
-**sem esperar resposta para este envio**, ele já sai direto. Guarde o `id` da
-mensagem enviada (não só o `threadId`) — é ele que a etapa de distribuição usa
-para encaminhar por `mcp__Gmail__forward`. Depois:
+**sem esperar resposta para este envio**, ele já sai direto. Depois:
 
 1. Acrescente uma linha em `estado/newsletter/log.md`: data/hora, quantos itens,
    eixos cobertos, se saiu em modo completo ou degradado.
@@ -126,7 +132,7 @@ para encaminhar por `mcp__Gmail__forward`. Depois:
    {
      "data": "<AAAA-MM-DD>",
      "thread_id": "<threadId retornado pelo envio>",
-     "message_id": "<id da mensagem enviada>",
+     "html_path": "estado/newsletter/aprovacoes/<AAAA-MM-DD>/newsletter.html",
      "assunto": "Newsletter Tributária — <AAAA-MM-DD>",
      "enviado_luis_em": "<timestamp ISO do envio>",
      "status": "aguardando_decisao"
