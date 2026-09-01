@@ -16,7 +16,11 @@ check-in trouxer. Sem data explícita, pegue a mais recente com `status` igual
 a `aguardando_decisao`. Se não houver nenhum, não há o que fazer: encerre sem
 agendar novo check-in.
 
-Leia do `meta.json`: `thread_id`, `html_path`, `assunto`, `enviado_luis_em`.
+Leia do `meta.json`: `thread_id`, `html_path`, `assunto`, `enviado_luis_em`, e
+o opcional `destino_override`. Quando presente, use esse endereço no lugar de
+`escritafiscal.centralizada@copasul.coop.br` — é um ciclo de teste (o
+`meta.json` traz uma `nota` explicando). Sem esse campo, o destino é sempre a
+equipe.
 
 ## 2. Leia a thread
 
@@ -40,12 +44,14 @@ nunca é "ENVIAR".
 
 **ENVIAR** →
 1. Leia o conteúdo de `html_path` (o HTML exato que foi enviado a Luis).
-2. `mcp__Gmail__send_message` com `to: ["escritafiscal.centralizada@copasul.coop.br"]`,
+2. `mcp__Gmail__send_message` com `to: [<destino_override, se houver no
+   meta.json; senão "escritafiscal.centralizada@copasul.coop.br">]`,
    `subject` = `assunto` do `meta.json` (sem prefixo "Fwd:" e sem citar a
    mensagem original) e `htmlBody` = esse conteúdo. É um envio novo, não um
-   encaminhamento — a equipe recebe a edição como e-mail próprio.
-3. `mcp__Gmail__reply` na mesma thread para Luis, confirmando: "Enviado para
-   a equipe (escritafiscal.centralizada@copasul.coop.br) às HH:MM."
+   encaminhamento — o destinatário recebe a edição como e-mail próprio.
+3. `mcp__Gmail__reply` na mesma thread para Luis, confirmando o envio e
+   dizendo para qual endereço foi (o real, ou o de teste se houver
+   `destino_override`).
 4. Atualize `meta.json`: `status: "enviado_equipe"`, acrescente
    `enviado_equipe_em`.
 5. Fim do ciclo.

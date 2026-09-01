@@ -5,5 +5,6 @@
   "assunto": "Newsletter Tributária — 2026-09-01",
   "enviado_luis_em": "2026-09-01T14:21:32Z",
   "status": "aguardando_decisao",
-  "nota": "Ciclo criado retroativamente para testar o fluxo novo — a edição de hoje foi enviada antes do painel de instrução existir no template."
+  "destino_override": "luishduarte.11@gmail.com",
+  "nota": "Ciclo de teste: destino trocado para o e-mail pessoal do usuário (pedido explícito) em vez de escritafiscal.centralizada@copasul.coop.br. Remover destino_override quando o teste terminar."
 }
