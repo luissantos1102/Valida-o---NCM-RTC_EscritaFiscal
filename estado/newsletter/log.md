@@ -263,3 +263,43 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   CORAT 63/2026). E-mail enviado para luis.santos@copasul.coop.br, thread
   `1a0582ca33b9176f`, confirmado entregue em tamanho completo (5,5 KB) via
   `get_thread`.
+
+- **2026-09-01 14:21 UTC — 5ª edição de produção, 2 itens.** Pré-voo:
+  `MODO=COMPLETO` (3/8 fontes primárias alcançáveis: gov.br, cgibs.gov.br,
+  cfc.org.br OK; planalto.gov.br, in.gov.br, portal.stf.jus.br,
+  confaz.fazenda.gov.br bloqueados com http=000, stj.jus.br com HTTP 403;
+  imprensa especializada toda acessível). Push de estado testado e
+  confirmado funcional nesta sessão (o `git push --dry-run` do preflight
+  tinha acusado bloqueio só porque o branch local estava atrás do remoto
+  por 11 commits; após `git pull --ff-only` o push funcionou normalmente,
+  sem falso positivo real de credencial). Pesquisa delegada ao agente
+  `pesquisador-fiscal` (ferramentas `mcp__Jusratio__*` não registradas
+  nesta sessão): nenhuma norma nova publicada nas últimas 24h nos três
+  eixos, mas dois fatos com consequência jurídica hoje (prazo/vigência que
+  começa), verificados por dupla fonte secundária independente cada um,
+  já que as páginas específicas de notícia no domínio gov.br não
+  renderizaram via WebFetch nesta execução (falha pontual, não bloqueio de
+  domínio): (1) IN RFB 2.332/2026 (monitoramento contínuo de benefícios
+  fiscais de PJ, EC 109/2021 e art. 43 §2º da Lei 14.973/2024) entra em
+  vigor hoje, eixo tributário; (2)
+  Resolução CGSN 186/2026 abre hoje, até 30/09/2026, a janela de opção
+  pelo regime regular de IBS/CBS para 2027 no Simples Nacional, eixo
+  reforma.
+  Eixo contabilidade: 0 achados (item mais próximo, Resolução CVM 244/2026
+  sobre relatório de sustentabilidade ISSB, fora da janela de 24h).
+  Bloqueios de egress adicionais identificados pelo agente, fora da lista
+  do preflight: taxesbrasil.com.br, www.legisweb.com.br, crcmg.org.br,
+  dtadvogados.com.br, reformatributaria360.com.br,
+  www.reformatributaria.com, www12.senado.leg.br (todos EGRESS_BLOCKED,
+  não erro transitório). `enviados.json` atualizado com os 2 itens novos;
+  entradas de 27-28/08 mantidas (dentro dos 7 dias). Falha operacional:
+  o primeiro envio (`mcp__Gmail__send_message`, thread `1a05d56163c38164`)
+  saiu com o corpo HTML substituído por engano por um placeholder literal
+  (`<LOAD_FROM_FILE>`, 838 bytes) em vez do conteúdo real, por erro do
+  operador ao montar a chamada da ferramenta. Detectado imediatamente por
+  `get_thread`. Corrigido no mesmo turno com um segundo envio na mesma
+  thread (`replyThreadId`), com nota de correção no topo do e-mail
+  avisando que a mensagem anterior falhou e essa a substitui, contendo a
+  edição completa (22,2 KB), confirmado entregue via `get_thread`. Não
+  conta como segunda edição do dia: é a correção de uma falha técnica de
+  envio da mesma execução, ambas na mesma thread.
