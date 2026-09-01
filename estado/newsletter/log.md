@@ -303,3 +303,22 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   edição completa (22,2 KB), confirmado entregue via `get_thread`. Não
   conta como segunda edição do dia: é a correção de uma falha técnica de
   envio da mesma execução, ambas na mesma thread.
+
+- **2026-09-01 17:19-17:24 UTC — teste do fluxo de distribuição
+  (`newsletter-aprovacao`).** Primeiro ciclo real: usuário pediu, em
+  conversa, a etapa de decisão para mandar a newsletter também à equipe
+  (escritafiscal.centralizada@copasul.coop.br), condicionada a ele
+  responder "ENVIAR" na thread do dia. Ciclo criado retroativamente para a
+  edição de hoje (que já tinha saído antes da mudança existir), com
+  `destino_override` para o e-mail pessoal do usuário só para este teste.
+  Usuário respondeu "ENVIAR" às 17:19 UTC (classificação inequívoca).
+  Encaminhamento não foi usado por pedido explícito do usuário ("não quero
+  um fwd") — o envio foi feito como mensagem nova via
+  `mcp__Gmail__send_message`, mesmo assunto, sem citar a thread original,
+  usando o HTML salvo em
+  `estado/newsletter/aprovacoes/2026-09-01/newsletter.html`. Entregue às
+  17:24 UTC (thread nova `1a05dfd8ae3651c9`), confirmação registrada na
+  thread original. `estado/newsletter/aprovacoes/2026-09-01/meta.json`
+  atualizado para `status: "enviado_equipe"`. Aguardando o usuário
+  confirmar recebimento antes de considerar o fluxo validado para produção
+  (remover `destino_override` e valer para o e-mail real da equipe).

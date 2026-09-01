@@ -4,7 +4,8 @@
   "html_path": "estado/newsletter/aprovacoes/2026-09-01/newsletter.html",
   "assunto": "Newsletter Tributária — 2026-09-01",
   "enviado_luis_em": "2026-09-01T14:21:32Z",
-  "status": "aguardando_decisao",
+  "status": "enviado_equipe",
   "destino_override": "luishduarte.11@gmail.com",
-  "nota": "Ciclo de teste: destino trocado para o e-mail pessoal do usuário (pedido explícito) em vez de escritafiscal.centralizada@copasul.coop.br. Remover destino_override quando o teste terminar."
+  "enviado_equipe_em": "2026-09-01T17:24:00Z",
+  "nota": "Ciclo de teste: destino trocado para o e-mail pessoal do usuário (pedido explícito) em vez de escritafiscal.centralizada@copasul.coop.br. Usuário respondeu ENVIAR às 17:19 UTC. Envio novo (mcp__Gmail__send_message, sem Fwd:) feito às 17:24 UTC, thread nova 1a05dfd8ae3651c9. Confirmação registrada na thread original."
 }
