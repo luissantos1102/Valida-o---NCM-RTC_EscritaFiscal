@@ -18,3 +18,26 @@
 - Segundo desvio seguido do eixo empresarial, por janela de 5 dias vazia.
   Recomendação de tema perene para o próximo ciclo registrada no e-mail e em
   `estado/rodizio.json`.
+
+## Monitoramento da resposta — PENDÊNCIA DE INFRAESTRUTURA
+
+O `SKILL.md` manda agendar o retorno com `send_later` (MCP `claude-code-remote`,
+`delay_minutes: 30`). **Esse servidor MCP não está conectado nesta sessão**:
+`ListConnectors` não devolve nada para "remote"/"scheduler" e `send_later` não
+aparece na busca de ferramentas.
+
+Fallback aplicado: `CronCreate` one-shot para 02/09/2026 08:13 (UTC-4),
+job `3991c773`, apontando para a skill `linkedin-aprovacao` com o thread_id.
+**Esse agendamento é session-only, em memória.** Como esta é uma execução
+agendada em container efêmero, que é recuperado ao fim do turno, o job
+provavelmente NÃO vai disparar.
+
+Consequência prática: a checagem da resposta de aprovação **não está garantida**
+de forma automática. Enquanto o conector `claude-code-remote` não for ligado no
+ambiente, o ciclo depende de:
+
+- uma Routine própria que rode a skill `linkedin-aprovacao` a cada 30 min entre
+  7h e 20h (UTC-4), apontando para o pacote do dia; ou
+- o usuário pedir "verifica a aprovação do post do LinkedIn" numa sessão nova.
+
+Nenhum post foi ao LinkedIn. O pacote fica em `aguardando_aprovacao`.

@@ -24,5 +24,13 @@
       "acao": "primeiro envio para aprovação"
     }
   ],
-  "message_id": "1a061eb9700ff739"
+  "message_id": "1a061eb9700ff739",
+  "monitoramento": {
+    "ferramenta_prevista": "send_later (MCP claude-code-remote, delay_minutes 30)",
+    "disponivel": false,
+    "motivo": "servidor MCP claude-code-remote nao conectado nesta sessao; send_later nao existe na busca de ferramentas e ListConnectors nao retorna nada",
+    "fallback": "CronCreate one-shot 3991c773 para 02/09/2026 08:13 (UTC-4), session-only e em memoria",
+    "risco": "container efemero de execucao agendada; o job provavelmente nao dispara. A checagem da aprovacao nao esta garantida automaticamente.",
+    "acao_recomendada": "conectar o MCP claude-code-remote OU criar uma Routine que rode a skill linkedin-aprovacao a cada 30 min entre 7h e 20h (UTC-4)"
+  }
 }
