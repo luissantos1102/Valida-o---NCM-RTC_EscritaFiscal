@@ -1,0 +1,7 @@
+{"template":"editorial","slides":[
+ {"tipo":"capa","kicker":"Benefícios fiscais","titulo":"Controle de requisito ou sanção política?","fonte":"IN RFB nº 3.341, de 31/08/2026","destaque":"Em vigor desde 1º de setembro de 2026"},
+ {"tipo":"texto","kicker":"O que a norma faz","titulo":"Um rito para retirar a fruição","corpo":["A IN altera a IN RFB nº 2.332/2026 e organiza o acompanhamento da fruição de benefícios fiscais, com **procedimento próprio** de comunicação, intimação e recurso."]},
+ {"tipo":"lista","kicker":"Requisitos de manutenção","titulo":"O que passa a ser monitorado","itens":["Regularidade fiscal federal, FGTS e Cadin.","Situação cadastral no CNPJ e adesão ao DTE.","Ausência de sanções impeditivas."]},
+ {"tipo":"comparativo","kicker":"Duas leituras","blocos":[{"lab":"Leitura de alívio","val":"Mais prazo, período orientativo\ne recurso com efeito suspensivo."},{"lab":"Leitura crítica","val":"Pendência acessória passa a\nresolver benefício nascido de lei."}],"rodape":"A segunda aproxima o instituto da **sanção política** vedada pelas Súmulas 70, 323 e 547 do STF."},
+ {"tipo":"texto","kicker":"A análise","titulo":"O efeito suspensivo é a peça que sustenta a norma","corpo":["Enquanto a fruição se mantém durante a discussão, a controvérsia é **procedimental**. Se ele for excepcionado na aplicação, volta a ser constitucional."]},
+ {"tipo":"fecho","kicker":"Para vigiar","titulo":"O que a Receita fará em 2027 com as comunicações emitidas no período orientativo","assinatura":["Luis Santos","Direito Tributário e Análise de Dados Fiscais"]}]}

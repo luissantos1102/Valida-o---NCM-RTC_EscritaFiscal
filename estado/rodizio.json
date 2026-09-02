@@ -1,19 +1,20 @@
 {
-  "mes_referencia": "2026-08",
+  "mes_referencia": "2026-09",
   "meta": {
     "tributario": 4,
     "empresarial": 2,
     "contratual": 2
   },
   "cotas": {
-    "tributario": 1,
+    "tributario": 0,
     "empresarial": 0,
     "contratual": 0
   },
   "fila_prioritaria": [
-    "empresarial"
+    "empresarial",
+    "contratual"
   ],
-  "observacao": "Cotas reconciliadas em 31/08/2026 a partir de estado/publicacoes/: 1 post tributario publicado em 27/08 (simples-nacional-credito-cadastro). O pacote receita-modulo-agro-cooperativismo, de 27/08, segue aguardando aprovacao e nao entra na cota ate ser publicado; se for publicado, somar 1 em tributario. O pacote de 31/08 (sintonia-redutores-ato-nao-definitivo) tambem so entra na cota apos a aprovacao. Empresarial esta no topo da fila e imune a novo desvio ate ser publicado.",
+  "observacao": "Virada de mes em 02/09/2026: cotas de agosto arquivadas em historico_mensal e contadores zerados. Agosto fechou com 1 publicado (tributario) e 2 pacotes ainda aguardando aprovacao (receita-modulo-agro-cooperativismo e sintonia-redutores-ato-nao-definitivo); se forem aprovados, contam no mes em que forem publicados. EMPRESARIAL segue no topo da fila e ja acumula DOIS desvios seguidos (31/08 e 02/09), ambos por janela de 5 dias vazia nesse eixo. Recomendacao: o proximo ciclo deve rodar empresarial mesmo com tema perene do eixo (societario, recuperacao judicial, cooperativismo), sob pena de a cota de 2 nao fechar em setembro.",
   "historico": [
     {
       "data": "2026-08-27",
@@ -39,9 +40,25 @@
       "status": "aguardando_aprovacao",
       "pontuacao": 56,
       "desvio_justificado": "eixo sugerido era empresarial; janela vazia nesse eixo (0 pontos) contra 56 do escolhido"
+    },
+    {
+      "data": "2026-09-02",
+      "eixo": "tributario",
+      "slug": "in-3341-beneficios-fiscais-sancao-politica",
+      "tema": "IN RFB 3.341/2026: o rito de retirada de beneficio fiscal e a fronteira da sancao politica",
+      "status": "aguardando_aprovacao",
+      "pontuacao": 59,
+      "desvio_justificado": "eixo sugerido era empresarial (topo da fila, imune a desvio); janela de 28/08 a 02/09 vazia nesse eixo (0 pontos) contra 59 do escolhido. Unico achado empresarial relevante (CNJ, art. 15, IV do Provimento 216/2026, ato cooperativo fora da recuperacao judicial) e de ~20/08, fora da regra dura dos 5 dias. Empresarial permanece no topo da fila."
     }
   ],
-  "historico_mensal": {},
+  "historico_mensal": {
+    "2026-08": {
+      "meta": { "tributario": 4, "empresarial": 2, "contratual": 2 },
+      "publicado": { "tributario": 1, "empresarial": 0, "contratual": 0 },
+      "aguardando_aprovacao_no_fechamento": 2,
+      "observacao": "Mes fechou com 1 de 8 publicado. Dois pacotes tributarios pendentes de aprovacao. Empresarial e contratual ficaram em zero: nenhum fato normativo nesses eixos apareceu nas janelas de 5 dias varridas em 27/08, 31/08 e 02/09."
+    }
+  },
   "descartados": [
     {
       "data": "2026-08-31",
@@ -57,7 +74,27 @@
       "data": "2026-08-31",
       "tema": "Malha Fiscal Digital PIS/Cofins",
       "motivo": "nao descartada: 2a colocada com 47 pontos, candidata do proximo ciclo tributario"
+    },
+    {
+      "data": "2026-09-02",
+      "tema": "Prazo de 01/09 a 30/09/2026 para opcao pelo Simples Nacional e escolha do modelo de recolhimento de IBS/CBS em 2027",
+      "motivo": "descartado pelo filtro dos 60 dias: Simples Nacional no IBS/CBS foi tema em 27/08. Pontuaria 53. Reavaliar apos 27/10."
+    },
+    {
+      "data": "2026-09-02",
+      "tema": "STJ 1a Turma - incide IR na venda de cotas entre fundos imobiliarios",
+      "motivo": "sem fonte primaria; www.stj.jus.br responde 403. Unica fonte secundaria (Migalhas, 01/09). Pontuaria 49."
+    },
+    {
+      "data": "2026-09-02",
+      "tema": "CNJ - art. 15, IV do Provimento 216/2026: ato cooperativo fora da recuperacao judicial",
+      "motivo": "NAO descartado por merito: fato de ~20/08/2026, fora da janela de 5 dias. Pontuaria 51 e e do eixo empresarial, que esta em divida. CANDIDATO NATURAL do proximo ciclo empresarial como tema perene."
+    },
+    {
+      "data": "2026-09-02",
+      "tema": "NTs 2026.002 da Reforma em producao no SVRS (BPe, CTe, NF3e, NFCom, NFAg, NFGas)",
+      "motivo": "43 pontos; tensao operacional e nao juridica, reprovada pelo criterio de autoridade juridica da analise.md"
     }
   ],
-  "ultimo_template": "dossie"
+  "ultimo_template": "editorial"
 }

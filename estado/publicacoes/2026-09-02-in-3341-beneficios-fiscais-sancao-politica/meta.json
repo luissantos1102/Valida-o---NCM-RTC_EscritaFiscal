@@ -1,0 +1,24 @@
+{
+  "slug": "in-3341-beneficios-fiscais-sancao-politica",
+  "tema": "IN RFB 3.341/2026: o rito de retirada de benefício fiscal e a fronteira da sanção política",
+  "eixo": "tributario",
+  "data_producao": "2026-09-02",
+  "data_agendamento": "2026-09-03T17:30:00-04:00",
+  "status": "aguardando_aprovacao",
+  "rodada": 1,
+  "assunto_email": "[LinkedIn] Aprovação — Benefícios fiscais e sanção política — 2026-09-02",
+  "thread_id": null,
+  "desvio_justificado": "Eixo sugerido pelo rodízio era o empresarial (topo da fila_prioritaria, imune a novo desvio desde 31/08). Janela de 28/08 a 02/09 vazia nesse eixo: o único achado relevante (decisão do CNJ sobre o art. 15, IV do Provimento CNJ nº 216/2026, afastando o ato cooperativo da recuperação judicial) é de ~20/08/2026, fora da regra dura dos 5 dias. Melhor candidato empresarial na janela: 0 pontos; escolhido: 59. Empresarial permanece no topo da fila. RECOMENDAÇÃO AO USUÁRIO: o próximo ciclo deve rodar empresarial mesmo que seja com tema perene, sob pena de a cota de 2 do mês não fechar.",
+  "link_primeiro_comentario": null,
+  "pontuacao": 59,
+  "formato_criativo": "carrossel",
+  "n_slides": 6,
+  "caracteres_texto": 1840,
+  "criativo_via": "bin/carrossel.py",
+  "template": "editorial",
+  "verificacao_fonte_primaria": "PARCIAL — a existência, o número, a data e o conteúdo da IN RFB nº 3.341, de 31/08/2026 (e o fato de alterar a IN RFB nº 2.332, de 25/06/2026) foram conferidos na comunicação oficial do órgão emissor em gov.br/receitafederal, publicada em 02/09/2026. O texto integral da IN NÃO pôde ser aberto: in.gov.br e planalto.gov.br estão bloqueados no ambiente (http=000) e o SIJUT (normas.receita.fazenda.gov.br) responde 200 mas não devolve resultado de busca sem JavaScript. Por isso o post NÃO cita nenhum artigo ou inciso da IN: descreve apenas o que a norma faz, conforme a regra 'prefira o fato à minúcia' de pesquisa.md. As Súmulas 70, 323 e 547 do STF são citadas por número, sem transcrição de enunciado, porque portal.stf.jus.br está bloqueado (http=000).",
+  "modo_execucao": "COMPLETO com fontes primárias parcialmente bloqueadas",
+  "historico_rodadas": [
+    { "rodada": 1, "acao": "primeiro envio para aprovação" }
+  ]
+}
