@@ -41,6 +41,27 @@
       "data": "2026-09-01",
       "fonte": "https://www.conjur.com.br/2026-abr-26/resolucao-cgsn-no-186-2026-janela-de-setembro-para-empresas-do-simples/",
       "enviado_em": "2026-09-01"
+    },
+    {
+      "titulo": "Receita Federal disponibiliza o Perguntas e Respostas do ITR 2026",
+      "eixo": "tributario",
+      "data": "2026-09-01",
+      "fonte": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/setembro/receita-federal-disponibiliza-o-perguntas-e-respostas-do-imposto-territorial-rural-itr-2026",
+      "enviado_em": "2026-09-02"
+    },
+    {
+      "titulo": "Resoluções CGSN 190 e 191/2026 detalham os modelos puro e híbrido de IBS/CBS no Simples Nacional para 2027",
+      "eixo": "reforma",
+      "data": "2026-09-01",
+      "fonte": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/agosto/cgsn-atualiza-regras-do-simples-nacional-para-adequacao-a-reforma-tributaria-do-consumo",
+      "enviado_em": "2026-09-02"
+    },
+    {
+      "titulo": "SVRS implanta em produção o conjunto de Notas Técnicas 2026.002 (IBS/CBS) para nove documentos fiscais eletrônicos",
+      "eixo": "reforma",
+      "data": "2026-08-31",
+      "fonte": "https://dfe-portal.svrs.rs.gov.br/Nfgas/Noticias/3005",
+      "enviado_em": "2026-09-02"
     }
   ]
 }

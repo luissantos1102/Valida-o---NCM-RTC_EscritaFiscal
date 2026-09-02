@@ -333,3 +333,48 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   escritafiscal.centralizada@copasul.coop.br às 17:35 UTC (thread
   `1a05e0450ef58655`). `destino_override` removido do `meta.json` — o teste
   encerrou; a partir de amanhã o ciclo roda com o destino real de produção.
+
+- **2026-09-02 11:40 UTC — 6ª edição de produção, 2 itens.** Pré-voo:
+  `MODO=COMPLETO` (3/8 fontes primárias alcançáveis: gov.br, cgibs.gov.br,
+  cfc.org.br OK; planalto.gov.br, in.gov.br, portal.stf.jus.br,
+  confaz.fazenda.gov.br bloqueados com http=000, stj.jus.br com HTTP 403;
+  imprensa especializada toda acessível; push testado e funcional).
+  Pesquisa conduzida diretamente nesta sessão (WebSearch/WebFetch, sem
+  delegar ao agente `pesquisador-fiscal`), cerca de 16 buscas ao todo,
+  acima do orçamento sugerido de 10 em `pesquisa.md` pela dificuldade de
+  achar fato genuinamente dentro da janela de 24h; nenhuma norma de
+  CONFAZ/STF/STJ entrou na edição (fontes bloqueadas), então não foi
+  necessário aplicar a regra dos dois independentes. Dois itens com fonte
+  primária verificada diretamente: (1) eixo tributário, Receita Federal
+  disponibiliza em 01/09 o Perguntas e Respostas do ITR 2026, atualizado
+  até 22/06, no fechamento do prazo da DITR (10/08 a 30/09, IN RFB
+  2.330/2026); (2) eixo reforma, comunicado da Receita Federal de 01/09
+  confirma a abertura, até 30/09, da janela de opção pelo modelo de
+  recolhimento de IBS/CBS no Simples Nacional para 2027, tratado como
+  atualização do que já foi coberto em 01/09 (Resolução CGSN 186/2026):
+  o comunicado de hoje detalhou os modelos puro e híbrido regulamentados
+  pelas Resoluções CGSN 190 e 191/2026 (11/08), desdobramento novo, não
+  repetição. Dentro do mesmo item, entrou como contexto (não como item
+  autônomo, por ter fato-data de 31/08, fora da janela estrita de 24h) a
+  implantação em produção pela SVRS do conjunto de Notas Técnicas
+  2026.002 para nove documentos fiscais eletrônicos. Eixo contabilidade:
+  0 achados com consequência normativa nas últimas 24h (cfc.org.br
+  acessível e checado diretamente; achados do dia foram só evento/curso e
+  coordenação institucional sobre bloqueio de acesso ao "Meu Imposto de
+  Renda", sem fato normativo). Descartados por ficarem fora da janela de
+  24h mesmo sendo relevantes: adiamento do split payment obrigatório para
+  2028 (matéria de 30/08) e Solução de Consulta Cosit 144/2026 sobre
+  PIS/Cofins em depreciação de imóveis (matéria de 31/08). Edição com
+  2.002 palavras visíveis (contagem por strip de tags), dentro da faixa de
+  10-15 min. Enviada via `mcp__Gmail__send_message` para
+  luis.santos@copasul.coop.br às 11:40:35 UTC, thread `1a061ebc12e560f0`,
+  confirmada entregue via `get_thread` (29,8 KB). `newsletter.html` salvo
+  em `estado/newsletter/aprovacoes/2026-09-02/` e `meta.json` criado com
+  `status: "aguardando_decisao"`. Ferramenta `send_later` (MCP
+  claude-code-remote) não estava registrada nesta sessão; o check-in de
+  30 min para a etapa de distribuição (`newsletter-aprovacao`) foi
+  agendado com `CronCreate` (job `c3f22ee8`, one-shot, 12:10 UTC) como
+  substituto funcional. Ressalva: jobs de `CronCreate` são só de sessão
+  (não persistem em disco); se esta sessão encerrar antes de 12:10 UTC, o
+  check-in não dispara e a decisão de distribuição de hoje fica pendente
+  até alguém invocar `newsletter-aprovacao` manualmente ou sob demanda.
