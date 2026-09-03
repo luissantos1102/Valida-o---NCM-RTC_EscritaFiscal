@@ -462,3 +462,14 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   manualmente para concluir o ciclo de 02/09) fica a critério do usuário,
   não executada automaticamente nesta sessão por não fazer parte do escopo
   do disparo agendado de hoje.
+
+- **2026-09-03 (mesma sessão) — usuário decidiu, ao vivo no chat, não
+  distribuir a edição de 02/09 para a equipe** ("Não quero que envie o de
+  ontem"), sobrepondo a resposta "ENVIAR" que Luis tinha dado na própria
+  thread em 02/09. `estado/newsletter/aprovacoes/2026-09-02/meta.json`
+  atualizado para `status: "nao_enviado"`, com `motivo` registrando que a
+  decisão veio do chat e não de nova resposta na thread. Nenhum e-mail
+  enviado para escritafiscal.centralizada@copasul.coop.br. Usuário também
+  avisou que vai analisar a edição de hoje (03/09) e responder na própria
+  thread; próxima ação sobre o ciclo de hoje fica sob demanda, sem check-in
+  agendado por esta sessão.
