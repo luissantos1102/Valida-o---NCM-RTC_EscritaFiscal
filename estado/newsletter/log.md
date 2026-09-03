@@ -473,3 +473,20 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   avisou que vai analisar a edição de hoje (03/09) e responder na própria
   thread; próxima ação sobre o ciclo de hoje fica sob demanda, sem check-in
   agendado por esta sessão.
+
+- **2026-09-03 (mesma sessão) — usuário apontou uma segunda consequência do
+  mesmo erro de checkout sem pull: a edição de hoje trouxe de volta o
+  parágrafo editorial de abertura** (logo abaixo do título, antes do
+  "Resumo executivo"), que o usuário já tinha pedido para remover em
+  01/09 (ver entrada "2ª rodada... parágrafo de abertura removido"). A
+  causa é a mesma: `templates/email_newsletter.html` foi lido antes do
+  `git pull`, então o bloco "PARÁGRAFO EDITORIAL DE ABERTURA" (já removido
+  do template real desde 01/09) voltou a aparecer porque o conteúdo do
+  e-mail de hoje foi montado à mão, replicando a estrutura antiga lida no
+  início da sessão, em vez de seguir o template atual do repositório.
+  Confirmado que o template em disco, após o pull, já está correto (sem
+  esse bloco); nenhuma mudança de arquivo necessária, só o registro do
+  erro. Não houve reenvio (mesma regra de um e-mail por dia). Reforça a
+  lição já registrada: sempre `git pull --ff-only` antes de ler qualquer
+  arquivo de referência (template, `SKILL.md`, `references/`), não só
+  antes de ler `estado/`.
