@@ -378,3 +378,87 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   (não persistem em disco); se esta sessão encerrar antes de 12:10 UTC, o
   check-in não dispara e a decisão de distribuição de hoje fica pendente
   até alguém invocar `newsletter-aprovacao` manualmente ou sob demanda.
+
+- **2026-09-03 10:08-13:21 UTC — 7ª edição de produção, com falha
+  operacional de dedup a registrar.** Erro no início da sessão: o checkout
+  inicial (`git fetch` + `git checkout` do branch) não foi seguido de
+  `git pull`, então a sessão trabalhou por toda a pesquisa e redação com uma
+  cópia de `enviados.json` e `log.md` **22 commits desatualizada**, sem
+  visibilidade das edições de produção de 08-29, 09-01 e 09-02 (nem do ciclo
+  de distribuição à equipe criado nesse meio-tempo). Consequência concreta:
+  o item "abertura do prazo de opção Simples Nacional 2027 e escolha entre
+  Simples Puro e Simples Híbrido para IBS/CBS" foi redigido e enviado nesta
+  edição como se fosse achado novo, usando inclusive a mesma URL de fonte
+  (gov.br, "cgsn-atualiza-regras-do-simples-nacional...") já registrada em
+  `enviados.json` desde 02/09 sob o título "Resoluções CGSN 190 e 191/2026
+  detalham os modelos puro e híbrido de IBS/CBS no Simples Nacional para
+  2027", e cujo fato-base (abertura da janela) já tinha sido coberto também
+  em 01/09 via Resolução CGSN 186/2026. O conteúdo em si está correto
+  (verificado em fonte primária, sem erro factual), mas violou a regra de
+  não repetir achado já coberto nos últimos 7 dias sem desdobramento real:
+  não havia desdobramento genuíno em relação ao que já saiu em 01 e 02/09,
+  só um ângulo de redação diferente (o alerta de abertura do prazo em vez do
+  detalhamento dos modelos). Detectado só depois do envio, ao tentar dar
+  commit no estado e encontrar conflito de merge com o `enviados.json` e
+  `log.md` reais. Correção aplicada: **não** foi adicionada entrada nova em
+  `enviados.json` para esse item (ele já está coberto pelas entradas de
+  01 e 02/09, mantidas); e este registro de log documenta o erro em vez de
+  encobri-lo. Não houve reenvio de e-mail corretivo nesta sessão: o e-mail
+  já está entregue e seu conteúdo não está factualmente errado, só
+  redundante em um dos três itens; reenviar geraria uma segunda edição no
+  mesmo dia, o que a invariante do dia proíbe.
+  Pré-voo (rodado antes do problema acima ser percebido): MODO=COMPLETO
+  (3/8 fontes primárias alcançáveis: gov.br, cgibs.gov.br, cfc.org.br; toda a
+  imprensa listada acessível; bloqueados: planalto.gov.br, in.gov.br,
+  portal.stf.jus.br, stj.jus.br, confaz.fazenda.gov.br). Push de teste do
+  pré-voo (dry-run) acusou BLOQUEADO por estar atrás do remoto (mesma causa
+  do problema de dedup); o push real desta edição, feito depois do
+  `git pull --ff-only`, funcionou normalmente, sem `AVISO=SEM_PERSISTENCIA`
+  a repassar ao usuário. Pesquisa via agente `pesquisador-fiscal` (17
+  WebSearch, acima do orçamento de ~10, pela dificuldade de separar
+  prazo/norma real de artigo de opinião) seguida de verificação manual em
+  fonte primária de cada achado antes de escrever, como manda o protocolo.
+  A verificação manual corrigiu um erro factual do dossiê do agente: ele
+  descreveu a IN RFB 2.341/2026 como medida mais dura para devedor
+  contumaz e Cadin; a leitura direta do texto em gov.br mostrou o oposto
+  (prazo de regularização sobe de 20 para 30 dias úteis, devedor contumaz
+  fica expressamente fora dessa regra, Confia/Sintonia ganham prazo
+  extra). 3 itens na edição: (1) IN RFB 2.341/2026, genuinamente novo,
+  verificação primária, fonte aberta diretamente em gov.br, adicionado a
+  `enviados.json`; (2) Ajuste SINIEF 26/2026 (CT-e Simplificado, mesmo
+  município para mesma UF), genuinamente novo, verificação
+  dupla_secundaria (texto oficial do CONFAZ retornou HTTP 503 na janela de
+  pesquisa, confirmado via Contábeis, aberto diretamente, e decreto de
+  incorporação do RICMS/RS; incorporação pelo RICMS/MS não confirmada,
+  registrado como ressalva no e-mail), adicionado a `enviados.json`; (3)
+  abertura do prazo de opção Simples Nacional 2027 e escolha Simples
+  Puro/Híbrido para IBS/CBS, verificação primária (duas notícias da
+  Receita Federal abertas diretamente), mas repetição não intencional do
+  que já saiu em 01 e 02/09 (ver acima), não adicionado a `enviados.json`
+  por já estar coberto. Um detalhe de "split payment" mencionado pelo
+  agente de pesquisa não foi confirmado nas fontes primárias abertas
+  manualmente e entrou apenas como ressalva não confirmada no Radar, não
+  como afirmação de fato. Contabilidade: 0 itens na janela de 24h, seção
+  omitida (CFC, CPC e CVM sem novidade nas últimas 24-48h). Edição com
+  1.944 palavras (~10 min de leitura), conferida sem travessão, sem
+  `<img>` e sem `background` sem `-color` antes do envio. E-mail enviado
+  para luis.santos@copasul.coop.br, thread 1a0676db46c3f4df, confirmado
+  entregue em tamanho completo (27,9 KB, todos os links e cores
+  preservados).
+  Lição para a próxima execução: sempre `git pull --ff-only` logo após o
+  checkout inicial, antes de ler qualquer arquivo de `estado/`, mesmo que
+  a instrução do disparo diga só para fazer `checkout`.
+
+- **2026-09-03 (mesma sessão) — usuário perguntou, ao vivo e fora do fluxo
+  agendado, se a newsletter de 02/09 foi distribuída para a equipe.**
+  Verificação na thread `1a061ebc12e560f0`: Luis respondeu "ENVIAR" às
+  2026-09-02T11:46:33Z, mas `estado/newsletter/aprovacoes/2026-09-02/meta.json`
+  permaneceu com `status: "aguardando_decisao"` porque o check-in de
+  distribuição daquele dia foi agendado só via `CronCreate` (job de sessão,
+  não persiste em disco) e a sessão que o criou aparentemente encerrou antes
+  de disparar. Resultado: a aprovação existe, mas a distribuição para
+  escritafiscal.centralizada@copasul.coop.br nunca aconteceu. Resposta dada
+  ao usuário no chat; ação de correção (rodar `newsletter-aprovacao`
+  manualmente para concluir o ciclo de 02/09) fica a critério do usuário,
+  não executada automaticamente nesta sessão por não fazer parte do escopo
+  do disparo agendado de hoje.
