@@ -14,7 +14,7 @@
     "empresarial",
     "contratual"
   ],
-  "observacao": "Virada de mes em 02/09/2026: cotas de agosto arquivadas em historico_mensal e contadores zerados. Agosto fechou com 1 publicado (tributario) e 2 pacotes ainda aguardando aprovacao (receita-modulo-agro-cooperativismo e sintonia-redutores-ato-nao-definitivo); se forem aprovados, contam no mes em que forem publicados. EMPRESARIAL segue no topo da fila e ja acumula DOIS desvios seguidos (31/08 e 02/09), ambos por janela de 5 dias vazia nesse eixo. Recomendacao: o proximo ciclo deve rodar empresarial mesmo com tema perene do eixo (societario, recuperacao judicial, cooperativismo), sob pena de a cota de 2 nao fechar em setembro.",
+  "observacao": "Virada de mes em 02/09/2026: cotas de agosto arquivadas em historico_mensal e contadores zerados. Agosto fechou com 1 publicado (tributario) e 2 pacotes ainda aguardando aprovacao (receita-modulo-agro-cooperativismo e sintonia-redutores-ato-nao-definitivo); se forem aprovados, contam no mes em que forem publicados. Ciclo de 09/09: EMPRESARIAL segue no topo da fila e acumula TRES desvios/vazios seguidos (31/08, 02/09 e 09/09), os dois ultimos por fonte primaria bloqueada (bcb.gov.br) apesar de o fato normativo existir dentro da janela de 5 dias. Nao houve publicacao neste ciclo: e-mail de janela vazia enviado propondo 3 temas perenes do eixo empresarial, aguardando decisao de Luis (thread 1a085e7b86c0c267). Recomendacao mantida: o proximo ciclo com pauta empresarial disponivel (fato novo ou tema perene escolhido) deve ser publicado sem novo desvio, sob pena de a cota de 2 nao fechar em setembro.",
   "historico": [
     {
       "data": "2026-08-27",
@@ -49,6 +49,15 @@
       "status": "aguardando_aprovacao",
       "pontuacao": 59,
       "desvio_justificado": "eixo sugerido era empresarial (topo da fila, imune a desvio); janela de 28/08 a 02/09 vazia nesse eixo (0 pontos) contra 59 do escolhido. Unico achado empresarial relevante (CNJ, art. 15, IV do Provimento 216/2026, ato cooperativo fora da recuperacao judicial) e de ~20/08, fora da regra dura dos 5 dias. Empresarial permanece no topo da fila."
+    },
+    {
+      "data": "2026-09-09",
+      "eixo": "empresarial",
+      "slug": "janela-vazia-empresarial",
+      "tema": "Janela vazia no eixo Empresarial (04-09/09/2026): sem fato normativo com fonte primaria aberta e conferida",
+      "status": "aguardando_decisao_tema",
+      "pontuacao": null,
+      "observacao_especifica": "Terceiro ciclo seguido com o eixo empresarial em divida. Unico achado do eixo na janela (Resolucao CMN 5.340/2026, 04/09/2026, revisao de garantias em credito rural) tem fonte primaria (bcb.gov.br) bloqueada neste ambiente - confirmado apenas por dupla fonte secundaria independente (Poder360, Portal do Cooperativismo Financeiro), nao atende a regra que nao se quebra nesta execucao ('nenhuma norma citada sem a fonte primaria aberta e conferida'). Achado tributario concorrente (LC 236/2026, sancionada 04/09) tambem tinha fonte primaria bloqueada (planalto.gov.br) e nao foi usado para furar o rodizio - empresarial segue imune a desvio ate publicar. E-mail enviado (thread 1a085e7b86c0c267) propondo 3 temas perenes do eixo empresarial para decisao de Luis: (1) art. 79 da Lei 5.764/71 x nao cumulatividade plena do IBS/CBS; (2) recuperacao judicial de cooperado x garantia real sobre penhor de safra/CPR; (3) responsabilidade de administradores de cooperativas agricolas a luz do Provimento CNJ 216/2026."
     }
   ],
   "historico_mensal": {
@@ -94,6 +103,16 @@
       "data": "2026-09-02",
       "tema": "NTs 2026.002 da Reforma em producao no SVRS (BPe, CTe, NF3e, NFCom, NFAg, NFGas)",
       "motivo": "43 pontos; tensao operacional e nao juridica, reprovada pelo criterio de autoridade juridica da analise.md"
+    },
+    {
+      "data": "2026-09-09",
+      "tema": "Resolucao CMN no 5.340/2026: revisao de garantias em credito rural ligado a eventos climaticos (eixo empresarial, marco legal de garantias)",
+      "motivo": "dentro da janela de 5 dias (fato de 04/09) mas fonte primaria bcb.gov.br bloqueada neste ambiente (testado por WebFetch direto, nao so pelo preflight); confirmado apenas por dupla fonte secundaria independente (Poder360, Portal do Cooperativismo Financeiro). NAO descartada por merito - CANDIDATO NATURAL do proximo ciclo empresarial se o bloqueio a bcb.gov.br for resolvido, ou se Luis autorizar excepcionalmente citacao por dupla fonte secundaria."
+    },
+    {
+      "data": "2026-09-09",
+      "tema": "LC 236/2026: teto de multas tributarias e ampliacao de transacao/mediacao/arbitragem tributaria (sancionada 04/09)",
+      "motivo": "eixo tributario, fora de cotacao neste ciclo porque empresarial esta imune a desvio; alem disso fonte primaria planalto.gov.br tambem bloqueada neste ambiente (testado por WebFetch direto), so dupla fonte secundaria (Migalhas, Senado Noticias). Forte candidato tributario do proximo ciclo se a fonte primaria abrir."
     }
   ],
   "ultimo_template": "editorial"

@@ -1,0 +1,29 @@
+{
+  "slug": "janela-vazia-empresarial",
+  "tema": "Janela vazia no eixo Empresarial (04-09/09/2026)",
+  "eixo": "empresarial",
+  "data_producao": "2026-09-09",
+  "status": "aguardando_decisao_tema",
+  "rodada": 1,
+  "assunto_email": "[LinkedIn] Aprovação — Janela vazia, eixo Empresarial — 2026-09-09",
+  "thread_id": null,
+  "message_id": null,
+  "motivo_vazio": "Único achado do eixo empresarial dentro da janela de 5 dias (Resolução CMN 5.340/2026, revisão de garantias em crédito rural) tem fonte primária (bcb.gov.br) bloqueada neste ambiente, confirmado apenas por dupla fonte secundária independente (Poder360, Portal do Cooperativismo Financeiro). Não atende à regra que não se quebra desta execução: nenhuma norma citada sem a fonte primária aberta e conferida. O outro candidato do eixo (Provimento CNJ 216/2026, art. 15, IV) é de ~20/08/2026, fora da janela dura dos 5 dias, sem desdobramento novo.",
+  "temas_perenes_propostos": [
+    "O ato cooperativo na Reforma Tributária: os limites do art. 79 da Lei 5.764/71 diante da não cumulatividade plena do IBS/CBS",
+    "Recuperação judicial de cooperado produtor rural: a colisão entre o concurso de credores e a garantia real sobre penhor de safra/CPR",
+    "Responsabilidade de administradores de cooperativas agrícolas: o dever de diligência sob o novo marco de governança, à luz do precedente do Provimento CNJ 216/2026 sobre o ato cooperativo fora da recuperação judicial"
+  ],
+  "modo_execucao": "COMPLETO no agregado do pré-voo, com bloqueio pontual confirmado por WebFetch direto em planalto.gov.br e bcb.gov.br para os dois candidatos mais fortes da rodada",
+  "historico_rodadas": [
+    { "rodada": 1, "acao": "e-mail de janela vazia enviado, propondo 3 temas perenes do eixo empresarial" }
+  ],
+  "monitoramento": {
+    "ferramenta_prevista": "send_later (MCP claude-code-remote)",
+    "disponivel": false,
+    "motivo": "send_later não aparece na busca de ferramentas desta sessão (mesma limitação já registrada em 2026-09-02)",
+    "fallback": "CronCreate one-shot, session-only e em memória",
+    "risco": "container de execução agendada é reciclado ao fim do turno; o job session-only provavelmente não dispara",
+    "acao_recomendada": "conectar o MCP claude-code-remote OU criar uma Routine que rode a skill linkedin-aprovacao a cada 30 min entre 7h e 20h (UTC-4)"
+  }
+}
