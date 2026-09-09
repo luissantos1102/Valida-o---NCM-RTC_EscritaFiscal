@@ -490,3 +490,24 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   lição já registrada: sempre `git pull --ff-only` antes de ler qualquer
   arquivo de referência (template, `SKILL.md`, `references/`), não só
   antes de ler `estado/`.
+
+- **2026-09-04 — edição "dia tranquilo".** Pré-voo manual (sem
+  `bin/preflight.sh`, que não existe no repositório): testado egresso direto
+  a `gov.br/receitafederal` e `cfc.org.br` via WebFetch, ambos acessíveis.
+  Modo: **completo**. Varredura de até 24h em Direito Tributário (RFB,
+  CONFAZ, STF/STJ via WebSearch, CARF), Reforma Tributária (Comitê Gestor do
+  IBS, Planalto/DOU, Congresso) e Contabilidade (CFC, CVM) não encontrou
+  nenhum fato normativo novo publicado nas últimas 24h; os achados de maior
+  destaque (IN RFB 2.341/2026, Ajuste SINIEF 26/2026, abertura da janela de
+  opção do Simples pelo regime regular de IBS/CBS) já constavam de
+  `enviados.json` de edições anteriores (01 a 03/09), sem desdobramento novo.
+  0 itens novos, 0 eixos com conteúdo no dia. Enviado o e-mail curto de "dia
+  tranquilo" (thread `1a0861effbaac4da`), com Radar para 09/09 (5 temas
+  repetitivos do STJ, pauta do STF sobre Funrural e Tema 843) e para 30/09
+  (fechamento da janela de opção do regime regular de IBS/CBS no Simples).
+  `enviados.json` não foi alterado (nada novo a registrar; nenhuma entrada
+  ultrapassou os 7 dias ainda). Observação: `bin/preflight.sh`, citado no
+  `SKILL.md` e em `references/pesquisa.md`, não existe neste branch; o
+  pré-voo desta edição foi feito manualmente via WebFetch em duas fontes
+  primárias representativas. Vale considerar criar o script ou ajustar a
+  referência num commit futuro.
