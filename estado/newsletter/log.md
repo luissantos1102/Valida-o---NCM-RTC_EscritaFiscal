@@ -490,3 +490,33 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   lição já registrada: sempre `git pull --ff-only` antes de ler qualquer
   arquivo de referência (template, `SKILL.md`, `references/`), não só
   antes de ler `estado/`.
+
+- **2026-09-09 (disparo agendado) — edição enviada em modo COMPLETO, 2
+  itens, só no eixo Direito Tributário.** Pré-voo (`bin/preflight.sh`)
+  reportou `MODO=COMPLETO` (3 de 8 fontes primárias alcançáveis:
+  `www.gov.br`, `www.cgibs.gov.br`, `cfc.org.br`), mas com
+  `www.planalto.gov.br`, `www.in.gov.br`, `portal.stf.jus.br`,
+  `www.stj.jus.br` e `www.confaz.fazenda.gov.br` bloqueados
+  individualmente. Pesquisa (agente `pesquisador-fiscal`, janela
+  2026-09-08 a 2026-09-09) aplicou a regra dos dois independentes para
+  qualquer achado dependente de um domínio bloqueado e descartou vários
+  candidatos por falta de segunda fonte, data fora da janela ou por serem
+  evento/treinamento, não norma (detalhe no transcript do agente). Itens
+  aceitos: (1) PGFN, Edital de Transação PGDAU nº 6/2026, prazo de
+  adesão até 30/09/2026, `verificacao: primaria` (fonte PGFN aberta
+  diretamente) mais duas fontes de imprensa; (2) TRF-3, 4ª Turma,
+  Processo 5026335-43.2023.4.03.0000, levantamento de depósito judicial
+  de IPI sem nova conferência da Receita, `verificacao: dupla_secundaria`
+  (acórdão do TRF-3 fora do ar no momento da pesquisa; data exata do
+  julgamento não confirmada, pode ser de agosto). Reforma Tributária
+  (IBS/CBS) e Contabilidade sem fato normativo novo nas últimas 24h;
+  cobertos só no Radar, sem forçar item. Edição ficou abaixo da meta de
+  1.800-2.800 palavras (~1.050 palavras visíveis) por decisão editorial
+  deliberada (regra "não estufe um dia fraco para bater a meta"), não por
+  erro de execução. E-mail enviado a luis.santos@copasul.coop.br,
+  threadId `1a085a9723079241`. Por instrução explícita do disparo de
+  hoje, o agendamento do check-in de `newsletter-aprovacao` (etapa 4 do
+  `SKILL.md`) foi propositalmente omitido nesta execução; o painel "Como
+  decidir a distribuição" segue no e-mail e `meta.json` foi criado do
+  mesmo jeito, para uma futura invocação (agendada ou sob demanda) da
+  skill `newsletter-aprovacao` poder processar a resposta de Luis.
