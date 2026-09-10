@@ -541,3 +541,69 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   decidir a distribuição" segue no e-mail e `meta.json` foi criado do
   mesmo jeito, para uma futura invocação (agendada ou sob demanda) da
   skill `newsletter-aprovacao` poder processar a resposta de Luis.
+
+- **2026-09-10 (disparo agendado) — edição enviada em modo COMPLETO, 1
+  item, só no eixo Reforma Tributária.** Checkout inicial seguido de
+  `git pull --ff-only` antes de ler qualquer arquivo de referência ou
+  `estado/` (lição das falhas de 03/09), trazendo 4 commits novos,
+  inclusive a edição "dia tranquilo" de 04/09 e a 8ª edição de 09/09,
+  que não estavam visíveis no primeiro `git fetch`. Pré-voo
+  (`bin/preflight.sh`, existente neste branch) reportou `MODO=COMPLETO`
+  (3/8 fontes primárias alcançáveis: `www.gov.br`, `www.cgibs.gov.br`,
+  `cfc.org.br`; bloqueadas: `www.planalto.gov.br`, `www.in.gov.br`,
+  `portal.stf.jus.br`, `www.stj.jus.br`, `www.confaz.fazenda.gov.br`;
+  imprensa especializada toda acessível). O aviso `AVISO=SEM_PERSISTENCIA`
+  do pré-voo (push como BLOQUEADO) foi confirmado falso positivo, mesma
+  causa já documentada em 01/09: o branch local estava atrás do remoto
+  no momento do dry-run; após o `git pull --ff-only`, `git push --dry-run`
+  funcionou normalmente, sem necessidade de aviso no rodapé do e-mail.
+  Pesquisa delegada ao agente `pesquisador-fiscal` (janela 09/09 a
+  10/09): 1 único fato normativo genuíno nos três eixos, no eixo Reforma
+  Tributária, verificado por WebFetch direto na fonte primária (Receita
+  Federal) por um segundo agente antes da redação, como manda o
+  protocolo: versão 1.2.0 da documentação técnica da DeRE (Declaração de
+  Regimes Específicos de IBS/CBS), aprovada pelo Ato Técnico Conjunto
+  RFB/SUFIS/CGIBS/DIRETORIA-EXECUTIVA nº 3, de 02/09/2026, com notícia
+  publicada em 09/09/2026; inclui controle de dedução de base, reabertura
+  de período encerrado e os primeiros leiautes de eventos transacionais
+  (séries D-2000/D-3000/D-4000). `verificacao: primaria`. O item de
+  radar sugerido pelo agente (menção a "cooperativas" nos regimes
+  específicos da LC 214/2025) não foi confirmado no texto da fonte
+  primária, então a newsletter tratou isso como pergunta em aberto para a
+  área fiscal confirmar internamente, não como fato. Direito Tributário
+  geral e Contabilidade: 0 achados nas últimas 24h, seções omitidas.
+  Descartados pelo agente (fora da janela, sem norma anexa ou já
+  cobertos): STF Tema 843/RE 835.818 (crédito presumido de ICMS x
+  PIS/Cofins, sessão não julgada), STJ sobre Selic em depósito compulsório
+  (julgamento de 08/09, fora da janela), LC 236/2026 (sanção de 04/09,
+  fora da janela e dos 7 dias), CARF Câmara Superior (Samarco e B3,
+  sessão de 08/09), "Painel Receita" (ferramenta de BI sem norma anexa),
+  e-Financeira (cronograma já fixado em agosto), Ajuste SINIEF 20/2026
+  (muito fora da janela) e debates/seminários do CFC (evento, não norma).
+  Dois itens de radar do próprio agente foram checados manualmente antes
+  do envio, por uma segunda rodada de verificação, e continham erro:
+  o cancelamento da sessão do STF de 09/09 (que traria o Tema 843) foi
+  confirmado, mas por crise institucional em torno do comando da Polícia
+  Federal (embate Dino x Mendonça), não por motivo processual do caso,
+  como o primeiro rascunho do dossiê sugeria; e a proposta de súmula do
+  CARF a ser votada em 14/09 é sobre IRRF em pagamento a beneficiário
+  identificado, não "não identificado" (que já é a Súmula Carf 241,
+  aprovada em 04/11/2025, tema distinto). Ambas as correções entraram no
+  e-mail final. Domínio adicional bloqueado, fora da lista do pré-voo:
+  `notagateway.com.br` (egress bloqueado pelo proxy). Edição com 1.013
+  palavras visíveis, abaixo da meta de 1.800-2.800, por decisão editorial
+  deliberada diante de um dia fraco nos outros dois eixos (mesma regra
+  aplicada em 09/09), não por erro de execução. E-mail enviado a
+  luis.santos@copasul.coop.br às 10:17 UTC, threadId `1a08ad225e70512b`,
+  confirmado entregue em tamanho completo (17,8 KB) via `get_thread`:
+  paleta, ausência de `<img>`, `background-color` e zero travessão
+  preservados; os dois links de fonte sobreviveram ao envio (o Gmail os
+  reescreveu com redirecionamento `google.com/url?q=`, comportamento
+  normal do cliente, não do template). `newsletter.html` salvo em
+  `estado/newsletter/aprovacoes/2026-09-10/` e `meta.json` criado com
+  `status: "aguardando_decisao"`. Por instrução explícita do disparo de
+  hoje ("não fique em espera ativa"), o agendamento do check-in de
+  `newsletter-aprovacao` (etapa 4 do `SKILL.md`) foi propositalmente
+  omitido nesta execução, assim como em 09/09; o painel "Como decidir a
+  distribuição" segue no e-mail para uma futura invocação, agendada ou
+  sob demanda, processar a resposta de Luis.
