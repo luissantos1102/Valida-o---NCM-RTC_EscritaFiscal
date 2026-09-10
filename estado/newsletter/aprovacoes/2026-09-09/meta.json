@@ -4,5 +4,8 @@
   "html_path": "estado/newsletter/aprovacoes/2026-09-09/newsletter.html",
   "assunto": "Newsletter Tributária — 2026-09-09",
   "enviado_luis_em": "2026-09-09T06:15:26-04:00",
-  "status": "aguardando_decisao"
+  "status": "nao_enviado",
+  "motivo": "sem_resposta_ate_19h",
+  "decidido_em": "2026-09-10T13:19:43Z",
+  "nota": "Checagem retroativa: nenhuma resposta de Luis na thread. Janela de decisão (19h Campo Grande de 09/09) já havia passado quando a Routine permanente de check-in foi criada (10/09). Fechado sem distribuição."
 }

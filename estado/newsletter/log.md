@@ -607,3 +607,13 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   omitido nesta execução, assim como em 09/09; o painel "Como decidir a
   distribuição" segue no e-mail para uma futura invocação, agendada ou
   sob demanda, processar a resposta de Luis.
+
+- **2026-09-10 13:19 UTC — check-in automático (Routine permanente
+  `trig_016J271dzoETCpJNUecUV22T`, primeira execução) fecha o ciclo de
+  09/09.** Sem resposta de Luis na thread `1a085a9723079241` — a janela de
+  decisão (19h Campo Grande daquele dia) já havia se encerrado antes de
+  qualquer checagem existir (a Routine permanente só foi criada em 10/09,
+  corrigindo a falta de checagem automática que também afetou o pipeline
+  do LinkedIn). `estado/newsletter/aprovacoes/2026-09-09/meta.json`
+  atualizado para `status: "nao_enviado"`. O ciclo de 10/09 (thread
+  `1a08ad225e70512b`) segue `aguardando_decisao`, ainda dentro da janela.
