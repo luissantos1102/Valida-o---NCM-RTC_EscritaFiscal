@@ -5,16 +5,21 @@ description: Verifica se Luis Santos decidiu distribuir a newsletter tributária
 
 # Verificação da decisão de distribuição
 
-Segundo tempo do `newsletter-tributaria`. É invocada por um check-in agendado
-via `send_later`, ou sob demanda. Só existe para a etapa de **distribuição
-para a equipe** — o envio a Luis já aconteceu antes desta skill rodar.
+Segundo tempo do `newsletter-tributaria`. É invocada pela Routine permanente
+`trig_016J271dzoETCpJNUecUV22T` (cron horário, 7h-19h Campo Grande, seg-sex —
+não por `send_later` autoagendado: essa abordagem foi tentada no pipeline do
+LinkedIn e falhou duas vezes porque a ferramenta não estava disponível na
+sessão que precisava chamá-la) ou sob demanda. Só existe para a etapa de
+**distribuição para a equipe** — o envio a Luis já aconteceu antes desta
+skill rodar.
 
 ## 1. Localize o ciclo do dia
 
 Leia `estado/newsletter/aprovacoes/<AAAA-MM-DD>/meta.json` para a data que o
 check-in trouxer. Sem data explícita, pegue a mais recente com `status` igual
 a `aguardando_decisao`. Se não houver nenhum, não há o que fazer: encerre sem
-agendar novo check-in.
+alterar nada — a próxima checagem já está garantida pela Routine permanente,
+não precisa ser agendada aqui.
 
 Leia do `meta.json`: `thread_id`, `html_path`, `assunto`, `enviado_luis_em`, e
 o opcional `destino_override`. Quando presente, use esse endereço no lugar de
@@ -62,19 +67,20 @@ nunca é "ENVIAR".
    ciclo.
 
 **Sem resposta** →
-- Dentro da janela 7h-19h (Campo Grande, UTC-4): reagende check-in em 30 min
-  via `send_later`, instruindo a invocar esta skill para a mesma data. Não
-  escreva ao usuário nesta sessão a cada check-in silencioso — apenas
-  reagende.
-- Fora da janela (antes das 7h ou às/depois das 19h): não reagende. Atualize
-  `meta.json`: `status: "nao_enviado"`, `motivo: "sem_resposta_ate_19h"`. Fim
-  do ciclo — a edição de amanhã começa um ciclo novo, independente deste.
+- Dentro da janela 7h-19h (Campo Grande, UTC-4): não faça nada além de
+  confirmar no `log.md` que checou e não havia novidade. Não agende
+  check-in — a Routine permanente cobre isso sozinha na próxima hora.
+- Fora da janela (antes das 7h ou às/depois das 19h — só relevante se
+  chamada sob demanda, já que a Routine permanente só dispara dentro dela):
+  atualize `meta.json`: `status: "nao_enviado"`, `motivo:
+  "sem_resposta_ate_19h"`. Fim do ciclo — a edição de amanhã começa um ciclo
+  novo, independente deste.
 
 **Ambíguo** →
 - 1ª vez: `mcp__Gmail__reply` na thread perguntando a definição, em uma
-  pergunta só: "Para eu seguir: ENVIAR para a equipe, ou Não enviar?".
-  Reagende check-in em 30 min.
-- Se continuar ambíguo na rodada seguinte (dentro da mesma janela do dia):
+  pergunta só: "Para eu seguir: ENVIAR para a equipe, ou Não enviar?". Não
+  agende check-in.
+- Se continuar ambíguo na checagem seguinte (dentro da mesma janela do dia):
   trate como **NÃO ENVIAR** (default seguro — nunca distribua por presunção),
   registre `status: "nao_enviado"`, `motivo: "ambiguo_assumido_nao_enviar"`,
   e diga na thread que assumiu essa leitura.
@@ -84,6 +90,7 @@ nunca é "ENVIAR".
 - Registre cada passagem em `estado/newsletter/log.md`: data/hora,
   classificação, ação tomada.
 - Commite e faça push a cada mudança de estado.
-- Um check-in nunca termina sem uma destas três coisas: uma ação executada
-  (encaminhado ou marcado como não enviado), um novo check-in agendado, ou o
-  ciclo já declarado encerrado em rodada anterior.
+- Nunca chame `send_later` nem tente agendar seu próprio retorno — a Routine
+  permanente já garante a próxima checagem. Um check-in termina quando a ação
+  cabível foi executada (ou confirmado que não havia nada a fazer) e o estado
+  ficou registrado.

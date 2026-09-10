@@ -54,3 +54,36 @@ ambiente, o ciclo depende de:
 - o usuário pedir "verifica a aprovação do post do LinkedIn" numa sessão nova.
 
 Nenhum post foi ao LinkedIn. O pacote fica em `aguardando_decisao_tema`.
+
+## Retomada em 2026-09-10 — falha de infraestrutura confirmada e corrigida
+
+Luis respondeu em 09/09 às 11:34 (thread `1a085e7b86c0c267`) escolhendo o
+tema 2 ("Recuperação judicial de cooperado produtor rural"). Ninguém
+processou essa resposta até 10/09 às ~12:40 (usuário reportou em conversa:
+"respondi e a rotina não prosseguiu"), confirmando o risco já registrado
+acima: o job de fallback não sobreviveu ao fim do container.
+
+Ações tomadas em 10/09:
+1. Diagnosticado: `send_later` de fato nunca esteve disponível na sessão da
+   Routine de 09/09; nenhum check-in foi ou seria agendado.
+2. Delegado a produção de `texto.md` e `roteiro.json` ao agente
+   `roteirista-linkedin` para o tema 2. Carrossel gerado
+   (`bin/carrossel.py`, 5 slides, template "tese"). `contar.py` aprovou
+   (1.890 caracteres). Nenhuma fonte primária ou secundária abriu nesta
+   sessão (13 URLs tentadas, ver `verificacao.md`) — sinalizado com
+   destaque no e-mail de aprovação.
+3. E-mail de aprovação enviado (thread `1a08b5efcd4d0f2e`), pedindo
+   inclusive que Luis confirme os números de artigo citados, já que não
+   houve conferência de fonte primária nesta rodada.
+4. **Correção estrutural** (pedida explicitamente pelo usuário: "não quero
+   que veja manualmente, quero que a automação funcione de forma
+   correta"): criadas duas Routines permanentes de check-in horário
+   (7h-19h Campo Grande, seg-sex) — `trig_01SAj9yvf6F4fk8MhPrpsYwD` para
+   `linkedin-aprovacao` e `trig_016J271dzoETCpJNUecUV22T` para
+   `newsletter-aprovacao` — vinculadas a esta sessão
+   (`session_01K16fwVgY9CmTddQUQ5B6aY`), que já carrega o conector Gmail.
+   Isso substitui a dependência de `send_later` ser chamado manualmente ao
+   fim de cada execução do pipeline (ponto único de falha que já causou
+   este atraso e um atraso anterior em 02/09).
+5. `status` do pacote passou de `aguardando_decisao_tema` para
+   `aguardando_aprovacao`. Ciclo de aprovação normal segue a partir daqui.

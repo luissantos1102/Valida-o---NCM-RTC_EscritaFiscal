@@ -87,10 +87,13 @@ Siga `references/email.md`. Envie para **luis.santos@copasul.coop.br**, salve o
 pacote em `estado/publicacoes/<AAAA-MM-DD>-<slug>/`, atualize
 `estado/rodizio.json`, commite e faça push no branch de trabalho.
 
-Depois de enviar, **agende o monitoramento da resposta**: chame `send_later`
-(MCP claude-code-remote) com `delay_minutes: 30` e uma mensagem que instrua você
-mesmo a invocar a skill `linkedin-aprovacao` para o pacote produzido. Encerre o
-turno. Não fique em espera ativa, não use `sleep`.
+Depois de enviar, **não agende o monitoramento** — não chame `send_later`. Uma
+Routine permanente (`trig_01SAj9yvf6F4fk8MhPrpsYwD`, cron horário 7h-19h Campo
+Grande, seg-sex) já verifica sozinha se há pacote pendente e invoca
+`linkedin-aprovacao`; agendar por conta própria aqui só duplicaria um
+mecanismo que já existe e que, no passado, falhou silenciosamente (ver
+`references/email.md`, seção Monitoramento). Encerre o turno. Não fique em
+espera ativa, não use `sleep`.
 
 ## Invariantes
 

@@ -87,14 +87,22 @@ como aprovação quando ela for **inequívoca**. Silêncio nunca é aprovação.
 
 ## Monitoramento
 
-Depois de enviar, agende o próprio retorno com `send_later`
-(`delay_minutes: 30`), com uma mensagem que instrua a invocar a skill
-`linkedin-aprovacao` para o pacote em
-`estado/publicacoes/<AAAA-MM-DD>-<slug>/`. Encerre o turno — nada de espera ativa.
+**Não agende o retorno com `send_later`.** Já foi tentado duas vezes (02/09 e
+09/09) e falhou as duas: a ferramenta não está disponível na sessão que a
+Routine `linkedin-pipeline` dispara, então a checagem nunca acontecia e a
+resposta de Luis ficava parada até alguém notar manualmente.
 
-Cadência dos check-ins:
-- a cada 30 min, das 7h às 20h (horário de Campo Grande, UTC-4);
-- fora dessa janela, reagende para as 7h do dia seguinte;
+Correção estrutural (10/09/2026): existem duas Routines **permanentes**,
+independentes desta execução, que fazem a checagem sozinhas —
+`trig_01SAj9yvf6F4fk8MhPrpsYwD` (LinkedIn) e `trig_016J271dzoETCpJNUecUV22T`
+(Newsletter), com cron horário das 7h às 19h (Campo Grande, seg-sex),
+vinculadas a uma sessão que já carrega o conector Gmail. Elas invocam
+`linkedin-aprovacao`/`newsletter-aprovacao` sem precisar de nenhum
+agendamento feito por esta execução. **Sua única responsabilidade aqui é
+enviar o e-mail e encerrar o turno** — a checagem já está garantida por fora.
+
+Cadência dos check-ins (executada pela Routine permanente, não por você):
+- a cada hora, das 7h às 19h (horário de Campo Grande, UTC-4), seg-sex;
 - às 12h do dia do agendamento previsto, se ainda não houver resposta, envie
   **um** lembrete na mesma thread ("o agendamento das 17:30 de hoje depende
   deste aval") e continue os check-ins;

@@ -140,10 +140,13 @@ Envie via `mcp__Gmail__send_message` direto para luis.santos@copasul.coop.br —
      "status": "aguardando_decisao"
    }
    ```
-4. Agende o próprio retorno com `send_later` (MCP claude-code-remote),
-   `delay_minutes: 30`, com uma mensagem instruindo a invocar a skill
-   `newsletter-aprovacao` para a data de hoje. Encerre o turno — nada de
-   espera ativa.
+4. **Não agende retorno** — não chame `send_later`. Existe uma Routine
+   permanente (`trig_016J271dzoETCpJNUecUV22T`, cron horário 7h-19h Campo
+   Grande, seg-sex) que já verifica sozinha se há ciclo `aguardando_decisao`
+   e invoca `newsletter-aprovacao` — autoagendar aqui só duplicaria um
+   mecanismo que já existe e que, quando tentado no pipeline do LinkedIn,
+   falhou (a ferramenta não estava disponível na sessão da Routine). Encerre
+   o turno — nada de espera ativa.
 5. Commite e faça push no branch de trabalho.
 
 ## Distribuição para a equipe
