@@ -1,0 +1,7 @@
+{ "template": "tese", "slides": [
+ {"tipo":"capa","kicker":"Direito Empresarial","titulo":"Penhor de safra não é propriedade fiduciária","fonte":"Lei nº 11.101/2005, art. 49, §3º","destaque":"Recuperação judicial do produtor cooperado"},
+ {"tipo":"texto","kicker":"O ponto de partida","titulo":"A CPR admite mais de uma garantia","corpo":["A Lei nº 8.929/1994, art. 3º, permite penhor rural ou alienação fiduciária sobre bens do emissor da Cédula de Produto Rural."]},
+ {"tipo":"comparativo","kicker":"Duas garantias, dois destinos","blocos":[{"lab":"CPR com penhor rural","val":"Classe II do art. 41, II.\nConcorre no plano de\nrecuperação judicial."},{"lab":"CPR com alienação\nfiduciária","val":"Exceção do art. 49, §3º.\nEscapa do concurso\nde credores."}],"rodape":"O mesmo instrumento, duas garantias, dois regimes."},
+ {"tipo":"lista","kicker":"Por que a diferença se sustenta","itens":["O art. 49, §3º protege quem já é proprietário da coisa.","Penhor confere preferência no pagamento, não domínio.","Equiparar as duas garantias apagaria essa distinção legal."]},
+ {"tipo":"fecho","kicker":"Para vigiar","titulo":"O STJ ainda não pacificou o tema para o penhor rural em CPR","assinatura":["Luis Santos","Direito Tributário e Análise de Dados Fiscais"]}
+]}
