@@ -617,3 +617,10 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   do LinkedIn). `estado/newsletter/aprovacoes/2026-09-09/meta.json`
   atualizado para `status: "nao_enviado"`. O ciclo de 10/09 (thread
   `1a08ad225e70512b`) segue `aguardando_decisao`, ainda dentro da janela.
+
+- **2026-09-10 23:06 UTC (19:06 Campo Grande) — check-in fecha o ciclo de
+  hoje.** Sem resposta de Luis na thread `1a08ad225e70512b` até o fim da
+  janela de decisão (19h Campo Grande). `meta.json` atualizado para
+  `status: "nao_enviado"`, `motivo: "sem_resposta_ate_19h"`. Primeiro dia
+  em que o ciclo roda do início ao fim inteiramente coberto pela Routine
+  permanente de check-in.
