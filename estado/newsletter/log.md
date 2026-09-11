@@ -679,3 +679,9 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   quando o pré-voo agregado reportar `MODO=COMPLETO`, já que o cálculo do
   modo usa o total de fontes primárias alcançáveis (3 de 8), não
   necessariamente as fontes relevantes para cada achado específico.
+
+- **2026-09-11 23:05 UTC (19:05 Campo Grande) — check-in fecha o ciclo de
+  11/09.** Sem resposta de Luis na thread `1a08ff7319569806` até o fim da
+  janela de decisão (19h Campo Grande). `meta.json` atualizado para
+  `status: "nao_enviado"`, `motivo: "sem_resposta_ate_19h"`. Segundo dia
+  seguido coberto integralmente pela Routine permanente de check-in.

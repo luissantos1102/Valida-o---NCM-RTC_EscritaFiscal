@@ -4,5 +4,7 @@
   "html_path": "estado/newsletter/aprovacoes/2026-09-11/newsletter.html",
   "assunto": "Newsletter Tributária — 2026-09-11",
   "enviado_luis_em": "2026-09-11T10:15:37Z",
-  "status": "aguardando_decisao"
+  "status": "nao_enviado",
+  "motivo": "sem_resposta_ate_19h",
+  "decidido_em": "2026-09-11T23:05:18Z"
 }
