@@ -1,20 +1,6 @@
 {
   "itens": [
     {
-      "titulo": "IN RFB 2.341/2026 amplia de 20 para 30 dias úteis o prazo de regularização de benefícios fiscais e isenta devedores contumazes da regra de Cadin",
-      "eixo": "tributario",
-      "data": "2026-08-31",
-      "fonte": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/setembro/receita-federal-aperfeicoa-regras-de-acompanhamento-da-fruicao-de-beneficios-fiscais",
-      "enviado_em": "2026-09-03"
-    },
-    {
-      "titulo": "Ajuste SINIEF 26/2026 amplia o CT-e Simplificado de mesmo município para mesma UF de destino",
-      "eixo": "tributario",
-      "data": "2026-09-01",
-      "fonte": "https://www.contabeis.com.br/noticias/78950/rs-ct-e-simplificado-tem-nova-regra-a-partir-de-setembro/",
-      "enviado_em": "2026-09-03"
-    },
-    {
       "titulo": "PGFN mantém o prazo final de 30/09 para adesão ao Edital de Transação PGDAU nº 6/2026 (dívida ativa até R$ 45 milhões)",
       "eixo": "tributario",
       "data": "2026-06-01",
@@ -34,6 +20,13 @@
       "data": "2026-09-09",
       "fonte": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/setembro/dere-receita-federal-publica-versao-1-2-0-da-documentacao-tecnica-da-dere",
       "enviado_em": "2026-09-10"
+    },
+    {
+      "titulo": "STJ (2ª Turma, REsp 2.255.283) nega mandado de segurança coletivo para excluir benefício de ICMS da base de IRPJ e CSLL",
+      "eixo": "tributario",
+      "data": "2026-09-10",
+      "fonte": "https://www.contabeis.com.br/noticias/79331/stj-barra-mandado-coletivo-para-excluir-beneficio-de-icms-do-irpj-e-csll",
+      "enviado_em": "2026-09-11"
     }
   ]
 }

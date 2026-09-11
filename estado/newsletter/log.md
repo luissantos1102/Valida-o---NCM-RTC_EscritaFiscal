@@ -624,3 +624,58 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   `status: "nao_enviado"`, `motivo: "sem_resposta_ate_19h"`. Primeiro dia
   em que o ciclo roda do início ao fim inteiramente coberto pela Routine
   permanente de check-in.
+
+- **2026-09-11 (disparo agendado) — edição enviada em modo COMPLETO, 1
+  item, só no eixo Direito Tributário.** Checkout seguido de
+  `git pull --ff-only` antes de ler qualquer arquivo de `estado/` ou
+  referência, trazendo 3 commits novos (edições de 09/09 e 10/09, e a
+  troca do autoagendamento por Routine permanente). Pré-voo
+  (`bin/preflight.sh`) reportou `MODO=COMPLETO` (3/8 fontes primárias
+  alcançáveis: `www.gov.br`, `www.cgibs.gov.br`, `cfc.org.br`; bloqueadas:
+  `www.planalto.gov.br`, `www.in.gov.br`, `portal.stf.jus.br`,
+  `www.stj.jus.br`, `www.confaz.fazenda.gov.br`; imprensa especializada
+  toda acessível) e push funcionando normalmente após o pull. Pesquisa
+  delegada ao agente `pesquisador-fiscal` (janela 09/10 a 09/11): mesmo
+  com `MODO=COMPLETO` no agregado, o agente confirmou na prática que
+  `portal.stf.jus.br` (HTTP 503) e `www.stj.jus.br` (HTTP 403) estavam
+  de fato inacessíveis para os achados de jurisprudência, e aplicou a
+  regra dos dois independentes do protocolo de modo degradado só para
+  esses achados, em vez de forçar verificação primária que não era
+  possível. Único item aceito: STJ, 2ª Turma, REsp 2.255.283 (sessão de
+  10/09/2026, relator originário Ministro Teodoro Silva Santos,
+  divergência vencedora do Ministro Marco Aurélio Bellizze), nega
+  mandado de segurança coletivo para excluir benefício de ICMS da base
+  de IRPJ/CSLL, por exigir prova pré-constituída e exame individualizado
+  de cada empresa. `verificacao: dupla_secundaria` (fonte primária do
+  STJ bloqueada; Contábeis e JOTA convergiram no mesmo número de
+  processo, turma e resultado). Reforma Tributária e Contabilidade: 0
+  achados nas últimas 24h, seções omitidas. Descartados pelo agente:
+  cancelamento da sessão do STF de 09/09 que traria Funrural (ADI 4.395),
+  imunidade de ITBI (Tema 1.348) e crédito presumido de ICMS no PIS/Cofins
+  (Tema 843), sem decisão de mérito, só cancelamento (foi para o Radar,
+  não como achado); pauta do STJ de 09/09 sobre os Temas Repetitivos 1.455
+  e 1.415, sem resultado confirmado em fonte aberta (Radar); LC 236/2026
+  (arbitragem/mediação tributária no CTN), sancionada em 04/09/2026, fora
+  da janela de 24h (Radar); acórdão do CARF sobre Samarco, sem fonte
+  aberta nem data confirmável; pedido do Ministério dos Portos e
+  Aeroportos por Imposto Seletivo zero para aeronaves, sem ato formal
+  para ancorar item; resoluções do Comitê Gestor do IBS e notícias da RFB
+  do dia, sem norma nova ou sem norma anexa. Edição com 1.027 palavras
+  visíveis, abaixo da meta de 1.800-2.800, por decisão editorial
+  deliberada diante de um dia fraco nos outros dois eixos (mesma regra
+  aplicada em 09/09 e 10/09), não por erro de execução. E-mail enviado a
+  luis.santos@copasul.coop.br às 10:15 UTC, threadId `1a08ff7319569806`,
+  confirmado entregue em tamanho completo (17,9 KB) via `get_thread`:
+  paleta, ausência de `<img>`, `background-color` e zero travessão
+  preservados; os dois links de fonte sobreviveram ao envio (redirecionados
+  pelo Gmail via `google.com/url?q=`, comportamento normal do cliente).
+  `newsletter.html` salvo em `estado/newsletter/aprovacoes/2026-09-11/` e
+  `meta.json` criado com `status: "aguardando_decisao"`. Por instrução
+  explícita do disparo de hoje ("não fique em espera ativa"), nenhum
+  check-in foi autoagendado; a Routine permanente de `newsletter-aprovacao`
+  já cobre isso. Recomendação do agente de pesquisa para próximas edições:
+  tratar `portal.stf.jus.br` e `www.stj.jus.br` como bloqueados por
+  padrão para fins de verificação de achados de jurisprudência, mesmo
+  quando o pré-voo agregado reportar `MODO=COMPLETO`, já que o cálculo do
+  modo usa o total de fontes primárias alcançáveis (3 de 8), não
+  necessariamente as fontes relevantes para cada achado específico.
