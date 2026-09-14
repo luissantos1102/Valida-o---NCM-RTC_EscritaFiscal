@@ -87,3 +87,18 @@ Ações tomadas em 10/09:
    este atraso e um atraso anterior em 02/09).
 5. `status` do pacote passou de `aguardando_decisao_tema` para
    `aguardando_aprovacao`. Ciclo de aprovação normal segue a partir daqui.
+
+## Expiração em 2026-09-14 — 48h sem resposta
+
+A Routine permanente `trig_01SAj9yvf6F4fk8MhPrpsYwD` checou a thread
+`1a08b5efcd4d0f2e` em cada disparo horário (7h-19h Campo Grande, seg-sex)
+desde 10/09. Nenhuma resposta de Luis chegou. Na checagem de
+2026-09-14T11:03:31Z (primeiro disparo após o fim de semana), confirmada
+ausência total de resposta — a thread contém apenas a mensagem original de
+aprovação.
+
+Como já se passaram mais de 48h desde o envio (2026-09-10T12:50:53Z, prazo
+vencido em ~2026-09-12T12:50Z), aplicada a regra de expiração da skill
+`linkedin-aprovacao`: `status` do pacote alterado para `expirado`. Check-ins
+encerrados para este pacote — a Routine permanente segue rodando
+normalmente para os demais pacotes pendentes. Nada foi publicado.

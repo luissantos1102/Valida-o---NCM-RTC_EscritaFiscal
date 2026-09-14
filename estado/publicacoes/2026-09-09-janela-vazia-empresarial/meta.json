@@ -4,7 +4,9 @@
   "eixo": "empresarial",
   "data_producao": "2026-09-09",
   "data_agendamento": "2026-09-11T17:30:00-04:00",
-  "status": "aguardando_aprovacao",
+  "status": "expirado",
+  "motivo_expiracao": "48h sem resposta de Luis na thread desde o envio do e-mail de aprovação (2026-09-10T12:50:53Z). Verificado em 2026-09-14T11:03:31Z pela Routine permanente trig_01SAj9yvf6F4fk8MhPrpsYwD — thread contém apenas a mensagem original, nenhuma resposta. Check-ins encerrados; não publicar.",
+  "expirado_em": "2026-09-14T11:03:31Z",
   "rodada": 1,
   "assunto_email": "[LinkedIn] Aprovação — Recuperação judicial e penhor de safra/CPR — 2026-09-09",
   "thread_id": "1a08b5efcd4d0f2e",
@@ -27,7 +29,8 @@
   "historico_rodadas": [
     { "rodada": 1, "acao": "e-mail de janela vazia enviado, propondo 3 temas perenes do eixo empresarial" },
     { "rodada": 1, "acao": "resposta de Luis (tema 2) ficou sem processamento de 09/09 a 10/09 por falha de agendamento do check-in (ver monitoramento)" },
-    { "rodada": 1, "acao": "retomado manualmente em 10/09: texto e carrossel produzidos, e-mail de aprovação enviado com aviso de fontes não verificadas" }
+    { "rodada": 1, "acao": "retomado manualmente em 10/09: texto e carrossel produzidos, e-mail de aprovação enviado com aviso de fontes não verificadas" },
+    { "rodada": 1, "acao": "sem resposta de Luis até o vencimento das 48h (~2026-09-12T12:50Z); confirmado sem resposta na checagem de 2026-09-14T11:03:31Z; pacote marcado expirado, não publicado" }
   ],
   "monitoramento": {
     "ferramenta_prevista": "send_later (MCP claude-code-remote)",
