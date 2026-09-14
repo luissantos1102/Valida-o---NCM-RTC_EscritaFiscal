@@ -49,3 +49,9 @@
   `bin/carrossel.py` não se aplicam a este pacote.
 
 Nenhum post foi ao LinkedIn. O pacote fica em `aguardando_decisao_tema`.
+
+## Check-ins
+
+- **2026-09-14 12:04 UTC** — thread `1a09faa43500848e` checada, sem resposta
+  de Luis ainda (e-mail enviado há menos de 1h). Nenhuma ação necessária;
+  próxima checagem coberta pela Routine permanente na próxima hora.
