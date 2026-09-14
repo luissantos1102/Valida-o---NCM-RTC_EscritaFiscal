@@ -1,0 +1,28 @@
+{
+  "slug": "janela-vazia-empresarial-14-09",
+  "tema": "Janela vazia no eixo Empresarial (09-14/09/2026): sem fato normativo com fonte primária aberta e conferida",
+  "eixo": "empresarial",
+  "data_producao": "2026-09-14",
+  "status": "aguardando_decisao_tema",
+  "rodada": 1,
+  "assunto_email": "[LinkedIn] Pauta vazia — Empresarial — 2026-09-14",
+  "thread_id": "1a09faa43500848e",
+  "message_id": "1a09faa43500848e",
+  "formato_criativo": null,
+  "verificacao_fonte_primaria": "NENHUM dos 6 achados da janela (3 tributário adicionais, 1 empresarial, 2 baixa confiança) teve fonte primária aberta e conferida. Domínios bloqueados/indisponíveis: planalto.gov.br, in.gov.br, stf.jus.br, stj.jus.br (403), confaz.fazenda.gov.br, bcb.gov.br, camara.leg.br, nfe.fazenda.gov.br (503), conjur.com.br, além da maior parte da imprensa especializada em agro/cooperativismo. O melhor candidato (prazo de opção pelo regime do ato cooperativo, até 31/10/2026, eixo empresarial) teve apenas dupla fonte secundária — insuficiente sob a regra rígida desta execução.",
+  "modo_execucao": "DEGRADADO_SEM_VERIFICACAO_PRIMARIA — nenhum achado sobreviveu ao filtro (b) de analise.md",
+  "motivo_vazio": "Quarto ciclo consecutivo (31/08, 02/09, 09/09, 14/09) sem publicação no eixo empresarial, que segue no topo da fila_prioritaria imune a desvio. O pacote da rodada anterior (2026-09-09-janela-vazia-empresarial, tema 'recuperação judicial de cooperado x penhor de safra/CPR') expirou em 14/09 por 48h sem resposta de Luis, sem publicação. Nesta rodada, o candidato mais forte do eixo empresarial (prazo de opção pelo regime do ato cooperativo na Reforma Tributária, até 31/10/2026) tem apenas dupla fonte secundária (Mundo Coop + materiais institucionais Somos Cooperativismo), não fonte primária aberta e conferida, e por isso foi descartado sob a regra que não se quebra nesta execução.",
+  "temas_perenes_propostos": [
+    "O ato cooperativo na Reforma Tributária: os limites do art. 79 da Lei 5.764/71 diante da não cumulatividade plena do IBS/CBS",
+    "Responsabilidade de administradores de cooperativas agrícolas: o dever de diligência sob o novo marco de governança, à luz do precedente do Provimento CNJ 216/2026 sobre o ato cooperativo fora da recuperação judicial",
+    "O prazo de opção pelo regime específico do ato cooperativo na Reforma Tributária (LC 214/2025), que corre até 31/10/2026: a lei não deixa claro se a opção é irreversível dentro da transição, nem como ela se articula com o crédito do adquirente não cooperado"
+  ],
+  "historico_rodadas": [
+    { "rodada": 1, "acao": "pesquisa cobriu os três eixos na janela 09-14/09; nenhum achado sobreviveu ao filtro de fonte primária verificada; e-mail de janela vazia enviado propondo 3 temas perenes do eixo empresarial" }
+  ],
+  "monitoramento": {
+    "ferramenta_send_later": "indisponível nesta sessão (ToolSearch não encontrou 'send_later' — mesma limitação já registrada em 02/09 e 09/09)",
+    "cobertura_real": "Routine permanente trig_01SAj9yvf6F4fk8MhPrpsYwD (linkedin-aprovacao), cron horário 7h-19h Campo Grande seg-sex, checa a thread independente desta execução — não depende de send_later.",
+    "acao_recomendada": "nenhuma; aguardar decisão de Luis via check-in horário da Routine"
+  }
+}

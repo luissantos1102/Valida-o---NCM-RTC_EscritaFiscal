@@ -14,7 +14,7 @@
     "empresarial",
     "contratual"
   ],
-  "observacao": "Virada de mes em 02/09/2026: cotas de agosto arquivadas em historico_mensal e contadores zerados. Agosto fechou com 1 publicado (tributario) e 2 pacotes ainda aguardando aprovacao (receita-modulo-agro-cooperativismo e sintonia-redutores-ato-nao-definitivo); se forem aprovados, contam no mes em que forem publicados. Ciclo de 09/09: EMPRESARIAL segue no topo da fila e acumula TRES desvios/vazios seguidos (31/08, 02/09 e 09/09), os dois ultimos por fonte primaria bloqueada (bcb.gov.br) apesar de o fato normativo existir dentro da janela de 5 dias. Nao houve publicacao neste ciclo: e-mail de janela vazia enviado propondo 3 temas perenes do eixo empresarial, aguardando decisao de Luis (thread 1a085e7b86c0c267). Recomendacao mantida: o proximo ciclo com pauta empresarial disponivel (fato novo ou tema perene escolhido) deve ser publicado sem novo desvio, sob pena de a cota de 2 nao fechar em setembro.",
+  "observacao": "Virada de mes em 02/09/2026: cotas de agosto arquivadas em historico_mensal e contadores zerados. Agosto fechou com 1 publicado (tributario) e 2 pacotes ainda aguardando aprovacao (receita-modulo-agro-cooperativismo e sintonia-redutores-ato-nao-definitivo); se forem aprovados, contam no mes em que forem publicados. Ciclo de 14/09: EMPRESARIAL acumula QUATRO desvios/vazios/expiracoes seguidos (31/08, 02/09, 09/09 e 14/09). O pacote de 09/09 (tema escolhido por Luis, 'recuperacao judicial de cooperado x penhor de safra/CPR') expirou em 14/09 por 48h sem resposta, sem publicar. Nesta rodada (14/09) nenhum dos 6 achados da pesquisa sobreviveu ao filtro de fonte primaria verificada, inclusive o melhor candidato do eixo empresarial (prazo de opcao pelo regime do ato cooperativo na Reforma Tributaria, ate 31/10/2026), que teve apenas dupla fonte secundaria. Novo e-mail de janela vazia enviado (thread 1a09faa43500848e) propondo 3 temas perenes do eixo empresarial (2 reaproveitados de 09/09, 1 novo derivado do prazo de 31/10/2026), aguardando decisao de Luis. Recomendacao mantida: o proximo ciclo com pauta empresarial disponivel (fato novo, fonte primaria liberada, ou tema perene escolhido) deve ser publicado sem novo desvio, sob pena de a cota de 2 nao fechar em setembro. Bloqueio de rede persistente e estrutural: recomenda-se liberar os dominios de bin/preflight.sh na politica de rede do ambiente da Routine.",
   "historico": [
     {
       "data": "2026-08-27",
@@ -58,6 +58,15 @@
       "status": "expirado",
       "pontuacao": null,
       "observacao_especifica": "Terceiro ciclo seguido com o eixo empresarial em divida. Unico achado do eixo na janela (Resolucao CMN 5.340/2026, 04/09/2026, revisao de garantias em credito rural) tem fonte primaria (bcb.gov.br) bloqueada neste ambiente - confirmado apenas por dupla fonte secundaria independente (Poder360, Portal do Cooperativismo Financeiro), nao atende a regra que nao se quebra nesta execucao ('nenhuma norma citada sem a fonte primaria aberta e conferida'). Achado tributario concorrente (LC 236/2026, sancionada 04/09) tambem tinha fonte primaria bloqueada (planalto.gov.br) e nao foi usado para furar o rodizio - empresarial segue imune a desvio ate publicar. E-mail enviado (thread 1a085e7b86c0c267) propondo 3 temas perenes do eixo empresarial para decisao de Luis: (1) art. 79 da Lei 5.764/71 x nao cumulatividade plena do IBS/CBS; (2) recuperacao judicial de cooperado x garantia real sobre penhor de safra/CPR; (3) responsabilidade de administradores de cooperativas agricolas a luz do Provimento CNJ 216/2026. Luis escolheu o tema 2 em 09/09 as 11:34, mas a resposta ficou sem processamento ate 10/09 por falha de agendamento do check-in (send_later indisponivel na sessao da Routine). Retomado manualmente em 10/09: texto e carrossel produzidos, e-mail de aprovacao enviado (thread 1a08b5efcd4d0f2e) com aviso de que nenhuma fonte primaria/secundaria abriu nesta sessao. Corrigida a causa raiz: criadas duas Routines permanentes de check-in horario (linkedin-aprovacao e newsletter-aprovacao), vinculadas a uma sessao com Gmail, para nao depender mais de agendamento manual. Passadas 48h sem resposta de Luis na thread de aprovacao (venceu ~2026-09-12T12:50Z), confirmada ausencia de resposta na checagem de 2026-09-14T11:03:31Z; pacote marcado expirado, nao publicado. Eixo empresarial permanece em divida para o proximo ciclo."
+    },
+    {
+      "data": "2026-09-14",
+      "eixo": "empresarial",
+      "slug": "janela-vazia-empresarial-14-09",
+      "tema": "Janela vazia no eixo Empresarial (09-14/09/2026): sem fato normativo com fonte primaria aberta e conferida",
+      "status": "aguardando_decisao_tema",
+      "pontuacao": null,
+      "observacao_especifica": "Quarto ciclo seguido com o eixo empresarial em divida. Pesquisa cobriu os tres eixos (6 achados: 3 STJ/RFB tributarios, 1 projeto de lei, 1 achado tributario de baixa confianca, 1 empresarial). Nenhum achado teve fonte primaria aberta e conferida nesta sessao - dominios bloqueados/indisponiveis: planalto.gov.br, in.gov.br, stf.jus.br, stj.jus.br (403), confaz.fazenda.gov.br, bcb.gov.br, camara.leg.br, nfe.fazenda.gov.br (503), conjur.com.br, alem da maior parte da imprensa especializada em agro/cooperativismo. Melhor candidato do eixo empresarial (prazo de opcao pelo regime do ato cooperativo na Reforma Tributaria, ate 31/10/2026, base legal LC 214/2025 consolidada mas decreto regulamentador nao confirmado) teve apenas dupla fonte secundaria (Mundo Coop + materiais institucionais Somos Cooperativismo) - descartado pela mesma regra que ja descartou o achado analogo de 09/09. Analise formal feita pelo agente analista-pauta, confirmando ausencia de sobreviventes ao filtro (b) de analise.md. E-mail de janela vazia enviado (thread 1a09faa43500848e) propondo 3 temas perenes do eixo empresarial: (1) art. 79 da Lei 5.764/71 x nao cumulatividade plena do IBS/CBS [reaproveitado de 09/09]; (2) responsabilidade de administradores de cooperativas agricolas a luz do Provimento CNJ 216/2026 [reaproveitado de 09/09]; (3) prazo de opcao pelo regime do ato cooperativo (LC 214/2025), ate 31/10/2026 [novo, derivado do achado empresarial desta rodada]. Dossie completo da pesquisa em estado/publicacoes/2026-09-14-janela-vazia-empresarial/dossie.md."
     }
   ],
   "historico_mensal": {
@@ -113,6 +122,36 @@
       "data": "2026-09-09",
       "tema": "LC 236/2026: teto de multas tributarias e ampliacao de transacao/mediacao/arbitragem tributaria (sancionada 04/09)",
       "motivo": "eixo tributario, fora de cotacao neste ciclo porque empresarial esta imune a desvio; alem disso fonte primaria planalto.gov.br tambem bloqueada neste ambiente (testado por WebFetch direto), so dupla fonte secundaria (Migalhas, Senado Noticias). Forte candidato tributario do proximo ciclo se a fonte primaria abrir."
+    },
+    {
+      "data": "2026-09-14",
+      "tema": "Ato Conjunto RFB/CGIBS adia validacao da rejeicao 1115 da NF-e (IBS/CBS); preenchimento dos campos continua obrigatorio",
+      "motivo": "unica_secundaria (Portal Contabeis, 12/09); nfe.fazenda.gov.br respondeu 503, in.gov.br/planalto.gov.br bloqueados. Numero do Ato Conjunto e da NT 2025.002 nao conferidos. NAO descartado por merito - candidato tributario do proximo ciclo se a fonte abrir."
+    },
+    {
+      "data": "2026-09-14",
+      "tema": "STJ (repetitivo): CPRB nao pode ser excluida da base de PIS/Cofins",
+      "motivo": "unica_secundaria (Portal Contabeis citando Valor, 11/09); stj.jus.br bloqueado (403). Numero do REsp/Tema nao conferido. Forte candidato tributario do proximo ciclo se a fonte primaria abrir."
+    },
+    {
+      "data": "2026-09-14",
+      "tema": "STJ nega mandado de seguranca coletivo: beneficio de ICMS nao sai da base de IRPJ/CSLL (REsp 2.255.283, 2a Turma)",
+      "motivo": "unica_secundaria (Portal Contabeis, 10/09); stj.jus.br bloqueado (403). Numero do REsp nao conferido."
+    },
+    {
+      "data": "2026-09-14",
+      "tema": "PL 3.186/2026: parcelamento de debitos com a Uniao em ate 240 meses, descontos ate 100% em multa/juros",
+      "motivo": "projeto de lei, nao norma vigente; unica_secundaria (Portal Contabeis, 11/09), camara.leg.br bloqueado."
+    },
+    {
+      "data": "2026-09-14",
+      "tema": "'LC 236/26': teto de multa tributaria (art. 142 CTN, 75/100/150%)",
+      "motivo": "baixa confianca - fonte unica de opiniao (Migalhas), sem segunda fonte apesar de tentativa; status indeterminado (sancionada ou nao); planalto.gov.br/in.gov.br bloqueados."
+    },
+    {
+      "data": "2026-09-14",
+      "tema": "Prazo de opcao pelo regime do ato cooperativo na Reforma Tributaria (LC 214/2025), ate 31/10/2026",
+      "motivo": "dentro da janela de 5 dias (prazo em curso) e do eixo empresarial em divida, mas apenas dupla fonte secundaria (Mundo Coop, materiais institucionais Somos Cooperativismo) - decreto regulamentador nao confirmado em fonte primaria. NAO descartado por merito - seria o melhor candidato do ciclo; virou tema perene proposto a Luis (tema 3 do e-mail de 14/09)."
     }
   ],
   "ultimo_template": "editorial"
