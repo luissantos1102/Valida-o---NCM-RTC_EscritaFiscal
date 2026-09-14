@@ -685,3 +685,52 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   janela de decisão (19h Campo Grande). `meta.json` atualizado para
   `status: "nao_enviado"`, `motivo: "sem_resposta_ate_19h"`. Segundo dia
   seguido coberto integralmente pela Routine permanente de check-in.
+
+- **2026-09-14 10:12 UTC (06:12 Campo Grande) — 9ª edição de produção,
+  "dia tranquilo".** Sem disparo nos dias 12 e 13/09 (sábado e domingo).
+  Checkout seguido de `git pull --ff-only` antes de ler qualquer arquivo de
+  `estado/` ou referência, trazendo 11 commits novos (edições de 09 a 11/09,
+  fluxo de aprovação/distribuição e ativos do LinkedIn). Pré-voo
+  (`bin/preflight.sh`, na raiz do repositório) reportou `MODO=COMPLETO`
+  (3/8 fontes primárias alcançáveis: `www.gov.br`, `www.cgibs.gov.br`,
+  `cfc.org.br`; bloqueadas: `www.planalto.gov.br`, `www.in.gov.br`,
+  `portal.stf.jus.br`, `www.stj.jus.br`, `www.confaz.fazenda.gov.br`;
+  imprensa especializada toda acessível; push confirmado funcional).
+  Pesquisa delegada ao agente `pesquisador-fiscal` (janela 13/09 a 14/09):
+  nenhum fato normativo novo verificável nos três eixos. Justificativa: 13/09
+  caiu em domingo (sem DOU) e a execução ocorreu às ~06h de Campo Grande de
+  14/09, antes do ciclo diário de indexação de imprensa e de boa parte da
+  publicação do DOU do dia; varredura direta em Receita Federal, Comitê
+  Gestor do IBS, CVM e CFC não retornou ato datado de 12, 13 ou 14/09; a
+  agenda tributária de setembro também não tem obrigação vencendo nessa
+  janela específica. Candidatos descartados por falta de verificação (não
+  por falta de relevância): pacote de Ajustes SINIEF/CONFAZ de setembro
+  (agro, combustíveis, varejo, transportes: CONFAZ bloqueado e fontes
+  secundárias que trariam o texto completo, como reformatributaria.com,
+  netcpa.com.br, totvs.com e tagdlaw.com.br, também bloqueadas nesta
+  sessão, fora da lista do preflight); Ato Declaratório Executivo COFIS
+  14/2026 sobre e-Financeira (fontes de confirmação bloqueadas, ângulo
+  prático baixo para a Copasul); votação de 10 propostas de súmula do CARF
+  em 14/09 (evento em curso, sem resultado, fonte única). Descartados por
+  estarem fora da janela de 24h, sem desdobramento novo: LC 236/2026
+  (sancionada 04/09, já registrada como Radar em 09/11), STJ Tema 1.276
+  (11/09) e STJ Tema 1.372 (20/08). Seguiu a seção "Dia sem novidade" da
+  skill, sem forçar pauta; `enviados.json` não foi alterado (nenhum item
+  novo a registrar; as quatro entradas existentes, de 09 e 10/09, seguem
+  dentro dos 7 dias). E-mail curto enviado com dois parágrafos de contexto
+  (a justificativa do dia parado e o que ficou de fora por falta de
+  verificação) e Radar com 3 itens (pacote SINIEF/CONFAZ pendente de
+  reprocessamento, resultado das súmulas do CARF de hoje, fechamento em
+  30/09 da janela do Simples/IBS-CBS e do Edital PGDAU 6/2026). Bloqueios de
+  rede adicionais identificados pelo agente, fora da lista do preflight:
+  `reformatributaria.com`, `taxesbrasil.com.br`, `legisweb.com.br`,
+  `netcpa.com.br`, `totvs.com`, `tagdlaw.com.br` e
+  `rotadajurisprudencia.com.br` (todos `EGRESS_BLOCKED`). E-mail enviado a
+  luis.santos@copasul.coop.br às 10:12:42 UTC, threadId `1a09f679cfe92cd3`,
+  confirmado entregue em tamanho completo (7,5 KB) via `get_thread`: paleta
+  verde Copasul, ausência de `<img>`, `background-color` e zero travessão
+  preservados. `newsletter.html` salvo em
+  `estado/newsletter/aprovacoes/2026-09-14/` e `meta.json` criado com
+  `status: "aguardando_decisao"`. Nenhum check-in autoagendado nesta
+  execução: a Routine permanente de `newsletter-aprovacao` cobre o
+  fechamento do ciclo de distribuição.
