@@ -738,3 +738,57 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
 - **2026-09-14 11:15 UTC (07:15 Campo Grande) — check-in checou o ciclo de
   hoje.** Thread `1a09f679cfe92cd3` sem resposta de Luis ainda; dentro da
   janela de decisão (7h-19h Campo Grande). Nenhuma alteração de estado.
+
+- **2026-09-15 (disparo agendado) — 10ª edição de produção, 1 item, só no
+  eixo Direito Tributário.** Checkout seguido de `git pull` antes de ler
+  qualquer arquivo de `estado/` ou referência, trazendo 17 commits novos
+  (edições de 09 a 14/09, fluxo de aprovação/distribuição e ativos do
+  LinkedIn). Pré-voo (`bin/preflight.sh`) reportou `MODO=COMPLETO` (3/8
+  fontes primárias alcançáveis: `www.gov.br`, `www.cgibs.gov.br`,
+  `cfc.org.br`; bloqueadas: `www.planalto.gov.br`, `www.in.gov.br`,
+  `portal.stf.jus.br`, `www.stj.jus.br`, `www.confaz.fazenda.gov.br`;
+  imprensa especializada toda acessível; push confirmado funcional).
+  Pesquisa delegada ao agente `pesquisador-fiscal` (janela 14/09 a 15/09):
+  nesta execução o proxy bloqueou também os principais portais de imprensa
+  especializada via `WebFetch` (reformatributaria.com, mgcontecnica.com.br,
+  atlaspublico.com.br, comunidadecontabilbrasil.com, todos `EGRESS_BLOCKED`
+  fora da lista do preflight), então a verificação se apoiou nos resumos
+  trazidos pelo próprio `WebSearch`, com 4 fontes independentes convergindo
+  no mesmo conteúdo. Único item aceito: CONFAZ, na 202ª Reunião Ordinária
+  (04/09/2026), aprovou o **Ajuste SINIEF nº 28/2026** (Despacho SE/CONFAZ
+  nº 42/2026, DOU de 14/09/2026), que cria o regime de "depósito
+  compartilhado" (condomínio de armazenagem entre produtores rurais, pessoa
+  jurídica própria, sem prestação de serviço a terceiros nem
+  industrialização), com CFOP 5.905 (remessa) e 5.906 (retorno) e vigência a
+  partir de 01/11/2026. `verificacao: multipla_secundaria` (fonte primária
+  do CONFAZ e o próprio DOU retornaram HTTP 503 em todas as tentativas;
+  número do ajuste, número do despacho, data e CFOPs confirmados por 4
+  fontes independentes: Comunidade Contábil Brasil, Reforma Tributária, MG
+  Contécnica e Atlas Público). Um detalhe (adesão facultativa por unidade
+  federada) apareceu em só 2 das 4 fontes e entrou na edição qualificado
+  como apuração inicial, não como fato confirmado, com nota explícita de que
+  nenhuma internalização pela SEFAZ-MS foi localizada até o fechamento.
+  Tratado como desdobramento do "pacote de Ajustes SINIEF/CONFAZ de
+  setembro", já sinalizado como pendente no Radar da edição de 14/09, não
+  como item disjunto. Reforma Tributária e Contabilidade: 0 achados nas
+  últimas 24h, seções omitidas. Descartados pelo agente (fora da janela, sem
+  segunda fonte ou sem resultado): votação de súmulas do CARF de 14/09 (sem
+  resultado publicado), STF ADI 4.395/Funrural (sessão ainda sem nova data),
+  Ato Técnico Conjunto RFB/CGIBS nº 4/2026 (fora da janela), Soluções de
+  Consulta Cosit 162/163/172 (fora da janela), CFC Orientação Técnica 2/2026
+  (fora da janela, sem ângulo Copasul) e a janela de opção do ato cooperado
+  na Resolução CGIBS nº 6/2026 (prazo já vigente, sem fato novo). Edição com
+  1.064 palavras visíveis (contagem por strip de tags), abaixo da meta de
+  1.800-2.800, por decisão editorial deliberada diante de um dia com um só
+  achado verificável nos três eixos (mesmo padrão aplicado em 09/09, 10/09 e
+  11/09), não por erro de execução. E-mail enviado a
+  luis.santos@copasul.coop.br às 10:16:53 UTC, threadId `1a0a491cd4f9b062`,
+  confirmado entregue em tamanho completo (19,2 KB) via `get_thread`:
+  paleta verde Copasul, ausência de `<img>`, `background-color` e zero
+  travessão preservados; os quatro links de fonte sobreviveram ao envio
+  (redirecionados pelo Gmail via `google.com/url?q=`, comportamento normal
+  do cliente, não do template). `newsletter.html` salvo em
+  `estado/newsletter/aprovacoes/2026-09-15/` e `meta.json` criado com
+  `status: "aguardando_decisao"`. Nenhum check-in autoagendado nesta
+  execução: a Routine permanente de `newsletter-aprovacao` cobre o
+  fechamento do ciclo de distribuição.
