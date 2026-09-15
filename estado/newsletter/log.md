@@ -797,3 +797,8 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   14/09.** Sem resposta de Luis na thread `1a09f679cfe92cd3` até o fim da
   janela de decisão (19h Campo Grande). `meta.json` atualizado para
   `status: "nao_enviado"`, `motivo: "sem_resposta_ate_19h"`.
+
+- **2026-09-15 23:05 UTC (19:05 Campo Grande) — check-in fecha o ciclo de
+  15/09.** Sem resposta de Luis na thread `1a0a491cd4f9b062` até o fim da
+  janela de decisão (19h Campo Grande). `meta.json` atualizado para
+  `status: "nao_enviado"`, `motivo: "sem_resposta_ate_19h"`.
