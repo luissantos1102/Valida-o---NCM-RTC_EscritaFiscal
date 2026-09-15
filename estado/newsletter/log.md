@@ -792,3 +792,8 @@ cobertos, modo (completo/degradado). Ver `.claude/skills/newsletter-tributaria/S
   `status: "aguardando_decisao"`. Nenhum check-in autoagendado nesta
   execução: a Routine permanente de `newsletter-aprovacao` cobre o
   fechamento do ciclo de distribuição.
+
+- **2026-09-14 23:05 UTC (19:05 Campo Grande) — check-in fecha o ciclo de
+  14/09.** Sem resposta de Luis na thread `1a09f679cfe92cd3` até o fim da
+  janela de decisão (19h Campo Grande). `meta.json` atualizado para
+  `status: "nao_enviado"`, `motivo: "sem_resposta_ate_19h"`.
